@@ -1,0 +1,1517 @@
+[9:55:04 PM] -Imported 0 . Excluded 441 accounts[9:55:04 PM] -Starting normal mode[9:55:04 PM] -Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429[9:55:04 PM] -Cuncurrency: 1[9:55:04 PM] -Proxy count setted: 10[9:55:04 PM] -Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150[9:55:04 PM] -Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false[9:55:34 PM] -Logined[9:55:34 PM] -Trying to mint zomby, account: d81458c1c9d6d7e54ccbdf4f1123f596ab47134ba6352d4967f4f57b86bf07cd[9:55:37 PM] -Cannot mint zomby: Not time yet[9:55:39 PM] -Basic error[9:56:08 PM] -Logined[9:56:08 PM] -Trying to mint zomby, account: c407cc29dab7ace487b76bc34875746abb63229c04910d34844ddeef56489cc2[9:56:32 PM] -Mint success[9:56:34 PM] -Basic error[9:57:02 PM] -Logined[9:57:02 PM] -Trying to mint zomby, account: b17882aaf969e565a27f3c1b010ac0e9a096b7ee59c921e2454c6e2e58300e8d[9:57:24 PM] -Mint success[9:57:26 PM] -Basic error[9:57:53 PM] -Logined[9:57:53 PM] -Trying to mint zomby, account: eb90855a86509e65688fde81cd9c64ee1422780e636035f2edc45122176b3417[9:58:14 PM] -Mint success[9:58:16 PM] -Basic error[10:01:48 PM] -Imported 0 . Excluded 441 accounts[10:01:48 PM] -Starting normal mode[10:01:48 PM] -Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429[10:01:48 PM] -Cuncurrency: 1[10:01:48 PM] -Proxy count setted: 10[10:01:48 PM] -Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150[10:01:48 PM] -Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false[10:02:13 PM] -Imported 0 . Excluded 441 accounts[10:02:13 PM] -Starting normal mode[10:02:13 PM] -Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429[10:02:13 PM] -Cuncurrency: 1[10:02:13 PM] -Proxy count setted: 10[10:02:13 PM] -Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150[10:02:13 PM] -Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false[10:02:41 PM] -Logined[10:02:41 PM] -Trying to mint zomby, account: d81458c1c9d6d7e54ccbdf4f1123f596ab47134ba6352d4967f4f57b86bf07cd[10:02:44 PM] -Cannot mint zomby: Not time yet[10:02:45 PM] -Basic error: cannot prepare transaction[10:03:13 PM] -Logined[10:03:13 PM] -Trying to mint zomby, account: c407cc29dab7ace487b76bc34875746abb63229c04910d34844ddeef56489cc2[10:03:16 PM] -Cannot mint zomby: Not time yet[10:03:44 PM] -Basic error: cannot prepare transaction[10:06:34 PM] - Imported 0 . Excluded 441 accounts[10:06:34 PM] - Starting normal mode[10:06:34 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429[10:06:34 PM] - Cuncurrency: 1[10:06:34 PM] - Proxy count setted: 10[10:06:34 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150[10:06:34 PM] - Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false[10:07:03 PM] - Logined[10:07:03 PM] - Trying to mint zomby, account: d81458c1c9d6d7e54ccbdf4f1123f596ab47134ba6352d4967f4f57b86bf07cd[10:07:05 PM] - Cannot mint zomby: Not time yet[10:07:07 PM] - Basic error: cannot prepare transaction[10:07:36 PM] - Logined[10:07:36 PM] - Trying to mint zomby, account: c407cc29dab7ace487b76bc34875746abb63229c04910d34844ddeef56489cc2[10:07:40 PM] - Cannot mint zomby: Not time yet[10:07:41 PM] - Basic error: cannot prepare transaction[10:10:36 PM] - Imported 0 . Excluded 441 accounts[10:10:36 PM] - Starting normal mode[10:10:36 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429[10:10:36 PM] - Cuncurrency: 1[10:10:36 PM] - Proxy count setted: 10[10:10:36 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150[10:10:36 PM] - Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false[10:11:06 PM] - Logined[10:11:06 PM] - Trying to mint zomby, account: d81458c1c9d6d7e54ccbdf4f1123f596ab47134ba6352d4967f4f57b86bf07cd[10:11:08 PM] - Cannot mint zomby: Not time yet[10:11:10 PM] - Zomby transfer: basic error:cannot prepare transaction[10:11:38 PM] - Logined[10:11:38 PM] - Trying to mint zomby, account: c407cc29dab7ace487b76bc34875746abb63229c04910d34844ddeef56489cc2[10:11:41 PM] - Cannot mint zomby: Not time yet[10:11:43 PM] - Zomby transfer: basic error:cannot prepare transaction[10:12:14 PM] - Logined[10:12:14 PM] - Trying to mint zomby, account: b17882aaf969e565a27f3c1b010ac0e9a096b7ee59c921e2454c6e2e58300e8d[10:12:17 PM] - Cannot mint zomby: Not time yet[10:12:42 PM] - Zomby transfer: basic error:cannot prepare transaction[10:13:10 PM] - Logined[10:13:10 PM] - Trying to mint zomby, account: eb90855a86509e65688fde81cd9c64ee1422780e636035f2edc45122176b3417[10:13:13 PM] - Cannot mint zomby: Not time yet[10:13:15 PM] - Zomby transfer: basic error:cannot prepare transaction[10:16:49 PM] - Imported 0 . Excluded 441 accounts[10:16:49 PM] - Starting normal mode[10:16:49 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429[10:16:49 PM] - Cuncurrency: 1[10:16:49 PM] - Proxy count setted: 10[10:16:49 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150[10:16:49 PM] - Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false[10:17:18 PM] - Logined[10:17:18 PM] - Trying to mint zomby, account: d81458c1c9d6d7e54ccbdf4f1123f596ab47134ba6352d4967f4f57b86bf07cd[10:17:21 PM] - Cannot mint zomby: Not time yet[10:17:24 PM] - Zomby transfer: basic error:cannot prepare transaction[10:17:27 PM] - Error: Navigation failed because browser has disconnected! account: c407cc29dab7ace487b76bc34875746abb63229c04910d34844ddeef56489cc2[10:22:16 PM] - Imported 0 . Excluded 441 accounts[10:22:16 PM] - Starting normal mode[10:22:16 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429[10:22:16 PM] - Cuncurrency: 1[10:22:16 PM] - Proxy count setted: 10[10:22:16 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150[10:22:16 PM] - Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false[10:22:45 PM] - Logined[10:22:45 PM] - Trying to mint zomby, account: d81458c1c9d6d7e54ccbdf4f1123f596ab47134ba6352d4967f4f57b86bf07cd[10:22:48 PM] - Cannot mint zomby: Not time yet[10:23:17 PM] - Logined[10:23:17 PM] - Trying to mint zomby, account: c407cc29dab7ace487b76bc34875746abb63229c04910d34844ddeef56489cc2[10:23:20 PM] - Cannot mint zomby: Not time yet[10:23:21 PM] - Zomby transfer: basic error:no zomby[10:25:25 PM] - Imported 0 . Excluded 441 accounts[10:25:25 PM] - Starting normal mode[10:25:25 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429[10:25:25 PM] - Cuncurrency: 1[10:25:25 PM] - Proxy count setted: 10[10:25:25 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150[10:25:25 PM] - Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false[10:25:54 PM] - Logined[10:25:54 PM] - Trying to mint zomby, account: d81458c1c9d6d7e54ccbdf4f1123f596ab47134ba6352d4967f4f57b86bf07cd[10:25:58 PM] - Cannot mint zomby: Not time yet[10:26:29 PM] - Logined[10:26:29 PM] - Trying to mint zomby, account: c407cc29dab7ace487b76bc34875746abb63229c04910d34844ddeef56489cc2[10:26:32 PM] - Cannot mint zomby: Not time yet[10:26:33 PM] - Zomby transfer: basic error:no zomby[10:27:55 PM] - Imported 0 . Excluded 441 accounts[10:27:55 PM] - Starting normal mode[10:27:55 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429[10:27:55 PM] - Cuncurrency: 1[10:27:55 PM] - Proxy count setted: 10[10:27:55 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150[10:27:55 PM] - Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false[10:28:27 PM] - Logined[10:28:27 PM] - Trying to mint zomby, account: d81458c1c9d6d7e54ccbdf4f1123f596ab47134ba6352d4967f4f57b86bf07cd[10:28:31 PM] - Cannot mint zomby: Not time yet[10:28:59 PM] - Logined[10:28:59 PM] - Trying to mint zomby, account: c407cc29dab7ace487b76bc34875746abb63229c04910d34844ddeef56489cc2[10:29:02 PM] - Cannot mint zomby: Not time yet[10:30:03 PM] - Zomby transfer: basic error:no zomby[10:30:32 PM] - Logined[10:30:32 PM] - Trying to mint zomby, account: b17882aaf969e565a27f3c1b010ac0e9a096b7ee59c921e2454c6e2e58300e8d[10:30:35 PM] - Cannot mint zomby: Not time yet[10:30:53 PM] - Imported 0 . Excluded 441 accounts[10:30:53 PM] - Starting normal mode[10:30:53 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429[10:30:53 PM] - Cuncurrency: 1[10:30:53 PM] - Proxy count setted: 10[10:30:53 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150[10:30:53 PM] - Mode: 
+		transfer: none 
+		burn: false 
+		headless: false[10:31:47 PM] - Imported 0 . Excluded 441 accounts
+[10:31:47 PM] - Starting normal mode
+[10:31:47 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429
+[10:31:47 PM] - Cuncurrency: 1
+[10:31:47 PM] - Proxy count setted: 10
+[10:31:47 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[10:31:47 PM] - Mode: 
+		transfer: none 
+		burn: false 
+		headless: false
+[10:32:17 PM] - Logined
+[10:32:17 PM] - Trying to mint zomby, account: d81458c1c9d6d7e54ccbdf4f1123f596ab47134ba6352d4967f4f57b86bf07cd
+[10:32:20 PM] - Cannot mint zomby: Not time yet
+[10:32:50 PM] - Logined
+[10:32:50 PM] - Trying to mint zomby, account: c407cc29dab7ace487b76bc34875746abb63229c04910d34844ddeef56489cc2
+[10:32:53 PM] - Cannot mint zomby: Not time yet
+[10:33:20 PM] - Logined
+[10:33:20 PM] - Trying to mint zomby, account: b17882aaf969e565a27f3c1b010ac0e9a096b7ee59c921e2454c6e2e58300e8d
+[10:33:22 PM] - Cannot mint zomby: Not time yet
+[10:33:51 PM] - Logined
+[10:33:51 PM] - Trying to mint zomby, account: eb90855a86509e65688fde81cd9c64ee1422780e636035f2edc45122176b3417
+[10:33:54 PM] - Cannot mint zomby: Not time yet
+[10:34:23 PM] - Logined
+[10:34:23 PM] - Trying to mint zomby, account: 2252896c236b8dc96730a956255bead1144ca92250dbb1360bd7778015d38a78
+[10:34:46 PM] - Zomby mint success
+[10:35:15 PM] - Logined
+[10:35:15 PM] - Trying to mint zomby, account: cd80451a30144a89770fa10124ff6bddc8b76c25d3bbc970c1d6dc6e910c3135
+[10:35:39 PM] - Zomby mint success
+[10:36:04 PM] - Logined
+[10:36:04 PM] - Trying to mint zomby, account: b0192a31a2d0520647d5e8b092e30a3a327beb0b860a74a580f03b2f535870df
+[10:36:27 PM] - Zomby mint success
+[10:36:56 PM] - Logined
+[10:36:56 PM] - Trying to mint zomby, account: f81810964d59253d17874355bab04bda444927f0b0b45dbaa91047a8481c76bb
+[10:37:19 PM] - Zomby mint success
+[10:37:49 PM] - Logined
+[10:37:49 PM] - Trying to mint zomby, account: 04536cfc3f4d0207bd65c0f1fc79b0bd9653b14fecc47d93407d5d8d54ada7ab
+[10:38:11 PM] - Zomby mint success
+[10:38:38 PM] - Logined
+[10:38:38 PM] - Trying to mint zomby, account: ffb44c4d14b4afba672c7e25c223d77cb634a810967199dc09ce9e4917a91bae
+[10:39:03 PM] - Zomby mint success
+[10:39:31 PM] - Logined
+[10:39:31 PM] - Trying to mint zomby, account: 5d6329e4000ad19c5524bcfc01b3cc565b65b497ea8573228171fdad97d6ca1a
+[10:39:54 PM] - Zomby mint success
+[10:40:25 PM] - Logined
+[10:40:25 PM] - Trying to mint zomby, account: 448af8cce3188c45dbf802aa5443c24b7e466c4de78bcde4b6a83891968c845c
+[10:40:49 PM] - Zomby mint success
+[10:41:17 PM] - Logined
+[10:41:17 PM] - Trying to mint zomby, account: 8463c289cf2582eddba34fcd7e7eb4d4e463e5e3bcfa0c98f9411c23a45f2d76
+[10:41:39 PM] - Zomby mint success
+[10:42:08 PM] - Logined
+[10:42:08 PM] - Trying to mint zomby, account: 5c7134c2877e72abef80694b56c1e386e634e8675a79200b8420aa6984cebf88
+[10:42:30 PM] - Zomby mint success
+[10:42:58 PM] - Logined
+[10:42:58 PM] - Trying to mint zomby, account: cf0a2fd41162bdf383ec9be4d1d57f9df332293ccc7c783350eecbbaeb0bf6cf
+[10:43:22 PM] - Zomby mint success
+[10:43:51 PM] - Logined
+[10:43:51 PM] - Trying to mint zomby, account: 26d09d9abdc57a00f875b456ab7aa47059324841b76f444451f0ee34047e1161
+[10:44:14 PM] - Zomby mint success
+[10:44:44 PM] - Logined
+[10:44:44 PM] - Trying to mint zomby, account: 0afa13ca076ae1c0d1379021e68337671a6895db8887363b8042f2b2dc286abc
+[10:45:06 PM] - Zomby mint success
+[10:45:35 PM] - Logined
+[10:45:35 PM] - Trying to mint zomby, account: 2f8ddf1cc346cfe2d98d64e724f46c74f8175a7a459c68a747086f6bfb97e718
+[10:45:59 PM] - Zomby mint success
+[10:46:27 PM] - Logined
+[10:46:27 PM] - Trying to mint zomby, account: dc5e3c27433d51355fd6b0753624bcac8ddab6ace41734a894ebbcc0aaeaddc4
+[10:46:49 PM] - Zomby mint success
+[10:47:17 PM] - Logined
+[10:47:17 PM] - Trying to mint zomby, account: d62350f2d9d986a775e2b52bf892295e6cc5d074d6db373b021081a31ffab181
+[10:47:41 PM] - Zomby mint success
+[10:48:11 PM] - Logined
+[10:48:11 PM] - Trying to mint zomby, account: 4052c17e18ca26ce7ab9bcb4818244c55047efe635545e0fe8aa0a0c02267524
+[10:48:35 PM] - Zomby mint success
+[10:49:04 PM] - Logined
+[10:49:04 PM] - Trying to mint zomby, account: f4430da7ca21d232f73e36b99e64a6d04432b8c59bd78e9656b3f608775efadc
+[10:49:26 PM] - Zomby mint success
+[10:49:54 PM] - Logined
+[10:49:54 PM] - Trying to mint zomby, account: 195ed60800c51156f375eb0333fb82dab4ebe09d052bf0bc861161b6e8efcf9a
+[10:50:16 PM] - Zomby mint success
+[10:50:46 PM] - Logined
+[10:50:46 PM] - Trying to mint zomby, account: ec1fb0e8edfac466c706158541a98499c9cb806f7d82815a39601a0a9a57f818
+[10:51:12 PM] - Zomby mint success
+[10:51:45 PM] - Logined
+[10:51:45 PM] - Trying to mint zomby, account: 057e9348b56d50c03f02c009cb82f4b9e55412a06fdd146c4568cf3be80b5558
+[10:52:09 PM] - Zomby mint success
+[10:52:35 PM] - Logined
+[10:52:35 PM] - Trying to mint zomby, account: 89399ceeb56817aa546ed8836add501f7885544f037c5e55b46bd45ca63d630e
+[10:52:58 PM] - Zomby mint success
+[10:53:27 PM] - Logined
+[10:53:27 PM] - Trying to mint zomby, account: 906b3fe847f4fa72d1370d4d4cc892c886cba4b15ea974b91a04764213ff1b44
+[10:53:49 PM] - Zomby mint success
+[10:54:18 PM] - Logined
+[10:54:18 PM] - Trying to mint zomby, account: da69311fd43c7191d33c237838034d29cbc9d617a7083c17e6848056c43cda3e
+[10:54:40 PM] - Zomby mint success
+[10:55:09 PM] - Logined
+[10:55:09 PM] - Trying to mint zomby, account: ae744614087719bc4ca6a94778dc0629acb2e7f979a0ea046e18cd758084f857
+[10:55:31 PM] - Zomby mint success
+[10:56:02 PM] - Logined
+[10:56:02 PM] - Trying to mint zomby, account: b0cda3d805484e102d98694eb54021b7189ddbb0753f16730ddad371fb21661e
+[10:56:24 PM] - Zomby mint success
+[10:56:51 PM] - Logined
+[10:56:51 PM] - Trying to mint zomby, account: 88fe2bc14498d7e670e02f4de89676b9a5890298670063cb9f89d991a697e4a9
+[10:57:15 PM] - Zomby mint success
+[10:57:42 PM] - Logined
+[10:57:42 PM] - Trying to mint zomby, account: 670c2126619372b38563b20bc5c644473d77d0212eea4bb7db88ac6cfae029e4
+[10:58:04 PM] - Zomby mint success
+[10:58:35 PM] - Logined
+[10:58:35 PM] - Trying to mint zomby, account: c72c05ca6f07ee3ee9fe01849d2048a39a88ea00feb55116128d50f4f1f68b69
+[10:58:58 PM] - Zomby mint success
+[10:59:29 PM] - Logined
+[10:59:29 PM] - Trying to mint zomby, account: d9d05fb8cea5cdaaed935f30f4548904b9a80bad525af2c90b75759877dfad37
+[10:59:50 PM] - Zomby mint success
+[11:00:22 PM] - Logined
+[11:00:22 PM] - Trying to mint zomby, account: 970629fcf8a5de842f1bf9e293801b15d8b6e36a059b1396c567f87c449a0047
+[11:00:44 PM] - Zomby mint success
+[11:01:17 PM] - Logined
+[11:01:17 PM] - Trying to mint zomby, account: 403f11167e0761ac57f5a1116e0801e77d7b883ebeba57b9d3b7c8df833bd43b
+[11:01:39 PM] - Zomby mint success
+[11:02:05 PM] - Logined
+[11:02:05 PM] - Trying to mint zomby, account: 65628e23fee3be83defc1311255f3eb4296cc0b8e72dade5e974919386577bf8
+[11:02:25 PM] - Zomby mint success
+[11:02:57 PM] - Logined
+[11:02:57 PM] - Trying to mint zomby, account: 2e548d754732e6d847fc92caa476d71b4ccb585a937a7af9f46645fc4cee2a95
+[11:03:21 PM] - Zomby mint success
+[11:03:53 PM] - Logined
+[11:03:53 PM] - Trying to mint zomby, account: 25a35fa490f6cbb90d2ca013ab2c8db668ecd0516c554ee636f934368f73cdf8
+[11:04:15 PM] - Zomby mint success
+[11:04:42 PM] - Logined
+[11:04:42 PM] - Trying to mint zomby, account: 105da6498d8886ed6b60befd1bd30df497bfc53c77a42bd70df4f98620d5f263
+[11:05:07 PM] - Zomby mint success
+[11:05:35 PM] - Logined
+[11:05:35 PM] - Trying to mint zomby, account: 211d6af530ed6e9890e7a49556ae428dd04baf0838e59f2e8c9d02ec23eeb57f
+[11:05:58 PM] - Zomby mint success
+[11:06:09 PM] - Error: Navigation failed because browser has disconnected! account: 2c4063b010f57e73cd8570a9647898595717cc3b5968d4569567f4fa0aee042e
+[11:06:21 PM] - Error: Navigation failed because browser has disconnected! account: 2c4063b010f57e73cd8570a9647898595717cc3b5968d4569567f4fa0aee042e
+[11:06:38 PM] - Logined
+[11:06:38 PM] - Trying to mint zomby, account: a3b66921ba89196ab5e0b8dd4b9de354dc37ed4713e1e9a9865147d284bb0569
+[11:06:49 PM] - Logined
+[11:06:49 PM] - Trying to mint zomby, account: 2c4063b010f57e73cd8570a9647898595717cc3b5968d4569567f4fa0aee042e
+[11:07:01 PM] - Zomby mint success
+[11:07:12 PM] - Zomby mint success
+[11:07:32 PM] - Logined
+[11:07:32 PM] - Trying to mint zomby, account: 4c65c4b75dc432e79aff2b207b86bf80e165619c6f409f960d92671a8874cdb6
+[11:07:55 PM] - Zomby mint success
+[11:08:25 PM] - Logined
+[11:08:25 PM] - Trying to mint zomby, account: e9888f91ae6396c5b19d6e5d8eb0c5432a0b1274b7a1c988ceece515a8cffbe8
+[11:08:47 PM] - Zomby mint success
+[11:09:14 PM] - Logined
+[11:09:14 PM] - Trying to mint zomby, account: b7f225d6e45249138fab9996ab52ca88d56d5beb5fe72c4dec626a54d9566cd3
+[11:09:35 PM] - Zomby mint success
+[11:10:02 PM] - Logined
+[11:10:02 PM] - Trying to mint zomby, account: e65325ebcc989fbec1d111e85aadd674848f9ace25c5450327e2ea34b327e77c
+[11:10:25 PM] - Zomby mint success
+[11:10:53 PM] - Logined
+[11:10:53 PM] - Trying to mint zomby, account: 10c44bb3f4e59b51783ab90485310e839829e4a921994631d0ea6c867b64820a
+[11:11:16 PM] - Zomby mint success
+[11:11:42 PM] - Logined
+[11:11:42 PM] - Trying to mint zomby, account: 17764630493cedaf2f908c0ebb453e16ea56c43b16c537bfcad27c894a1ac313
+[11:12:06 PM] - Zomby mint success
+[11:12:36 PM] - Logined
+[11:12:36 PM] - Trying to mint zomby, account: 62c47d51e4c97381b3409756a00df100f19671f7db26bef6f39549dbb79a4561
+[11:12:58 PM] - Zomby mint success
+[11:13:25 PM] - Logined
+[11:13:25 PM] - Trying to mint zomby, account: b3a99d1d49b6385bac64b5f0d85c096984177c3f54a1a03631b197e2426d1ee4
+[11:13:48 PM] - Zomby mint success
+[11:14:15 PM] - Logined
+[11:14:15 PM] - Trying to mint zomby, account: 83b31fcb9451379e7dc683e5bd3315c3ab28b9e5ab914fd8fb3dd0cba6f8336d
+[11:14:40 PM] - Zomby mint success
+[11:15:09 PM] - Logined
+[11:15:09 PM] - Trying to mint zomby, account: 3ff0fa4032334fbe1c272d3ff92fdf5f7b5c4a608664f20a0d2149081c655ff5
+[11:15:31 PM] - Zomby mint success
+[11:16:00 PM] - Logined
+[11:16:00 PM] - Trying to mint zomby, account: 486f79c1bed6b8cf076426b947f136630513a1927e12509b2a97846f4bae79e0
+[11:16:25 PM] - Zomby mint success
+[11:16:53 PM] - Logined
+[11:16:53 PM] - Trying to mint zomby, account: 32e8bbdf7e6dfa57c061f46b6b9a515a710c02f7b7e574625a3e65d99e5b32a1
+[11:17:17 PM] - Zomby mint success
+[11:17:47 PM] - Logined
+[11:17:47 PM] - Trying to mint zomby, account: 666f70655ef01e47cffe0e41860d1433f858f6763bd010c6b166004746b3ef95
+[11:18:07 PM] - Zomby mint success
+[11:18:36 PM] - Logined
+[11:18:36 PM] - Trying to mint zomby, account: 34d7d280e7bd0237bb6997ba7140002c7bca04592b1871ae83b5f3de32ddeeb6
+[11:18:59 PM] - Zomby mint success
+[11:19:32 PM] - Logined
+[11:19:32 PM] - Trying to mint zomby, account: c189ffd1b98eb45df2366187ba65dabdd54e97141c759940f80f1b11cbdbdde8
+[11:19:57 PM] - Zomby mint success
+[11:20:23 PM] - Logined
+[11:20:23 PM] - Trying to mint zomby, account: 17f81b81118dd1f663a332ee118f5be901fdd4e4362b4c0cfa35fddddbc931b5
+[11:20:48 PM] - Zomby mint success
+[11:21:17 PM] - Logined
+[11:21:17 PM] - Trying to mint zomby, account: 4442c0cecc222bffb53e4c29655af443e0c223ed845a5d8a6c513b54d6b49854
+[11:21:41 PM] - Zomby mint success
+[11:22:10 PM] - Logined
+[11:22:10 PM] - Trying to mint zomby, account: 9b78552d2426b9c79c834123b7f5046f7eb67d39aa4ed573f33c954785dc53f1
+[11:22:34 PM] - Zomby mint success
+[11:23:03 PM] - Logined
+[11:23:03 PM] - Trying to mint zomby, account: 642127b612bc5b6ac00f48cfd2621ee8b66698f34fb9f68184ee74b2841af3d6
+[11:23:25 PM] - Zomby mint success
+[11:23:54 PM] - Logined
+[11:23:54 PM] - Trying to mint zomby, account: 6b2b22e426bdf0d727d495bd5796f9f85a05b3643fe78cfdeb38ff3f305043dd
+[11:24:18 PM] - Zomby mint success
+[11:24:49 PM] - Logined
+[11:24:49 PM] - Trying to mint zomby, account: 9e47376f16103d7d5c5bce0e72ac8dafff91246f1e6bb835ca0de142b290fba8
+[11:25:11 PM] - Zomby mint success
+[11:25:40 PM] - Logined
+[11:25:40 PM] - Trying to mint zomby, account: b4d47ac4cdc042fd43477dcfb86130877d56d25de14646ce9253841a27fc44b5
+[11:26:02 PM] - Zomby mint success
+[11:34:25 PM] - TimeoutError: Navigation timeout of 500000 ms exceeded account: 7c3e1cf56eeba560eb2aaf2262a97eba5c548b253d4d1535740e80d757f5d8bf
+[11:34:52 PM] - Logined
+[11:34:52 PM] - Trying to mint zomby, account: 11742afb531ce4d97f7985857ae2a6b5ea7c9865fdcd1ed111b8c9c4bbe693a5
+[11:35:13 PM] - Zomby mint success
+[11:35:40 PM] - Logined
+[11:35:40 PM] - Trying to mint zomby, account: 4bca28336fa1971a2a43d1958a6767dead6bc6aaee21c1eea118ed70e6870cfb
+[11:36:03 PM] - Zomby mint success
+[11:36:33 PM] - Logined
+[11:36:33 PM] - Trying to mint zomby, account: 56a8a60793515b4b66d951c8b5d2bbebfe299dc76f8f7008afee25d5614065d3
+[11:36:53 PM] - Zomby mint success
+[11:37:20 PM] - Logined
+[11:37:20 PM] - Trying to mint zomby, account: b7c11959121bece3b2e341a1378ab0d3e291848be0b1a935615d82a82c2b846b
+[11:37:43 PM] - Zomby mint success
+[11:38:11 PM] - Logined
+[11:38:11 PM] - Trying to mint zomby, account: 28e1e8708f00bccae2b80ed72c57df48353fbe7fbd18fb1ac21a8a53b2e97ae8
+[11:38:33 PM] - Zomby mint success
+[11:38:58 PM] - Logined
+[11:38:58 PM] - Trying to mint zomby, account: 09fb7d80f1fc970fd2924e897188fd285cdf72273904379b91ca99c014f79c26
+[11:39:23 PM] - Zomby mint success
+[11:39:50 PM] - Logined
+[11:39:50 PM] - Trying to mint zomby, account: 0a4b62405aeebd754f59c639bc2eb7206d1304ca01c20d502d03d7be1a1ea23b
+[11:40:14 PM] - Zomby mint success
+[11:40:42 PM] - Logined
+[11:40:42 PM] - Trying to mint zomby, account: 5420701d99db94d143dd1223062377559f34e080d3379bce198076fa9814babf
+[11:41:03 PM] - Zomby mint success
+[11:41:28 PM] - Logined
+[11:41:28 PM] - Trying to mint zomby, account: 538e997bf9163a4df83a7858c333e69b07e5a174f2c0ccc658299fd7967e8926
+[11:41:52 PM] - Zomby mint success
+[11:42:19 PM] - Logined
+[11:42:19 PM] - Trying to mint zomby, account: f218bf316e140681a63adb60bf80d0881eb674986daa436b21824e1bb0d14dcc
+[11:42:41 PM] - Zomby mint success
+[11:43:08 PM] - Logined
+[11:43:08 PM] - Trying to mint zomby, account: eeece0feaad5e43e266907c847b2765bc03cdc73883715fd1b612474f43720f7
+[11:43:31 PM] - Zomby mint success
+[11:44:01 PM] - Logined
+[11:44:01 PM] - Trying to mint zomby, account: ab15a7ea6f44dcf59596a0f75795cf1604960f3f2f48dcca1ad165b923695755
+[11:44:24 PM] - Zomby mint success
+[11:44:53 PM] - Logined
+[11:44:53 PM] - Trying to mint zomby, account: 9e76510809dc677553381cdc32adc71462c78261109885fce5d645f6c553a936
+[11:45:15 PM] - Zomby mint success
+[11:45:44 PM] - Logined
+[11:45:44 PM] - Trying to mint zomby, account: 3a9e5bcf2ca73f148e1bf9a4cc3c6d75915dfeea5795967eb833b9ea58c4668b
+[11:46:08 PM] - Zomby mint success
+[11:46:36 PM] - Logined
+[11:46:36 PM] - Trying to mint zomby, account: c0f9cb48eacaf9b29f5f2e60907e936267802290b3ff01526718d43aee6d7f5c
+[11:46:57 PM] - Zomby mint success
+[11:47:25 PM] - Logined
+[11:47:25 PM] - Trying to mint zomby, account: eecb47f90b96c64669c04c780cd323a6052f7b3c8426d63702e93cb74fae5b48
+[11:47:50 PM] - Zomby mint success
+[11:48:16 PM] - Logined
+[11:48:16 PM] - Trying to mint zomby, account: edb8b72f61d812fdbfeda630fa09aab8f7c63697c7caaeebec75080b3c4adf5e
+[11:48:40 PM] - Zomby mint success
+[11:49:11 PM] - Logined
+[11:49:11 PM] - Trying to mint zomby, account: c8fddedb88b06cd44903162181d367202467682f5f3d972dbf3f04dd66156466
+[11:49:32 PM] - Zomby mint success
+[11:50:12 PM] - Logined
+[11:50:12 PM] - Trying to mint zomby, account: 537a162af45423de592d22d27c01fffe8c654a4387907038d080b50c9b062084
+[11:50:38 PM] - Zomby mint success
+[11:51:07 PM] - Logined
+[11:51:07 PM] - Trying to mint zomby, account: 0d7ac90a3bc1e3e0771172e3474671c5fce989d662dd88ca6067f517704b93bd
+[11:51:32 PM] - Zomby mint success
+[11:51:59 PM] - Logined
+[11:51:59 PM] - Trying to mint zomby, account: 560b54f1c908d1e56a46c5134cc779426c351fed2d8086cde096f078788a4560
+[11:52:28 PM] - Zomby mint success
+[11:52:55 PM] - Logined
+[11:52:55 PM] - Trying to mint zomby, account: ae110715f595bf92e6123000dbd732bee395cd894a88918fd84a56246d4d55ab
+[11:53:18 PM] - Zomby mint success
+[11:53:45 PM] - Logined
+[11:53:45 PM] - Trying to mint zomby, account: d73bd2bcf4ca844733baa9665e8715231759dc8cd92130393d4a50b2afc6bcc8
+[11:54:09 PM] - Zomby mint success
+[11:54:38 PM] - Logined
+[11:54:38 PM] - Trying to mint zomby, account: 5576d2ac13885c624fbef2f694bd4d20badce08d3458fd0302ad94a83c188144
+[11:55:01 PM] - Zomby mint success
+[11:55:34 PM] - Logined
+[11:55:34 PM] - Trying to mint zomby, account: 810e160a2f16090ac83e852a1662e12f8ad11c30f2e2fce8a1429fb81fb3f1e1
+[11:55:56 PM] - Zomby mint success
+[11:56:24 PM] - Logined
+[11:56:24 PM] - Trying to mint zomby, account: e5783287e87f888f055dfaea601260ace9749713bd7962fbdf74dcfeefe74fa1
+[11:56:47 PM] - Zomby mint success
+[11:57:18 PM] - Logined
+[11:57:18 PM] - Trying to mint zomby, account: 857c9c61527e08cc631fd2833c2e9e988bf46c3af264ba71d558a2ec656fe808
+[11:57:43 PM] - Zomby mint success
+[11:58:10 PM] - Logined
+[11:58:10 PM] - Trying to mint zomby, account: 77a5a942d7a9d7c8dacf548bb53e639443ac745ba50ede84ef743f5ba26c43c6
+[11:58:32 PM] - Zomby mint success
+[11:58:59 PM] - Logined
+[11:58:59 PM] - Trying to mint zomby, account: 26b2c469f3ee41af4b64905df57dfd4e8d9acbbeb63e8ff03456f3d6720502ab
+[11:59:23 PM] - Zomby mint success
+[11:59:51 PM] - Logined
+[11:59:51 PM] - Trying to mint zomby, account: 10ee93995d91c2bbe8cb49f64b1de36e4eafdb12b2acaeaf2655738533cb1dce
+[12:00:15 AM] - Zomby mint success
+[12:00:44 AM] - Logined
+[12:00:44 AM] - Trying to mint zomby, account: 8e7c881ac2726c6107a2ec44e35f0717f72c6e77998f9d3e8f610fdf37e39495
+[12:01:06 AM] - Zomby mint success
+[12:01:39 AM] - Logined
+[12:01:39 AM] - Trying to mint zomby, account: fba15cc675846fee60b8ee5957761b2da770566a26aaed98519e5c63d7c0bdc6
+[12:02:01 AM] - Zomby mint success
+[12:02:34 AM] - Logined
+[12:02:34 AM] - Trying to mint zomby, account: f805964cc874dc79f3544a95662b9edf5006f3c51f5fc0b965673320a15fd365
+[12:02:59 AM] - Zomby mint success
+[12:03:32 AM] - Logined
+[12:03:32 AM] - Trying to mint zomby, account: 0cb39cf1071a5e206ce19469567b0214501af94ff4913749e78be9ba6e296d97
+[12:03:57 AM] - Zomby mint success
+[12:04:27 AM] - Logined
+[12:04:27 AM] - Trying to mint zomby, account: df3bf0b8a235d555145f45d3e57d578f44a70edef56f90c084c9919c9618e71c
+[12:04:49 AM] - Zomby mint success
+[12:05:19 AM] - Logined
+[12:05:19 AM] - Trying to mint zomby, account: 4299ba997a7fa1b660d501259166be389b6e35aac8a83418e1e11e0c0d8ace17
+[12:05:44 AM] - Zomby mint success
+[12:06:11 AM] - Logined
+[12:06:11 AM] - Trying to mint zomby, account: 35356a1ec5208063bd10895f38c2990893e7bdd2332ae8c8374e3408bacfddd0
+[12:06:32 AM] - Zomby mint success
+[12:07:01 AM] - Logined
+[12:07:01 AM] - Trying to mint zomby, account: 848b754214af1d863bb652f05f5384b1055a0b6673c60b7edcff912ad1d66652
+[12:15:29 AM] - Cannot mint zomby: Unknown error while minting
+[12:15:58 AM] - Logined
+[12:15:58 AM] - Trying to mint zomby, account: 49103f765cfedc3152bd0f4aab7f8acf8a00adb254e0652376ef2e2bb5742f70
+[12:16:19 AM] - Zomby mint success
+[12:16:47 AM] - Logined
+[12:16:47 AM] - Trying to mint zomby, account: 91910d2527db5d7bb791153ad3c0dfcef09427864ba1844fa9cd1cea06b0276f
+[12:17:09 AM] - Zomby mint success
+[12:17:37 AM] - Logined
+[12:17:37 AM] - Trying to mint zomby, account: 4874fa8c86c7905097fc5027ed4d4350415ffac5f0300bde54aaa4755ef19396
+[12:18:00 AM] - Zomby mint success
+[12:18:28 AM] - Logined
+[12:18:28 AM] - Trying to mint zomby, account: 523ba93993bfcd9db57780c91d97cf696d803c97318ae95307cddd421e424aff
+[12:18:51 AM] - Zomby mint success
+[12:19:17 AM] - Logined
+[12:19:17 AM] - Trying to mint zomby, account: 7eca3f46119bf50cf380476e36c4a3559582a45d5e832764a0d7c8810e08975a
+[12:19:40 AM] - Zomby mint success
+[12:20:11 AM] - Logined
+[12:20:11 AM] - Trying to mint zomby, account: eccdc7f2bb58799358472e923791080de2130dc47b9a05a1a3ab7f25cc8bf991
+[12:20:36 AM] - Zomby mint success
+[12:21:03 AM] - Logined
+[12:21:03 AM] - Trying to mint zomby, account: 08c1f47de33e909e146ee427b07b093452beeb87697600f326d97527be7b5f58
+[12:21:26 AM] - Zomby mint success
+[12:21:53 AM] - Logined
+[12:21:53 AM] - Trying to mint zomby, account: 110e487c014a70ad459be71912b6c7becffae9e8be103ffe0767ff8d99c18109
+[12:22:16 AM] - Zomby mint success
+[12:22:44 AM] - Logined
+[12:22:44 AM] - Trying to mint zomby, account: 134b787dd99c811018da87479abff4e41c5c0d3738ca838900ce34e42a0e2476
+[12:23:08 AM] - Zomby mint success
+[12:23:35 AM] - Logined
+[12:23:35 AM] - Trying to mint zomby, account: d996bc4ad50ce2a960639dd06923d6040c533ab2ba84a60a8f4b2307cb3cc55c
+[12:23:57 AM] - Zomby mint success
+[12:24:22 AM] - Logined
+[12:24:22 AM] - Trying to mint zomby, account: c6fc7ea70432df23f1b947782c400657fe7f4690bdb516e4052da2aa7b76a8ad
+[12:24:45 AM] - Zomby mint success
+[12:25:15 AM] - Logined
+[12:25:15 AM] - Trying to mint zomby, account: 6c2f40228a56fe74bba2bd346cd1fb45bc57cf001d851cf72b7b225d5e465b68
+[12:25:39 AM] - Zomby mint success
+[12:26:09 AM] - Logined
+[12:26:09 AM] - Trying to mint zomby, account: 05089def3c42d22bf4a36efacea01c696e08b9548ed259eaa054063050433117
+[12:26:30 AM] - Zomby mint success
+[12:26:59 AM] - Logined
+[12:26:59 AM] - Trying to mint zomby, account: eca8ac13f9734fb7eca37033b590fa6ee78dd3db3455b1a7ec79c3725a45faa7
+[12:27:21 AM] - Zomby mint success
+[12:27:46 AM] - Logined
+[12:27:46 AM] - Trying to mint zomby, account: 2df291e07f024b53fb5c3f9b1eceebdcab62246c5062992cb15dc156f845891e
+[12:28:07 AM] - Zomby mint success
+[12:28:35 AM] - Logined
+[12:28:35 AM] - Trying to mint zomby, account: 733b486cd403f70c35bcf3804b492545b7c0e4e45428f94a39be1788191def8a
+[12:28:59 AM] - Zomby mint success
+[12:29:26 AM] - Logined
+[12:29:26 AM] - Trying to mint zomby, account: 01c7c729ec129d647f5129da1c78d4bdc2e43b0af279f9887091605b915c44c7
+[12:29:50 AM] - Zomby mint success
+[12:30:35 AM] - Logined
+[12:30:35 AM] - Trying to mint zomby, account: 8b4b6b0879369393efd95dddea69437a8f58d7d206b06849d6165a1919f61e7f
+[12:31:00 AM] - Zomby mint success
+[12:31:30 AM] - Logined
+[12:31:30 AM] - Trying to mint zomby, account: 12c98d862b4b488b37e52f0cbc5307fb98e1f11eaa28c9b765d89330d6c22c98
+[12:31:56 AM] - Zomby mint success
+[12:32:25 AM] - Logined
+[12:32:25 AM] - Trying to mint zomby, account: 9a1a88e1cdb9f09cc74ac3976c070e555fc2c79cfc4bf3a8ccb720ca71001466
+[12:32:49 AM] - Zomby mint success
+[12:33:19 AM] - Logined
+[12:33:19 AM] - Trying to mint zomby, account: 5a2b46ac06a4aba6f9a0014d9814360e92632bea44d386ccc65b9e60fb4aedf0
+[12:33:41 AM] - Zomby mint success
+[12:34:11 AM] - Logined
+[12:34:11 AM] - Trying to mint zomby, account: 86459f19bd331433cf17de70b78c3da6aa15389733dc9b3559883bdc212af6ca
+[12:34:36 AM] - Zomby mint success
+[12:35:03 AM] - Logined
+[12:35:03 AM] - Trying to mint zomby, account: 1d114a11701f111acf2bb5a5a96e042e1c9fc96d68e88e02a81ef7d46bcf5fba
+[12:35:30 AM] - Zomby mint success
+[12:36:01 AM] - Logined
+[12:36:01 AM] - Trying to mint zomby, account: 974c20bdaf12c3ebc035aae101dba069e5ff0726adc51bffbb3bece08340f733
+[12:36:24 AM] - Zomby mint success
+[12:36:53 AM] - Logined
+[12:36:53 AM] - Trying to mint zomby, account: 2ff084d02bf9088adf82127a9ddaa407a993dd18a48eb76c19cf41140f513b5d
+[12:37:16 AM] - Zomby mint success
+[12:37:45 AM] - Logined
+[12:37:45 AM] - Trying to mint zomby, account: 77e7163a60c3a4bf8bd2b3294a9a804b5914b47ed055b666bdcaa68bd4e0fa7c
+[12:38:06 AM] - Zomby mint success
+[12:38:33 AM] - Logined
+[12:38:33 AM] - Trying to mint zomby, account: 186485f283b6d7171e232fd5a5d35921aef70da0e68b51dbb94dbbd47301c447
+[12:38:57 AM] - Zomby mint success
+[12:39:24 AM] - Logined
+[12:39:24 AM] - Trying to mint zomby, account: 20748316f26998a0fce8e16004afd48b4e2536bd7fd3d22e326acbd5ab1ec5f5
+[12:39:48 AM] - Zomby mint success
+[12:40:17 AM] - Logined
+[12:40:17 AM] - Trying to mint zomby, account: 58c498f01fb226ae3d6759e28c05146508e3abe05f76b5ec921e0c07e7f0fdcd
+[12:40:41 AM] - Zomby mint success
+[12:41:10 AM] - Logined
+[12:41:10 AM] - Trying to mint zomby, account: da9a8883df1823de85f8a47b2c4af9042991b865d692bf5cb2afc0a911693c86
+[12:41:33 AM] - Zomby mint success
+[12:42:02 AM] - Logined
+[12:42:02 AM] - Trying to mint zomby, account: 061b5d6161ad4f1204aeffafb6ef82e90304e9855e85487cc99562204779c4bf
+[12:42:06 AM] - Cannot mint zomby: Unknown error while minting
+[12:42:33 AM] - Logined
+[12:42:33 AM] - Trying to mint zomby, account: 061b5d6161ad4f1204aeffafb6ef82e90304e9855e85487cc99562204779c4bf
+[12:42:34 AM] - Logined
+[12:42:34 AM] - Trying to mint zomby, account: 1505cdc73764484806b98489608a096384226956ee5775e806f74b8c456294ea
+[12:42:55 AM] - Zomby mint success
+[12:42:56 AM] - Zomby mint success
+[12:43:23 AM] - Logined
+[12:43:23 AM] - Trying to mint zomby, account: e32c2d0f6a2f747c2c9bd8bd6f5e235e8d194a8c7cb93a8524012d57f89ba5e0
+[12:43:47 AM] - Zomby mint success
+[12:44:17 AM] - Logined
+[12:44:17 AM] - Trying to mint zomby, account: b93f35ee9d7e9516360e6c4d18095f481a11d63645cba93eed23e25798116c5a
+[12:44:39 AM] - Zomby mint success
+[12:46:03 AM] - Logined
+[12:46:03 AM] - Trying to mint zomby, account: 5fda02098f774909446d7dbe20872dc5ebfaa0744e9f9d010b12e9f37b9c6d14
+[12:46:25 AM] - Zomby mint success
+[12:46:54 AM] - Logined
+[12:46:54 AM] - Trying to mint zomby, account: 3bf766c27ad93dd208c6b448d3d206513d5fc5e0f6fed0c184fd50732dd98a99
+[12:47:17 AM] - Zomby mint success
+[12:47:46 AM] - Logined
+[12:47:46 AM] - Trying to mint zomby, account: ad7abac5900d0c4fc62ee96504de87f56e857612280cf0bc9be599fb0ef51d00
+[12:48:09 AM] - Zomby mint success
+[12:48:39 AM] - Logined
+[12:48:39 AM] - Trying to mint zomby, account: 1988ac113c26286edf32c1b9eb92c026bea0ba1e83f96f9821e1305a27eaee20
+[12:49:00 AM] - Zomby mint success
+[12:49:27 AM] - Logined
+[12:49:27 AM] - Trying to mint zomby, account: 0040d3fdc03bc6dc7a0b50cf85d3ec790a98f687d91c33fb417e884c04d64bd5
+[12:49:48 AM] - Zomby mint success
+[12:50:16 AM] - Logined
+[12:50:16 AM] - Trying to mint zomby, account: 9c3afa4068c5cacaacf5f9405421d62da8e1bafe955c68513f46b8feb595d7d1
+[12:50:39 AM] - Zomby mint success
+[12:51:07 AM] - Logined
+[12:51:07 AM] - Trying to mint zomby, account: f4dccdd9420662d5b3cef5fd375b6d21622189ac048d97a41de883296a77e1af
+[12:51:28 AM] - Zomby mint success
+[12:51:54 AM] - Logined
+[12:51:54 AM] - Trying to mint zomby, account: c84e9f55a3012f9919710109486553b8344aa08109b96abd2ac976dd33c530a5
+[1:00:23 AM] - Cannot mint zomby: Unknown error while minting
+[1:00:51 AM] - Logined
+[1:00:51 AM] - Trying to mint zomby, account: 4b3668e3e69748863695f69ab85b6ece3f9b91757860cd7b02e843be9d59592d
+[1:01:15 AM] - Zomby mint success
+[1:01:41 AM] - Logined
+[1:01:41 AM] - Trying to mint zomby, account: 57e1451656276fe7d2c68fa9048869795c5faf9eef0400b2ab51622a5c65d79d
+[1:02:06 AM] - Zomby mint success
+[1:02:33 AM] - Logined
+[1:02:33 AM] - Trying to mint zomby, account: cedbc8e10d18563d46e47e21a02c599de217c0b1a428bc46dd97acec3d85a0f8
+[1:02:58 AM] - Zomby mint success
+[1:03:27 AM] - Logined
+[1:03:27 AM] - Trying to mint zomby, account: 420a7bd5943842ad0f72102f1dff7433d396ffeca46b4540187f8b969bc00a72
+[1:03:51 AM] - Zomby mint success
+[1:04:20 AM] - Logined
+[1:04:20 AM] - Trying to mint zomby, account: a7ee3e22e49fe34879684a28790d76adad8b9dcf3e96862b6f63d18591d0dcae
+[1:04:42 AM] - Zomby mint success
+[1:05:12 AM] - Logined
+[1:05:12 AM] - Trying to mint zomby, account: 099cf77f9fa6a7323be95d626ed4aad1d1b04fa664ad719cc1c5165f4995a5f4
+[1:05:35 AM] - Zomby mint success
+[1:06:03 AM] - Logined
+[1:06:03 AM] - Trying to mint zomby, account: 407bc15269a6592fcd2da8f985ec16ac7607718ee4513d24739bcf3b8cba042f
+[1:06:26 AM] - Zomby mint success
+[1:06:53 AM] - Logined
+[1:06:53 AM] - Trying to mint zomby, account: deca2451f76bb78b5f1df213257e9b9a83ba9e982dd77258bd1860cd3aae1e16
+[1:07:16 AM] - Zomby mint success
+[1:07:45 AM] - Logined
+[1:07:45 AM] - Trying to mint zomby, account: 703502ea017106de14d794dd870382add767cfcaf99a1d863411c93f39a172f2
+[1:08:09 AM] - Zomby mint success
+[1:08:39 AM] - Logined
+[1:08:39 AM] - Trying to mint zomby, account: f8e0d402c942e408dbe4d63ffe653d557ce6d96694ae610d828e5190f02a837f
+[1:17:09 AM] - Cannot mint zomby: Unknown error while minting
+[1:17:37 AM] - Logined
+[1:17:37 AM] - Trying to mint zomby, account: f291c4614e30a2a9bfc43aeee894097e14f2abc8cbee285dbc6796dd5582e73c
+[1:18:00 AM] - Zomby mint success
+[1:18:28 AM] - Logined
+[1:18:28 AM] - Trying to mint zomby, account: 063ed54be663a33b45385218a15d64fac57eb91ee7aa298a783d40bc85fbd064
+[1:18:49 AM] - Zomby mint success
+[1:19:16 AM] - Logined
+[1:19:16 AM] - Trying to mint zomby, account: 052f11ce9893006810605559b4a221dbaef49138394a2681122b29dcce4e6f12
+[1:19:39 AM] - Zomby mint success
+[1:20:08 AM] - Logined
+[1:20:08 AM] - Trying to mint zomby, account: 130ace0e1a51050e170f99148bd7688a98475e5a6bcd799f8b71791559d6532f
+[1:20:32 AM] - Zomby mint success
+[1:21:02 AM] - Logined
+[1:21:02 AM] - Trying to mint zomby, account: f171b3313eb16277e2141e09329396c95d7c956eaa5203ad8bb7d4e7c2a1519b
+[1:21:25 AM] - Zomby mint success
+[1:21:53 AM] - Logined
+[1:21:53 AM] - Trying to mint zomby, account: f8793b0780e8238516e6eac78fd0f168a069b85de889c0ea14278d35da96d1ef
+[1:22:14 AM] - Zomby mint success
+[1:22:43 AM] - Logined
+[1:22:43 AM] - Trying to mint zomby, account: 58534c4070f15f07744f655e4ee090b591b2785436dd7b3f5396329b3c5c1b65
+[1:23:07 AM] - Zomby mint success
+[1:23:35 AM] - Logined
+[1:23:35 AM] - Trying to mint zomby, account: af07d890cbb0df5953c3781744c77c3294bd3b6d12f5573fdc5ebf792a3d92fd
+[1:23:59 AM] - Zomby mint success
+[1:24:26 AM] - Logined
+[1:24:26 AM] - Trying to mint zomby, account: beb6279e745a9df79913bd928a0f79d21bb296b8000383b36a444e05d8626f51
+[1:24:46 AM] - Zomby mint success
+[1:25:16 AM] - Logined
+[1:25:16 AM] - Trying to mint zomby, account: 4fb41b81e8867d179d5844da398655a5b817b15db590876e9cef65a23dadb830
+[1:25:36 AM] - Zomby mint success
+[1:26:03 AM] - Logined
+[1:26:03 AM] - Trying to mint zomby, account: c6167867f164ce050249dd3404e389fc0360ac9dbd7d393b588f572bc3e1f5bf
+[1:26:25 AM] - Zomby mint success
+[1:26:53 AM] - Logined
+[1:26:53 AM] - Trying to mint zomby, account: e1308e9f29a2a7f55225a7b983b63d97d8e189ea95589a1978ec6031beb09c1c
+[1:27:15 AM] - Zomby mint success
+[1:27:43 AM] - Logined
+[1:27:43 AM] - Trying to mint zomby, account: c4253818ced7c4123e588ec4d68912fb571b5a81bf3e684c3bb66c40852730dc
+[1:28:05 AM] - Zomby mint success
+[1:28:31 AM] - Logined
+[1:28:31 AM] - Trying to mint zomby, account: ab29a4c5f7d8e834ac9ec7261b60dc5c19add67ef11188c10d0e74c829e041cf
+[1:28:53 AM] - Zomby mint success
+[1:29:23 AM] - Logined
+[1:29:23 AM] - Trying to mint zomby, account: 0e392f452768f0bb9ee1d7b891a557456770eff8531aeb92548bf667297e59a4
+[1:29:45 AM] - Zomby mint success
+[1:30:14 AM] - Logined
+[1:30:14 AM] - Trying to mint zomby, account: 40e2884733fc8410b89d90541c32b343b2247f5076ec65b7ce279093a4e08903
+[1:30:39 AM] - Zomby mint success
+[1:31:09 AM] - Logined
+[1:31:09 AM] - Trying to mint zomby, account: 093df817497a6ba46b960f3594c47b11ba10eed6fc44a23b2a657820e49c5700
+[1:31:32 AM] - Zomby mint success
+[1:32:01 AM] - Logined
+[1:32:01 AM] - Trying to mint zomby, account: 3b7ebd36ffe4f83b173f3c4089bcecbc90462cdd00f8cfb0ed169ca92e3d7244
+[1:32:46 AM] - Zomby mint success
+[1:33:36 AM] - Logined
+[1:33:36 AM] - Trying to mint zomby, account: 3ea91719ca58827b1ab64ef5afd48a934b5e2dd34d3688f361d85d37fe08715d
+[1:34:17 AM] - Zomby mint success
+[1:35:20 AM] - Logined
+[1:35:20 AM] - Trying to mint zomby, account: c01e7d102b9e3793da5a2c9c008eba97ff3cc98894c28afa0fc1d4d59bbb852e
+[1:36:00 AM] - Zomby mint success
+[1:36:58 AM] - Logined
+[1:36:58 AM] - Trying to mint zomby, account: 27181c02a9aede15c8c75284989808972793d82d889ebf2e48a77c4069571953
+[1:37:36 AM] - Zomby mint success
+[1:38:27 AM] - Logined
+[1:38:27 AM] - Trying to mint zomby, account: 7c275390d20c50b82cad1fd3acaf966167d52fa4ef117090d33ab8327450c0ac
+[1:39:08 AM] - Zomby mint success
+[1:39:58 AM] - Logined
+[1:39:58 AM] - Trying to mint zomby, account: 548ab1b09135eafb87d40046a0b86e650f8a57f07f393fc926abaf67b808709c
+[1:40:36 AM] - Zomby mint success
+[1:41:28 AM] - Logined
+[1:41:28 AM] - Trying to mint zomby, account: 6d0d751904651258f351ef1699305a657474a16820c384b534f164d83209388b
+[1:42:09 AM] - Zomby mint success
+[1:42:57 AM] - Logined
+[1:42:57 AM] - Trying to mint zomby, account: c1c0f88a101500e20b4e27b4736244a09c804eaf132ea171871a248eb9fd2dd0
+[1:43:45 AM] - Zomby mint success
+[1:44:34 AM] - Logined
+[1:44:34 AM] - Trying to mint zomby, account: f34863ba34c3840afa87fe2a935f440bc39e81bd9d88b11237248e596bfb9a4f
+[1:45:20 AM] - Zomby mint success
+[1:46:10 AM] - Logined
+[1:46:10 AM] - Trying to mint zomby, account: 1e1d5232e1b1d0a934820a2777655b36a82bc40772d3c7001e2be698588d998d
+[1:46:48 AM] - Zomby mint success
+[1:47:34 AM] - Logined
+[1:47:34 AM] - Trying to mint zomby, account: a394e6c99d98c3501fcbbce85fe13ef76f68c3ca9dcf5ce0878f698d41a32d63
+[1:48:18 AM] - Zomby mint success
+[1:49:04 AM] - Logined
+[1:49:04 AM] - Trying to mint zomby, account: 01a9b2b5164e4a23f3ccbb4e89ed876381477d6261d94bd33efba1e38ed82574
+[1:49:53 AM] - Zomby mint success
+[1:50:46 AM] - Logined
+[1:50:46 AM] - Trying to mint zomby, account: 1f79f0009c26f8b536e5645a895092d5bc7e50268455fcd660baac3701391bce
+[1:51:26 AM] - Zomby mint success
+[1:52:14 AM] - Logined
+[1:52:14 AM] - Trying to mint zomby, account: 678e9831ed3565dbf2e913e138a54daecf04fe05d2dc992f07b8ca06b3b3e4db
+[1:52:28 AM] - Cannot mint zomby: Unknown error while minting
+[1:53:14 AM] - Logined
+[1:53:14 AM] - Trying to mint zomby, account: 0470848ee998a25c8bc4450bb066a2740dd7339716330607c4180a148de7e293
+[1:53:15 AM] - Logined
+[1:53:15 AM] - Trying to mint zomby, account: 678e9831ed3565dbf2e913e138a54daecf04fe05d2dc992f07b8ca06b3b3e4db
+[1:53:51 AM] - Zomby mint success
+[1:53:52 AM] - Zomby mint success
+[1:54:39 AM] - Logined
+[1:54:39 AM] - Trying to mint zomby, account: 767593eb778adc08d46036cd64be804b1628bc5b0a8a4872c6c8d5b342afbcbb
+[1:55:21 AM] - Zomby mint success
+[1:56:10 AM] - Logined
+[1:56:10 AM] - Trying to mint zomby, account: 745fe07b8ece5c7e68a49e1fb542f8b265b595e127a5c0305f2eb1cacdabad6a
+[1:56:50 AM] - Zomby mint success
+[1:57:37 AM] - Logined
+[1:57:37 AM] - Trying to mint zomby, account: 993c38c7f4beedc86ef2e55c23961e6a56272ea3c1da3839ab48bf6b94564592
+[1:58:15 AM] - Zomby mint success
+[1:59:04 AM] - Logined
+[1:59:04 AM] - Trying to mint zomby, account: 3318084e8aa53d7c70b5dddea2eec467af1308e65cb0a6e3af2c22a6ab18431c
+[1:59:40 AM] - Zomby mint success
+[2:00:28 AM] - Logined
+[2:00:28 AM] - Trying to mint zomby, account: 4486dfebf8c350a1e384ad647a86b00dc7fa0f4c3fde7e7971d190294b91f74e
+[2:01:04 AM] - Zomby mint success
+[2:01:49 AM] - Logined
+[2:01:49 AM] - Trying to mint zomby, account: 25e483ed0f93716e85b165f2820eb49a6ebcecc6474a63a4ad14c5d7439741b3
+[2:02:36 AM] - Zomby mint success
+[2:03:23 AM] - Logined
+[2:03:23 AM] - Trying to mint zomby, account: d55309d00a9661f4167a51dd1d0d3533a2685bad1fbc8bbeea9c752fb7e1ac9f
+[2:04:04 AM] - Zomby mint success
+[2:04:46 AM] - Logined
+[2:04:46 AM] - Trying to mint zomby, account: 280bdb7355b950a2cf95be88d235fb172cdecaa7daaded5bbde6b064c072a5d5
+[2:05:21 AM] - Zomby mint success
+[2:06:14 AM] - Logined
+[2:06:14 AM] - Trying to mint zomby, account: 09c2a7034217dec8bd33ab37d253f8acc7f372ce9483f1380515c2ebb7cae148
+[2:06:52 AM] - Zomby mint success
+[2:07:45 AM] - Logined
+[2:07:45 AM] - Trying to mint zomby, account: 42fb44527d99bb491aa5d3e23e9ad54e367a16e030e95681b25320ac0f3e358f
+[2:08:22 AM] - Zomby mint success
+[2:09:07 AM] - Logined
+[2:09:07 AM] - Trying to mint zomby, account: b5992a6507c177c953fbd4a6c4a03b7b7b960fbea5c039944fbfe599e7c463f0
+[2:09:47 AM] - Zomby mint success
+[2:10:37 AM] - Logined
+[2:10:37 AM] - Trying to mint zomby, account: 29aed34d0a0fb0be1a9be0eaa5831d3a072e7e0b5dcab53b362eb91870c54090
+[2:11:19 AM] - Zomby mint success
+[2:12:01 AM] - Logined
+[2:12:01 AM] - Trying to mint zomby, account: 050c4e1bacbb3467d095d1407db7c7732a4626a1fa82ba47e05f767ac5245106
+[2:12:40 AM] - Zomby mint success
+[2:13:23 AM] - Logined
+[2:13:23 AM] - Trying to mint zomby, account: beb582ea712fa852698873e3e1b134e7c9f8abf4139488ca2a50fca7c0f0f1cd
+[2:14:06 AM] - Zomby mint success
+[2:14:54 AM] - Logined
+[2:14:54 AM] - Trying to mint zomby, account: 704d2828589b0554690fb9dd9829cf84365d921b39054244dcb414a4fe71fea2
+[2:15:33 AM] - Zomby mint success
+[2:16:21 AM] - Logined
+[2:16:21 AM] - Trying to mint zomby, account: b62f1a48df3687a02aa71878898508362959b01be5c416653ab052686072be0d
+[2:17:07 AM] - Zomby mint success
+[2:17:57 AM] - Logined
+[2:17:57 AM] - Trying to mint zomby, account: 0b18c5c232d2f10a76e9fde352e7088d9b2c5f7cf42563ca80ad6f37a3578d13
+[2:18:38 AM] - Zomby mint success
+[2:19:29 AM] - Logined
+[2:19:29 AM] - Trying to mint zomby, account: a16ddbd6c5b0bc610702315173bf7a80d94b307778b345ecfde4ce66b994b329
+[2:20:06 AM] - Zomby mint success
+[2:20:56 AM] - Logined
+[2:20:56 AM] - Trying to mint zomby, account: 8bf25a91227da89955d3c9a838ff9f8d96db47eeda4ddeaf6ebd46d7e687bc7e
+[2:21:35 AM] - Zomby mint success
+[2:22:22 AM] - Logined
+[2:22:22 AM] - Trying to mint zomby, account: 89f4096a67615efa185ac6ba2aee8ddb9c942215265e8b5859726a55944eb5e9
+[2:23:04 AM] - Zomby mint success
+[2:23:52 AM] - Logined
+[2:23:52 AM] - Trying to mint zomby, account: febbbd45b6921b58634cfcc863323dc83236e04b5451fac42b391619eb31d04a
+[2:24:30 AM] - Zomby mint success
+[2:25:22 AM] - Logined
+[2:25:22 AM] - Trying to mint zomby, account: b91bb405598b6a04ff51f0256175540a257477c45494b14d9c680433297bd411
+[2:26:04 AM] - Zomby mint success
+[2:26:54 AM] - Logined
+[2:26:54 AM] - Trying to mint zomby, account: 4c0052880c9153a425851522e4b0d02271fa908ed0ba52bfb09e14c6b3707904
+[2:27:35 AM] - Zomby mint success
+[2:28:24 AM] - Logined
+[2:28:24 AM] - Trying to mint zomby, account: d0f9a4140fe0bd0e0d6d8623aadb696b3c84ee72711842e61c0b75bb7fdb942a
+[2:29:04 AM] - Zomby mint success
+[2:29:53 AM] - Logined
+[2:29:53 AM] - Trying to mint zomby, account: ca5653716efc11cf11bb4f3dada995583267810cb9c5aa32758b4acb81913ffe
+[2:30:33 AM] - Zomby mint success
+[2:31:19 AM] - Logined
+[2:31:19 AM] - Trying to mint zomby, account: 80a6f800f4fe9c7b9d4cc727a0432d624970c23de285a6b2fb79489dbebff86b
+[2:31:54 AM] - Zomby mint success
+[2:32:44 AM] - Logined
+[2:32:44 AM] - Trying to mint zomby, account: e410935c55b77b47c3b3557565bda22997faf03a6d14e23cafdeb04863d44283
+[2:33:23 AM] - Zomby mint success
+[2:34:10 AM] - Logined
+[2:34:10 AM] - Trying to mint zomby, account: e5eeb662d0efb925235f2d42ea20ffb2696234bede3a4e62448ea8000d219c22
+[2:34:25 AM] - Cannot mint zomby: Unknown error while minting
+[2:35:10 AM] - Logined
+[2:35:10 AM] - Trying to mint zomby, account: e5eeb662d0efb925235f2d42ea20ffb2696234bede3a4e62448ea8000d219c22
+[2:35:10 AM] - Logined
+[2:35:10 AM] - Trying to mint zomby, account: 0580b2e92ca632178ce7cf322ffa28d252b57b9b86661318d99403f912c97a85
+[2:35:48 AM] - Zomby mint success
+[2:35:48 AM] - Zomby mint success
+[2:36:36 AM] - Logined
+[2:36:36 AM] - Trying to mint zomby, account: dccd6476ce8d3dc0106ce4d6ee727040ce0e09e13ea9e213dd2a84a099d84266
+[2:37:08 AM] - Zomby mint success
+[2:37:53 AM] - Logined
+[2:37:53 AM] - Trying to mint zomby, account: 46e68083bfce96f9b5332844334e74442a66622b3c632c9510aaba1ee24874bc
+[2:38:10 AM] - Cannot mint zomby: Unknown error while minting
+[2:38:56 AM] - Logined
+[2:38:56 AM] - Trying to mint zomby, account: 3364c8171888c4d994cb5660743ad9e99a73e79fd4a1cc2de5cb7af07b0532b6
+[2:38:57 AM] - Logined
+[2:38:57 AM] - Trying to mint zomby, account: 46e68083bfce96f9b5332844334e74442a66622b3c632c9510aaba1ee24874bc
+[2:39:28 AM] - Zomby mint success
+[2:39:36 AM] - Zomby mint success
+[2:40:24 AM] - Logined
+[2:40:24 AM] - Trying to mint zomby, account: a0e704cc4b32c10fca3a5979397280880b942cdff974ac7a1e8fb63a97d78599
+[2:41:02 AM] - Zomby mint success
+[2:41:48 AM] - Logined
+[2:41:48 AM] - Trying to mint zomby, account: 2f3ad37bfb74b6ccbb020f1673736aacb50e490df2d8c133f0174dfe9a698198
+[2:42:27 AM] - Zomby mint success
+[2:43:16 AM] - Logined
+[2:43:16 AM] - Trying to mint zomby, account: 14b338813e27a5deaf6fe93934308753200661c43a0c79843e2177e22ec7a8d9
+[2:43:59 AM] - Zomby mint success
+[2:44:50 AM] - Logined
+[2:44:50 AM] - Trying to mint zomby, account: c69748915e730a44f31060a65d43c67e152371822be5ab4dbcb1a51984de81aa
+[2:45:30 AM] - Zomby mint success
+[2:46:18 AM] - Logined
+[2:46:18 AM] - Trying to mint zomby, account: e08ee538af44d288caf583ca39d1857685d8c4ef22f130ece8e2368373887cce
+[2:46:56 AM] - Zomby mint success
+[2:47:47 AM] - Logined
+[2:47:47 AM] - Trying to mint zomby, account: 11a2d9432e9fb1df1ed62ccf7a871b6afa1d1cbbf7b0a0f88fcf12a874f994ca
+[2:48:28 AM] - Zomby mint success
+[2:49:16 AM] - Logined
+[2:49:16 AM] - Trying to mint zomby, account: 1199d9959f9d89f55a7e05b48b9e9ee8ed30f9b6327ac30c6e89e154ad4b890f
+[2:50:01 AM] - Zomby mint success
+[2:50:50 AM] - Logined
+[2:50:50 AM] - Trying to mint zomby, account: 0805975c9a288ab4d7794ebdd7fd56c3be80625765f0d96e39318d4746a24d7d
+[2:51:29 AM] - Zomby mint success
+[2:52:18 AM] - Logined
+[2:52:18 AM] - Trying to mint zomby, account: 2ed047873ba3e816db717018c9d7990d76654dc2aa1a17750f968cd38d30ce86
+[2:52:50 AM] - Zomby mint success
+[2:53:35 AM] - Logined
+[2:53:35 AM] - Trying to mint zomby, account: cf5fe321878c2c4afdd7db71e691ffd0c15a7c470588c20c98b861984047cd3d
+[2:54:12 AM] - Zomby mint success
+[2:54:58 AM] - Logined
+[2:54:58 AM] - Trying to mint zomby, account: e2569459981cf423dc2c05608bafae8cc78dc4410e35c63c0e81968ec6cbe43e
+[2:55:41 AM] - Zomby mint success
+[2:57:11 AM] - Logined
+[2:57:11 AM] - Trying to mint zomby, account: c49a19bc363c4b385ae4e15239322fc9c9413b6493b74ad7dc6d1a3658be6f82
+[2:57:50 AM] - Zomby mint success
+[2:58:40 AM] - Logined
+[2:58:40 AM] - Trying to mint zomby, account: 394e20745bf2f35b944beaf7b25c7add869080cfbad7d6cdf2ed18fd43287147
+[2:59:30 AM] - Zomby mint success
+[3:00:28 AM] - Logined
+[3:00:28 AM] - Trying to mint zomby, account: 68b025324aa50f52101065d18481ef417bdca1a92df10252da1e81cbd4878598
+[3:01:00 AM] - Cannot mint zomby: basic errorno zomby
+[3:01:51 AM] - Logined
+[3:01:51 AM] - Trying to mint zomby, account: 5d1956d7406553dee85c179d4b2c591859e5f6221864cbd5ca70e6d65025e178
+[3:02:34 AM] - Zomby mint success
+[3:03:20 AM] - Logined
+[3:03:20 AM] - Trying to mint zomby, account: 96c9f03cfef6ca0314aa7846d1f244e80c0c88fa92bf6f61b97bfb23894f1042
+[3:04:11 AM] - Zomby mint success
+[3:04:59 AM] - Logined
+[3:04:59 AM] - Trying to mint zomby, account: df19be99a3241f1e62c30535bdb8f50c0078059f96dab343cb69f6e28dd9d2f1
+[3:05:45 AM] - Zomby mint success
+[3:06:33 AM] - Logined
+[3:06:33 AM] - Trying to mint zomby, account: e52ad2d221e736f3884e140290ccc2154b7debc12e810d253cbfbedb9f33d831
+[3:07:10 AM] - Zomby mint success
+[3:07:58 AM] - Logined
+[3:07:58 AM] - Trying to mint zomby, account: c9e7de0e4e555811dbdd1a871e03253d6493f39c56cfd4ad6ae6b1ef58e90cc7
+[3:08:40 AM] - Zomby mint success
+[3:09:29 AM] - Logined
+[3:09:29 AM] - Trying to mint zomby, account: a57a08b8acd0f9facd077c4bbe59b4d47124c97ee16fc61866e02745e2caea69
+[3:10:11 AM] - Zomby mint success
+[3:11:06 AM] - Logined
+[3:11:06 AM] - Trying to mint zomby, account: b880e3c70d40c66794eda1673546b4475a0cb5fd54947870ab0b2afcde96c118
+[3:11:45 AM] - Zomby mint success
+[3:12:34 AM] - Logined
+[3:12:34 AM] - Trying to mint zomby, account: 260a09dcc2c9822c3a9a9e0ec242422eb8902b8e58c875b24db2cfec7f789b1c
+[3:13:14 AM] - Zomby mint success
+[3:14:07 AM] - Logined
+[3:14:07 AM] - Trying to mint zomby, account: 067f299f6d76f70d2bb7672cf1816a3c6254b29565c7e56aeb9392e3cce0217c
+[3:14:48 AM] - Zomby mint success
+[3:15:36 AM] - Logined
+[3:15:36 AM] - Trying to mint zomby, account: 5a920d0f58971559ca3156a87e14c81feda6c062563d7fd7818681da8271bda8
+[3:16:20 AM] - Zomby mint success
+[3:17:10 AM] - Logined
+[3:17:10 AM] - Trying to mint zomby, account: c049d09a3e9d301c1c789d4904f3eb86c3355be8f43ff3719f8f025db15baba4
+[3:17:50 AM] - Zomby mint success
+[3:18:39 AM] - Logined
+[3:18:39 AM] - Trying to mint zomby, account: 87d97b6aa31b753ef54292b5b1ab97831c78080e7d91126a1712555d999a4858
+[3:19:23 AM] - Zomby mint success
+[3:20:15 AM] - Logined
+[3:20:15 AM] - Trying to mint zomby, account: 76a92d1ecb9caa8b1659286f93c93dcf163296e5bed1171d356f4539a8dc82b5
+[3:20:48 AM] - Zomby mint success
+[3:21:48 AM] - Logined
+[3:21:48 AM] - Trying to mint zomby, account: 08df03d6cc1a66253dbac5cd3ccdbf43fdfa0017b310691e51c6711bad490647
+[3:22:29 AM] - Zomby mint success
+[3:23:18 AM] - Logined
+[3:23:18 AM] - Trying to mint zomby, account: 32201456cd6c93506aab48cd859df25561102abf15aca93ee373534c95cd3bc0
+[3:24:00 AM] - Zomby mint success
+[3:24:45 AM] - Logined
+[3:24:45 AM] - Trying to mint zomby, account: 9fc7cde09f4b95106a1a3bba005360c4bdb73a26eec14a70bb72b754213ff4ec
+[3:25:02 AM] - Cannot mint zomby: Unknown error while minting
+[3:25:48 AM] - Logined
+[3:25:49 AM] - Trying to mint zomby, account: 9fc7cde09f4b95106a1a3bba005360c4bdb73a26eec14a70bb72b754213ff4ec
+[3:25:50 AM] - Logined
+[3:25:50 AM] - Trying to mint zomby, account: 0ad3bcc41bd48f673b3e9ce4f2a02cb0cc13f54ef86aa09d680c9f09fcd07df6
+[3:26:21 AM] - Zomby mint success
+[3:26:28 AM] - Zomby mint success
+[3:27:15 AM] - Logined
+[3:27:15 AM] - Trying to mint zomby, account: 7fbc6ac465fd3b5f33acf3a842e0db5916163b78ffcfc4456d4e6863825f5302
+[3:28:01 AM] - Zomby mint success
+[3:28:55 AM] - Logined
+[3:28:55 AM] - Trying to mint zomby, account: af8c1273b1c3f6badbe2dfc24e5f37648df684d277247e21f38938fecd939a35
+[3:29:39 AM] - Zomby mint success
+[3:30:26 AM] - Logined
+[3:30:26 AM] - Trying to mint zomby, account: c8dc85685df8c3e3ba917c1e6b940c13486c03e4e06e3025afc864a2c3c18b31
+[3:31:10 AM] - Zomby mint success
+[3:31:59 AM] - Logined
+[3:31:59 AM] - Trying to mint zomby, account: 1a0003d2723178520c9223df916baeda781858bc4fc6449230c115c1a1e86031
+[3:32:49 AM] - Zomby mint success
+[3:33:41 AM] - Logined
+[3:33:41 AM] - Trying to mint zomby, account: 0701c964b5f8cb2184a1b6d863828fa7e6a2393a00d00f3966dde4e12345bef6
+[3:34:28 AM] - Zomby mint success
+[3:35:13 AM] - Logined
+[3:35:13 AM] - Trying to mint zomby, account: c56199a12cb393fcfe5d67df952ccba7156a1b48506521d37c6c02c3c144a7a8
+[3:35:49 AM] - Zomby mint success
+[3:36:37 AM] - Logined
+[3:36:37 AM] - Trying to mint zomby, account: 0d2370a4e79ef7bafc0bbf823806d187a9b7edec517c84c3a699e3d4103a1428
+[3:37:18 AM] - Zomby mint success
+[3:38:08 AM] - Logined
+[3:38:08 AM] - Trying to mint zomby, account: 7f831d8c1ba3534f53261f85d494cdb253ba9b69e3850492dca44622999b9fda
+[3:38:48 AM] - Zomby mint success
+[3:39:36 AM] - Logined
+[3:39:36 AM] - Trying to mint zomby, account: c8cca23ed8ec5c00f5667c994d6e6156728b853ab06228ed1b09910402f8ae1d
+[3:40:23 AM] - Zomby mint success
+[3:41:14 AM] - Logined
+[3:41:14 AM] - Trying to mint zomby, account: 362113c8a839ada1b1ba1f6df32df4e895acc3178fd35bc49d044192a1f7babb
+[3:41:51 AM] - Zomby mint success
+[3:42:39 AM] - Logined
+[3:42:39 AM] - Trying to mint zomby, account: 3c478b6e9ba60eb164db26058ed56e9f7fe335025ff624f0b2dc0bcf1ee7b50b
+[3:43:19 AM] - Zomby mint success
+[3:44:12 AM] - Logined
+[3:44:12 AM] - Trying to mint zomby, account: 136f1825c645e785945866c1f2fb7e5920e966830495ad37c25b529db884b5f2
+[3:44:47 AM] - Zomby mint success
+[3:45:34 AM] - Logined
+[3:45:34 AM] - Trying to mint zomby, account: be4565dbd9d38137793bf4d93d508634effc1c09f9ee1dfe4c0acb77bfad2b8b
+[3:46:19 AM] - Zomby mint success
+[3:47:09 AM] - Logined
+[3:47:09 AM] - Trying to mint zomby, account: 8013c0cee93ee0f35a1e4e7feefae52edab38da96e6aa9d6a19511797c7571c7
+[3:47:50 AM] - Zomby mint success
+[3:48:49 AM] - Logined
+[3:48:49 AM] - Trying to mint zomby, account: 34b435f6836e275a691746623d99045cce80c7e3100ead4bce4359f41e1bdec6
+[3:49:34 AM] - Zomby mint success
+[3:50:26 AM] - Logined
+[3:50:26 AM] - Trying to mint zomby, account: be552e21a48f9c8c63c48ce1df55f9a152c0316a284d6e876c86b9002b9c7d04
+[3:50:59 AM] - Zomby mint success
+[3:51:50 AM] - Logined
+[3:51:50 AM] - Trying to mint zomby, account: da0f84a446dff650294fb901d12c3c22b9f0d4869e246ce7c94069159c90d475
+[3:52:29 AM] - Zomby mint success
+[3:53:14 AM] - Logined
+[3:53:14 AM] - Trying to mint zomby, account: ef2da145f7e8d4a63cf98d4c2221df6adf571689b112b439368b0294cf2cf063
+[3:54:03 AM] - Zomby mint success
+[3:54:50 AM] - Logined
+[3:54:50 AM] - Trying to mint zomby, account: c2d10b74ddd0dd2a0ec82362713ffa965fefe56b9346b3f0e48bcaac3218f812
+[3:55:30 AM] - Zomby mint success
+[3:56:17 AM] - Logined
+[3:56:17 AM] - Trying to mint zomby, account: 47ae700277b181f152864612221e57b664345a2b8e5c7d08f447d15a38166e34
+[3:57:04 AM] - Zomby mint success
+[3:57:51 AM] - Logined
+[3:57:51 AM] - Trying to mint zomby, account: bd13829b6e746d10691f872a3397510df0692963dbf341370e76f064c42e1205
+[3:58:28 AM] - Zomby mint success
+[3:59:15 AM] - Logined
+[3:59:15 AM] - Trying to mint zomby, account: 278586679bfbd95247a7d5c89080f7554d357ec42e0202ab1e67ec91bfd13a09
+[3:59:48 AM] - Zomby mint success
+[4:00:39 AM] - Logined
+[4:00:39 AM] - Trying to mint zomby, account: 9bd3d0e3b39fb4483494ea2bb5f29346f6960141856a4259accf7782c3ab3f43
+[4:01:17 AM] - Zomby mint success
+[4:02:07 AM] - Logined
+[4:02:07 AM] - Trying to mint zomby, account: adc3a1e8dc9a07dd9c7b71dedae747d4d84973d3975c3e7e6ef937d46520de63
+[4:02:43 AM] - Zomby mint success
+[4:03:32 AM] - Logined
+[4:03:32 AM] - Trying to mint zomby, account: 4993c7c80cb88080652b65773eb1210d3e9d2fb3b9d0e1e0b2ee2c377c7c2c02
+[4:04:06 AM] - Zomby mint success
+[4:04:56 AM] - Logined
+[4:04:56 AM] - Trying to mint zomby, account: 1597e61ff331b6222c6f175e0a4cddb32be8dbf53cd8c9ebf24b1e5dc91f472a
+[4:05:33 AM] - Zomby mint success
+[4:06:26 AM] - Logined
+[4:06:26 AM] - Trying to mint zomby, account: 9f6444c5a84c8b3a2f254d8618884964ed4b7e753ee7f4d78c96cefa7a011dd2
+[4:07:01 AM] - Zomby mint success
+[4:07:49 AM] - Logined
+[4:07:49 AM] - Trying to mint zomby, account: d52d8527036983a4b54f18ff3acd6a2152aec4e4763c3e0813e3fcf9e560d9b6
+[4:08:27 AM] - Zomby mint success
+[4:09:13 AM] - Logined
+[4:09:13 AM] - Trying to mint zomby, account: 843ce211582e18619bfcdf0145b82ea0e5b29d62a31d3c3054bf298a1c4dcfcc
+[4:09:48 AM] - Zomby mint success
+[4:10:39 AM] - Logined
+[4:10:39 AM] - Trying to mint zomby, account: ab5662bd4e547208008d458e7db02a088f602afa330417c7c24d5ebd560d9f75
+[4:11:19 AM] - Zomby mint success
+[4:12:07 AM] - Logined
+[4:12:07 AM] - Trying to mint zomby, account: f69597c3f63f68748003b7256f55ea9a53a32dec4f51e8dfd982499219e6ac47
+[4:12:42 AM] - Zomby mint success
+[4:13:31 AM] - Logined
+[4:13:31 AM] - Trying to mint zomby, account: a82be0e779cc39c54901bcededb90df98bf2fc14486dd03a086f297d6872cc58
+[4:14:06 AM] - Zomby mint success
+[4:14:53 AM] - Logined
+[4:14:53 AM] - Trying to mint zomby, account: aa382f57b944949b98c5a439adb8abd4d0e9f840eff57304af569092ef709e17
+[4:15:33 AM] - Zomby mint success
+[4:16:25 AM] - Logined
+[4:16:25 AM] - Trying to mint zomby, account: 4fc29641143dab00112f0151d6200a728e17e6f984cab1ccd93cbfb57df53b80
+[4:17:06 AM] - Zomby mint success
+[4:17:55 AM] - Logined
+[4:17:55 AM] - Trying to mint zomby, account: 959ce9583832163197a43453dad4ce9141f17e560d16eb9f823172872a619b3f
+[4:18:34 AM] - Zomby mint success
+[4:19:24 AM] - Logined
+[4:19:24 AM] - Trying to mint zomby, account: 1dc6ed12ca15e06d30d5586de36d175eeec2097ee5b9c289c9de022a62b07b23
+[4:20:01 AM] - Zomby mint success
+[4:20:52 AM] - Logined
+[4:20:52 AM] - Trying to mint zomby, account: ba1e7caf624305ebc7cfd4b210dd21d30fd841d59c635bb4f45b148820a136fe
+[4:21:29 AM] - Zomby mint success
+[4:22:18 AM] - Logined
+[4:22:18 AM] - Trying to mint zomby, account: a82d16aab3808d6305ceee2315d14eb92f2d75e4174bc86a605305cfc1dff073
+[4:22:51 AM] - Zomby mint success
+[4:23:50 AM] - Logined
+[4:23:50 AM] - Trying to mint zomby, account: 687762ef6f78bfb59feefb8f66367f85bbf69c5597ec449291bf0fd2b23f9d8a
+[4:24:27 AM] - Zomby mint success
+[4:25:24 AM] - Logined
+[4:25:24 AM] - Trying to mint zomby, account: 381d24628cc12cb3eb683e2196a302635939fa7c02b5564824ad0a799dad3593
+[4:26:01 AM] - Zomby mint success
+[4:26:51 AM] - Logined
+[4:26:51 AM] - Trying to mint zomby, account: fe37c66580de7a03bae8f6b55c0a9b1c44b4a540fe3276e47f7049412d83e9f2
+[4:27:25 AM] - Zomby mint success
+[4:28:14 AM] - Logined
+[4:28:14 AM] - Trying to mint zomby, account: 16fe13f04a9748d96f9b48665350caf67c49298ef7218c32a29e0db549657d60
+[4:28:55 AM] - Zomby mint success
+[4:29:42 AM] - Logined
+[4:29:42 AM] - Trying to mint zomby, account: d03551cf0479ae51b3020730872a827c9c7ddbbb763a1d44a81090c33b8029d8
+[4:30:31 AM] - Zomby mint success
+[4:31:20 AM] - Logined
+[4:31:20 AM] - Trying to mint zomby, account: c6251e39ec33099256b7afba2f81dc8d19174faffda74c9cb8c0c5ad3b6518d7
+[4:31:59 AM] - Zomby mint success
+[4:32:50 AM] - Logined
+[4:32:50 AM] - Trying to mint zomby, account: 07e86d9f78b7c77bbe4ea915d662ddfe7912d0b4ece917a717ae362b8e4de75b
+[4:33:26 AM] - Zomby mint success
+[4:34:22 AM] - Logined
+[4:34:22 AM] - Trying to mint zomby, account: 471b47090c26724e4e4e564614a1243f0304cff08c69b0879b2befdb1fecf9ca
+[4:35:09 AM] - Zomby mint success
+[4:35:57 AM] - Logined
+[4:35:57 AM] - Trying to mint zomby, account: 90166d830de3256bb5e816b24b398808152f590d7d5b995e6aefb2e5bf9ea524
+[4:36:34 AM] - Zomby mint success
+[4:37:23 AM] - Logined
+[4:37:23 AM] - Trying to mint zomby, account: 28ccee27fcbb73618eb1008fa1116dc4266f1a8e00c3d317ea6f73d5e55f3ea9
+[4:38:13 AM] - Zomby mint success
+[4:39:04 AM] - Logined
+[4:39:04 AM] - Trying to mint zomby, account: 89e6c96c269d887a4136ff945200294f256a0d88b2b289f4a18ac702718e4a7b
+[4:39:45 AM] - Zomby mint success
+[4:40:34 AM] - Logined
+[4:40:34 AM] - Trying to mint zomby, account: a5f47c7714efbae6025854e1e3f6edcbabf115db9a57240bea638b0b4311b0d8
+[4:41:16 AM] - Zomby mint success
+[4:42:08 AM] - Logined
+[4:42:08 AM] - Trying to mint zomby, account: b1a95db2d7509cd6a509941f5980f05cba432a2d9d9bf3eeac18091acf09338e
+[4:42:51 AM] - Zomby mint success
+[4:43:42 AM] - Logined
+[4:43:42 AM] - Trying to mint zomby, account: a8e11e001cca10f8b9521a9c14d171c8cab85e631ccf5742ac709667b6e7caa9
+[4:44:25 AM] - Zomby mint success
+[4:45:13 AM] - Logined
+[4:45:13 AM] - Trying to mint zomby, account: 10cd6e06ba6bdda2b1c7968a4962c70f0e7779ca57deceb0523c01c314d9f037
+[4:45:56 AM] - Zomby mint success
+[4:46:45 AM] - Logined
+[4:46:45 AM] - Trying to mint zomby, account: d61e5eb4fbea59d588383442c8c1a1f102fa64fea4b348641de2d49f52e36f66
+[4:47:28 AM] - Zomby mint success
+[4:48:18 AM] - Logined
+[4:48:18 AM] - Trying to mint zomby, account: 39d10c3298a69d1d9eef2306caf65247095f91e04dfb9963ed23af8dc1d33018
+[4:48:56 AM] - Zomby mint success
+[4:49:48 AM] - Logined
+[4:49:48 AM] - Trying to mint zomby, account: 44be866e96a7710596a3af3499b9f58ebca6856e7107887aa164c0c4230963d3
+[4:50:31 AM] - Zomby mint success
+[4:51:26 AM] - Logined
+[4:51:26 AM] - Trying to mint zomby, account: 81d522e10c0207e1ad70b2d265565febb55e2401b2cd27f1292667c7f58449da
+[4:52:05 AM] - Zomby mint success
+[4:52:58 AM] - Logined
+[4:52:58 AM] - Trying to mint zomby, account: 3499b70242c5c3e4c02f2a6df8e6459875ad0630196dda0da52110e77d30f202
+[4:53:38 AM] - Zomby mint success
+[4:54:29 AM] - Logined
+[4:54:29 AM] - Trying to mint zomby, account: b6528b941357e8fb5d256714bd6eb86908cdbe5db9bdae623e1ae31e195967f2
+[4:55:12 AM] - Zomby mint success
+[4:55:59 AM] - Logined
+[4:55:59 AM] - Trying to mint zomby, account: d546e0254afba245a93a7e1aa09fae238b1e7f8f9c6a0cbb176dacbb262fbc8f
+[4:56:44 AM] - Zomby mint success
+[4:57:31 AM] - Logined
+[4:57:31 AM] - Trying to mint zomby, account: 548a578caac23ab93644dea513fdfc962de0fe02a96885239f31bdd6e3211a6e
+[4:58:08 AM] - Zomby mint success
+[4:58:58 AM] - Logined
+[4:58:58 AM] - Trying to mint zomby, account: 6ba84f65f24a79abed10ef4de004bb22fe5aa2181f19f216dcd897bb4703124e
+[4:59:42 AM] - Zomby mint success
+[5:00:26 AM] - Logined
+[5:00:26 AM] - Trying to mint zomby, account: ac32d5b522fb6f67dc5a477a1176b520f9c5068a4eeccb11ca7ef7722e03de81
+[5:01:07 AM] - Zomby mint success
+[5:01:57 AM] - Logined
+[5:01:57 AM] - Trying to mint zomby, account: cd83c4f71c3ff914baabbd9c66f7cafc7a7754e51092b078de60467aca247439
+[5:02:38 AM] - Zomby mint success
+[5:03:31 AM] - Logined
+[5:03:31 AM] - Trying to mint zomby, account: a669b80e901c2656114884eade73dd37a2e42561b71975f047d45e305fe67c0e
+[5:04:15 AM] - Zomby mint success
+[5:05:06 AM] - Logined
+[5:05:06 AM] - Trying to mint zomby, account: 118c4eff7b878b9bce431252a0ef6c801f950dc9d729b27a77363d9036d2859d
+[5:05:39 AM] - Zomby mint success
+[5:06:27 AM] - Logined
+[5:06:27 AM] - Trying to mint zomby, account: b337123842be2135445bdc0a7f335fd7c37a3c6d0c665980893e9e416e1703ee
+[5:07:07 AM] - Zomby mint success
+[5:07:57 AM] - Logined
+[5:07:57 AM] - Trying to mint zomby, account: 85e92d37c471001f01115930088c68c7989d195ebf981936d10869f8b0218df0
+[5:08:33 AM] - Zomby mint success
+[5:09:34 AM] - Logined
+[5:09:34 AM] - Trying to mint zomby, account: 22a10be1e4e9b53a367818b369530ff86a07c9921ae61542cccf1b082ff39cb5
+[5:10:17 AM] - Zomby mint success
+[5:11:06 AM] - Logined
+[5:11:06 AM] - Trying to mint zomby, account: 8d2add49b347292d6b07be3370eee009e61556a58dfdd5590aed38bee1720c8d
+[5:11:48 AM] - Zomby mint success
+[5:12:36 AM] - Logined
+[5:12:36 AM] - Trying to mint zomby, account: d7589542536925350a0d99005f85de4ecb40d9d771d5c6f339146dc11e92be1b
+[5:13:14 AM] - Zomby mint success
+[5:14:07 AM] - Logined
+[5:14:07 AM] - Trying to mint zomby, account: 4f485b2bfd1c7f043e62422ea4ade057dd96c129a39dc646932f2c41f45d7247
+[5:14:48 AM] - Zomby mint success
+[5:15:32 AM] - Logined
+[5:15:32 AM] - Trying to mint zomby, account: 88e9afa5b1cba35a3a9bbc977d093a74f23edda252648e3e404e4382e21031ef
+[5:16:14 AM] - Zomby mint success
+[5:16:59 AM] - Logined
+[5:16:59 AM] - Trying to mint zomby, account: 67379de41d0cd82fe6990350b0b31c8bd17844d1854a1deae021edd69912c03d
+[5:17:35 AM] - Zomby mint success
+[5:18:24 AM] - Logined
+[5:18:24 AM] - Trying to mint zomby, account: fdcd6c87001d11b25994ed05b19f2ea6f1c23df92695afb2bd0611a7b0ea21f3
+[5:19:03 AM] - Zomby mint success
+[5:19:54 AM] - Logined
+[5:19:54 AM] - Trying to mint zomby, account: 85eda45237eac078569afd02c436318701ab56152a0a4dcd1cc00e9b947e480e
+[5:21:30 AM] - Zomby mint success
+[5:22:58 AM] - Logined
+[5:22:58 AM] - Trying to mint zomby, account: 9da20c4c1965c2815055e532b8dd6be2b885db1fbc096c3be5f29a8a7a2b5ab9
+[5:23:30 AM] - Zomby mint success
+[5:24:21 AM] - Logined
+[5:24:21 AM] - Trying to mint zomby, account: 7e4bce3e8c122627bd19467cff471112c991aa3fdd572fc5a9c323a690563668
+[5:25:06 AM] - Zomby mint success
+[5:25:58 AM] - Logined
+[5:25:58 AM] - Trying to mint zomby, account: 78e9559bc81cba3e1989b806214a09271aae289b5fb95307b2cb10ef0ff23293
+[5:26:37 AM] - Zomby mint success
+[5:27:26 AM] - Logined
+[5:27:26 AM] - Trying to mint zomby, account: 1691b340c6862b3e9810e423da8c4fabefb2e1724712c386f682061c995d89cb
+[5:28:10 AM] - Zomby mint success
+[5:29:03 AM] - Logined
+[5:29:03 AM] - Trying to mint zomby, account: 5b9c3607d83885322263603b99d36204911c8245ae22dffe11d1942c1883241d
+[5:29:35 AM] - Zomby mint success
+[5:30:19 AM] - Logined
+[5:30:19 AM] - Trying to mint zomby, account: 5fe299b0cec979c6e3437c074b676fb7338f999a3f612e5805a5e82a3133078d
+[5:31:01 AM] - Zomby mint success
+[5:31:46 AM] - Logined
+[5:31:46 AM] - Trying to mint zomby, account: d67c81c098ef7253a75d940f16a20f56aa0ce5b7f4ce6e9d5b7bf68bf737a252
+[5:32:29 AM] - Zomby mint success
+[5:33:22 AM] - Logined
+[5:33:22 AM] - Trying to mint zomby, account: 9c3521001e8b484662f323a1f5101f730ea49c6b92683e2889691b8604f13896
+[5:34:02 AM] - Zomby mint success
+[5:34:49 AM] - Logined
+[5:34:49 AM] - Trying to mint zomby, account: 0ba36fcba214dbec901a67e399ffb7bc2e3ed245590908b718bdc1824c385a23
+[5:35:39 AM] - Zomby mint success
+[5:36:29 AM] - Logined
+[5:36:29 AM] - Trying to mint zomby, account: 1a45d522e8b357a71c6c0a80fe671c5497ed6cff1a6d98ce6fd5cbc44c57ace6
+[5:37:14 AM] - Zomby mint success
+[5:38:08 AM] - Logined
+[5:38:08 AM] - Trying to mint zomby, account: c178c448ec75f79b7b510b36796c5a28f03111a1f2ddc0a3591b29fa8ab90b66
+[5:38:40 AM] - Zomby mint success
+[5:39:31 AM] - Logined
+[5:39:31 AM] - Trying to mint zomby, account: 3d7e940858065483ef7bf4975ae9cb6e33ba5c183fb44eb47937eab613d57ad2
+[5:40:13 AM] - Zomby mint success
+[5:41:01 AM] - Logined
+[5:41:01 AM] - Trying to mint zomby, account: 318e6365e4b4749e87bbf1c0c91f250e1a42689a8e244ef75d2e0a2d470341a6
+[5:41:44 AM] - Zomby mint success
+[5:42:32 AM] - Logined
+[5:42:32 AM] - Trying to mint zomby, account: 163df9228002a33b3c72d49706add72856c854e459d3c8c892be57e5717d25f7
+[5:43:13 AM] - Zomby mint success
+[5:44:03 AM] - Logined
+[5:44:03 AM] - Trying to mint zomby, account: 1abdb0b440ab91fc00a2bae97962938eb1befe30cd1e3f3d46927824d25e347d
+[5:44:46 AM] - Zomby mint success
+[5:45:38 AM] - Logined
+[5:45:38 AM] - Trying to mint zomby, account: 2157d43448aeb2cd57442ee08327cfaafc6ebbd129331e5c7768bbc4cbe1e608
+[5:46:16 AM] - Zomby mint success
+[5:47:05 AM] - Logined
+[5:47:05 AM] - Trying to mint zomby, account: bae0e495ce9c4bc948f2e45e632cce5e0b2fc5c1b5f986a91753a8e5ddcf0160
+[5:47:41 AM] - Zomby mint success
+[5:48:34 AM] - Logined
+[5:48:34 AM] - Trying to mint zomby, account: d1fcdcd0e44aa7b61e361c29815f3d2a60688d5e30df5b1ffccf2f299cf9fd2f
+[5:49:12 AM] - Zomby mint success
+[5:50:01 AM] - Logined
+[5:50:01 AM] - Trying to mint zomby, account: 76341c9c338fe97260ff531319fda6a6cb20a94cc84a65dab0b4e1bbae5838c3
+[5:50:39 AM] - Zomby mint success
+[5:51:33 AM] - Logined
+[5:51:33 AM] - Trying to mint zomby, account: fa97de4deb9e1bd78fe2215477dcc5944ba9fcbb048ea083c340c78411e491a5
+[5:52:18 AM] - Zomby mint success
+[5:53:06 AM] - Logined
+[5:53:06 AM] - Trying to mint zomby, account: f4f98c11758025ccbf932c651dd393ba37e69480ba865496e5436644c8a4cf0a
+[5:53:52 AM] - Zomby mint success
+[5:54:46 AM] - Logined
+[5:54:46 AM] - Trying to mint zomby, account: b0f511ac62bea82b69bdb00ce64610b9f8fcb6225a228c111c4c8866625d4ce0
+[5:55:27 AM] - Zomby mint success
+[5:56:20 AM] - Logined
+[5:56:20 AM] - Trying to mint zomby, account: c14fe66ef37dca3cffde01716a99cbce2881d31839a84a2b225419f7be54e706
+[5:56:58 AM] - Zomby mint success
+[5:57:48 AM] - Logined
+[5:57:48 AM] - Trying to mint zomby, account: bfc5d472dfb961a6f9773a8544d2c4c343dca9678876f4d71147496acc027445
+[5:58:37 AM] - Zomby mint success
+[5:59:25 AM] - Logined
+[5:59:25 AM] - Trying to mint zomby, account: d534814ecfc0c143c1ab4d330f543c501d7abd310c7dde8183482404cce36ca3
+[6:00:05 AM] - Zomby mint success
+[6:00:53 AM] - Logined
+[6:00:53 AM] - Trying to mint zomby, account: f6599f15b9ae02f0c3db1433927727b37c3a7d71cdacb2a3828167d55c0053af
+[6:01:28 AM] - Zomby mint success
+[6:02:13 AM] - Logined
+[6:02:13 AM] - Trying to mint zomby, account: c79ee18402a7c35de75af1720a31aaa55f3c004e8591a7fe6a0f0c647d9276ca
+[6:02:57 AM] - Zomby mint success
+[6:03:47 AM] - Logined
+[6:03:47 AM] - Trying to mint zomby, account: 36a147076e759701a5e8a3ecfad07f2254e1639359745859b696f1d7894885c2
+[6:04:28 AM] - Zomby mint success
+[6:05:21 AM] - Logined
+[6:05:21 AM] - Trying to mint zomby, account: fdb39e7f016264acda6439ad7c450cabc25e5aee260b6615ce41472740b874e5
+[6:05:30 AM] - Cannot mint zomby: Not time yet
+[6:06:15 AM] - Logined
+[6:06:15 AM] - Trying to mint zomby, account: b2e2be580f30fbb5429d01dbaf4140ed8cdbb7e26f355d595921f8cdde688728
+[6:06:24 AM] - Cannot mint zomby: Not time yet
+[6:07:21 AM] - Logined
+[6:07:21 AM] - Trying to mint zomby, account: ce35a8cd33e704e0c1d705b2cd9d3d7d3da06cd228ce92cd11d6ef2c54330ab3
+[6:07:29 AM] - Cannot mint zomby: Not time yet
+[6:08:21 AM] - Logined
+[6:08:21 AM] - Trying to mint zomby, account: 967997d0f5b66a2581f362bdde50c3599559bf1e90a207a9f633ebbba1987474
+[6:08:30 AM] - Cannot mint zomby: Not time yet
+[6:09:17 AM] - Logined
+[6:09:17 AM] - Trying to mint zomby, account: c5cbf377083afe2cb9cf0828fdd87d8a1a1bcd7c1da559f5120dbcc3661c1425
+[6:09:57 AM] - Zomby mint success
+[6:10:46 AM] - Logined
+[6:10:46 AM] - Trying to mint zomby, account: 3342f27e0508464f8104b5c0f7e6cf6d82527e7755dbbdbf87b90e0008625e05
+[6:11:34 AM] - Zomby mint success
+[6:12:26 AM] - Logined
+[6:12:26 AM] - Trying to mint zomby, account: 829ed6c6c90649bed8f300908108504691fd34389b679da0dec28fa7beafe4c8
+[6:13:07 AM] - Zomby mint success
+[6:13:55 AM] - Logined
+[6:13:55 AM] - Trying to mint zomby, account: 4a95c25ebb067b5eba987008a47fa91a6f6074ec0234eaaadd0e9e003a684b28
+[6:14:37 AM] - Zomby mint success
+[6:15:27 AM] - Logined
+[6:15:27 AM] - Trying to mint zomby, account: e682d6d17d8dbf278df07c5d2b086fcd88bd09f28a4017ff470531d5fe418286
+[6:16:07 AM] - Zomby mint success
+[6:16:55 AM] - Logined
+[6:16:55 AM] - Trying to mint zomby, account: 376a08b7028992ef81140855212d2bccf585839803db8d55850d282f3de2a943
+[6:17:37 AM] - Zomby mint success
+[6:18:22 AM] - Logined
+[6:18:22 AM] - Trying to mint zomby, account: e530f77d802f099964988076732783dc5744b7856709b82fb726ff62e84d3f9e
+[6:18:55 AM] - Zomby mint success
+[6:19:44 AM] - Logined
+[6:19:44 AM] - Trying to mint zomby, account: cbcbd82ab5ec3ca955e983c0732ef29c6f7a75e18024f147298a6ba21ac80824
+[6:20:28 AM] - Zomby mint success
+[6:21:18 AM] - Logined
+[6:21:18 AM] - Trying to mint zomby, account: 03845bc675868410801c9a513d5b482d07ccff3e1ce065d11f67c75ef4a3954e
+[6:21:55 AM] - Zomby mint success
+[6:22:43 AM] - Logined
+[6:22:43 AM] - Trying to mint zomby, account: 053ceaa31d7f095959dd70e4c6801548c20142afcb5aeff2cb068fc0a6b25364
+[6:23:25 AM] - Zomby mint success
+[6:24:15 AM] - Logined
+[6:24:15 AM] - Trying to mint zomby, account: fac7ec4256fcb9a706b22c0206420caff51812659d4de3ffbf286488e6ae023c
+[6:24:51 AM] - Zomby mint success
+[6:25:41 AM] - Logined
+[6:25:41 AM] - Trying to mint zomby, account: de920da6aa437d2968b850e9bd10c9a23e6b0bdd2fa354bfca7786cc8ed11efa
+[6:26:19 AM] - Zomby mint success
+[6:27:10 AM] - Logined
+[6:27:10 AM] - Trying to mint zomby, account: 8e94eb5bbd6befb2c2ca9646aaa9aba855b4cc937211c676e0aff4d0f01a47f5
+[6:27:59 AM] - Zomby mint success
+[6:28:58 AM] - Logined
+[6:28:58 AM] - Trying to mint zomby, account: f73e8af658a9e708cb9fb948ed08029dfb77f82ddc183029d396f34a1d18a95c
+[6:29:35 AM] - Zomby mint success
+[6:30:21 AM] - Logined
+[6:30:21 AM] - Trying to mint zomby, account: c48a54bf409dc9179ec86edd78e94bb9d5c2a038432e397db9ab089d7631127b
+[6:30:57 AM] - Zomby mint success
+[6:31:46 AM] - Logined
+[6:31:46 AM] - Trying to mint zomby, account: ef60daf61ffd929ca8acb4cc61b59e7d9882e2451f3a32adb16d0c8b4dc3f08a
+[6:32:30 AM] - Zomby mint success
+[6:33:20 AM] - Logined
+[6:33:20 AM] - Trying to mint zomby, account: 9104cc588d8941a57b5195b2ea6b807a3935f73e8ff4f9badefb196f94c518f5
+[6:33:52 AM] - Zomby mint success
+[6:34:49 AM] - Logined
+[6:34:49 AM] - Trying to mint zomby, account: ed8ba91b97db8bf080ee205672d37e6b2012d964c815da36cded03e821b31b4b
+[6:35:28 AM] - Zomby mint success
+[6:36:15 AM] - Logined
+[6:36:15 AM] - Trying to mint zomby, account: 3fc200363667db20df8eb3bfb243e7cc7d5b08bf99783e74eebd1735c32e3cdf
+[6:36:47 AM] - Zomby mint success
+[6:37:35 AM] - Logined
+[6:37:35 AM] - Trying to mint zomby, account: a985da325a0d99e76235632c285cebe28ade9dcdf1912e4e052d022daaece4ce
+[6:38:13 AM] - Zomby mint success
+[6:39:01 AM] - Logined
+[6:39:01 AM] - Trying to mint zomby, account: afc897cbe29b3c3fa206278b7a53abfbf55643c5b631f85318481afe578db4bc
+[6:39:37 AM] - Zomby mint success
+[6:40:24 AM] - Logined
+[6:40:24 AM] - Trying to mint zomby, account: 3633c74e2617f991fcc57942d0b6b844d239465a1437e55ba0fe49b12e03faaf
+[6:41:01 AM] - Zomby mint success
+[6:41:49 AM] - Logined
+[6:41:49 AM] - Trying to mint zomby, account: 981ee9f77919d90df79714b8745436bf6ed5915253c9285783f9ad8bbd892e44
+[6:42:24 AM] - Zomby mint success
+[6:43:16 AM] - Logined
+[6:43:16 AM] - Trying to mint zomby, account: ad8f80383b61bbe1c7c157bfc6851746b187813c32431b7b8e0742abcd1abea1
+[6:43:56 AM] - Zomby mint success
+[6:44:46 AM] - Logined
+[6:44:46 AM] - Trying to mint zomby, account: 4201710353c779c7e5f22cfae9b30b6abff56d3ad62274fb40c435b5c0fb95dc
+[6:45:20 AM] - Zomby mint success
+[6:46:03 AM] - Logined
+[6:46:03 AM] - Trying to mint zomby, account: e1901a9a0ddf3c283e0e7fe8eb4a0dc1bd4632003ddc7961bed554852f1ce20e
+[6:46:39 AM] - Zomby mint success
+[6:47:24 AM] - Logined
+[6:47:24 AM] - Trying to mint zomby, account: 958d5902457a67f4690e81bf6aea11a15b15c4f93f58dfec41f30ceb6d7a0d94
+[6:48:08 AM] - Zomby mint success
+[6:48:55 AM] - Logined
+[6:48:55 AM] - Trying to mint zomby, account: e67fd25fd59dcae1137ab52d9ba97ef039fb8ece252d47d799eea5a86eeabad1
+[6:49:32 AM] - Zomby mint success
+[6:50:14 AM] - Logined
+[6:50:14 AM] - Trying to mint zomby, account: b86058f242dfb3ed9d86866afda1dd75359fa20ef020084c3283741fb4d62507
+[6:50:55 AM] - Zomby mint success
+[6:51:43 AM] - Logined
+[6:51:43 AM] - Trying to mint zomby, account: 1f305b774ff77744b7df7de2cc6fac087007547c3590fc56d20c9863df57f919
+[6:52:21 AM] - Zomby mint success
+[6:53:10 AM] - Logined
+[6:53:10 AM] - Trying to mint zomby, account: a2d11b8ce2df33641580710fa13b531d04fa189d27a0434fe160e938173f8bc5
+[6:53:43 AM] - Zomby mint success
+[6:54:32 AM] - Logined
+[6:54:32 AM] - Trying to mint zomby, account: 51234c21921fc3ac5d448217729c8c5f8e7af653de0e579d00c1e0326913a7e0
+[6:55:10 AM] - Zomby mint success
+[6:56:01 AM] - Logined
+[6:56:01 AM] - Trying to mint zomby, account: 323b18cfd48799cddd6fddb975b85432530f99452140745c3681e20bd192018a
+[6:56:45 AM] - Zomby mint success
+[6:57:36 AM] - Logined
+[6:57:36 AM] - Trying to mint zomby, account: e237aa4345a2116cf7ea62a07a0bc005c68d3f3fadc478e5a10212921ecaaf85
+[6:58:10 AM] - Zomby mint success
+[6:58:59 AM] - Logined
+[6:58:59 AM] - Trying to mint zomby, account: a686b854d66256cb0ef16a1fd8d6fafd35a2b6bd6f97ffc2cc8f8034f76241ac
+[6:59:41 AM] - Zomby mint success
+[7:00:32 AM] - Logined
+[7:00:32 AM] - Trying to mint zomby, account: c01ae398795cd16e8102902b579f302b7f6d6c89f37b656ee185450f126ef861
+[7:01:08 AM] - Zomby mint success
+[7:01:59 AM] - Logined
+[7:01:59 AM] - Trying to mint zomby, account: fe958c0c37cd3c6611b8e6b2c96ea9998a200962e410876b4bcb1f135b81f901
+[7:02:38 AM] - Zomby mint success
+[7:03:23 AM] - Logined
+[7:03:23 AM] - Trying to mint zomby, account: 548791a157d2e8ceb70f69882b97861e5888ff94e66f2cbfe3d92279b2aa09ff
+[7:03:59 AM] - Zomby mint success
+[7:04:49 AM] - Logined
+[7:04:49 AM] - Trying to mint zomby, account: f188302fc425c8a2f356fd385556b0a0881e2912d1ca4c5ddd6d6c405dd4515f
+[7:05:32 AM] - Zomby mint success
+[7:06:21 AM] - Logined
+[7:06:21 AM] - Trying to mint zomby, account: 35139c2a0e655470dfc5db0bc4302f67a4ec7c74d082e742ee7f996580bf0c93
+[7:07:00 AM] - Zomby mint success
+[7:07:52 AM] - Logined
+[7:07:52 AM] - Trying to mint zomby, account: 1b817a6e094bde8414e6c2027ea1b0ae7767c46961ed339278234636fe6edf3e
+[7:08:28 AM] - Zomby mint success
+[7:09:14 AM] - Logined
+[7:09:14 AM] - Trying to mint zomby, account: 469b434ebceba424658a9e6b60c848c704ee0908cf21552327cbc131ccf6bf3e
+[7:09:55 AM] - Zomby mint success
+[7:10:47 AM] - Logined
+[7:10:47 AM] - Trying to mint zomby, account: e0d765aa809b2f406e05e6317d327b441403cf6226fdb14d0f52f80cbf054efa
+[7:11:33 AM] - Zomby mint success
+[7:12:22 AM] - Logined
+[7:12:22 AM] - Trying to mint zomby, account: ab5a3acff16202bafa48078c66fdca50645af2e59392386cc163964c82bd16e6
+[7:13:05 AM] - Zomby mint success
+[7:13:54 AM] - Logined
+[7:13:54 AM] - Trying to mint zomby, account: 9214abf065ec8a1f3f89cf1afbeb0691368441feae26ec2a979996ff1ba3ac22
+[7:14:38 AM] - Zomby mint success
+[7:15:29 AM] - Logined
+[7:15:29 AM] - Trying to mint zomby, account: 07def0d16b1409fd4b0db321adb85aedcaf1bf19abf29cf5519a216b2d420d43
+[7:16:04 AM] - Zomby mint success
+[7:16:54 AM] - Logined
+[7:16:54 AM] - Trying to mint zomby, account: 5240a4fdfe5e34a311ed7ebdb76344db3e8d6b571c72517dc1e1867c7b2887f9
+[7:17:36 AM] - Zomby mint success
+[7:18:22 AM] - Logined
+[7:18:22 AM] - Trying to mint zomby, account: b45280ef07823b5d465d28cae94cf242210219c54d81324c40e57bb7da58d8b5
+[7:18:57 AM] - Zomby mint success
+[7:19:43 AM] - Logined
+[7:19:43 AM] - Trying to mint zomby, account: f6cc3d65e3f870827904faef36d99e5818d49473a26da0265496d21912ffc60b
+[7:20:30 AM] - Zomby mint success
+[7:21:22 AM] - Logined
+[7:21:22 AM] - Trying to mint zomby, account: 5a0a9f4797944a394d45af6c4a3d9fb1500723432cd75e1b848e3c0e4fba5756
+[7:21:59 AM] - Zomby mint success
+[7:22:46 AM] - Logined
+[7:22:46 AM] - Trying to mint zomby, account: f404264a7e8836daf468009271810009e1510307e6d16dc22f41c64fb8b88d85
+[7:23:25 AM] - Zomby mint success
+[7:24:21 AM] - Logined
+[7:24:21 AM] - Trying to mint zomby, account: 6493df0dc7e6f9e59482e5ca914f41cb77163e68110964d417f0c93e60e66f09
+[7:24:56 AM] - Zomby mint success
+[7:25:51 AM] - Logined
+[7:25:51 AM] - Trying to mint zomby, account: 3e75f174f3c90cdf1f5ee907f63efef2638eff2be991b941558ecbb36403868d
+[7:26:26 AM] - Zomby mint success
+[7:27:13 AM] - Logined
+[7:27:13 AM] - Trying to mint zomby, account: 376d36d5f633ab7a0f6c8dff37f3399ab2736041fb33f91d32569ec629a9c180
+[7:27:46 AM] - Zomby mint success
+[7:28:33 AM] - Logined
+[7:28:33 AM] - Trying to mint zomby, account: c5fe22afaac868010860502283f8abe2f5c706cb6d957d6b9f82fe005d41d735
+[7:29:11 AM] - Zomby mint success
+[7:29:55 AM] - Logined
+[7:29:55 AM] - Trying to mint zomby, account: 5bf61c4cb0a14c4f7278859686aea6ae851ab1fcc3fe22297357782345dfac05
+[7:30:29 AM] - Zomby mint success
+[7:31:15 AM] - Logined
+[7:31:15 AM] - Trying to mint zomby, account: 3dc23aef0c3d265ab3b8e0f682912ca748cb130100728b758e40499f15102e61
+[7:31:52 AM] - Zomby mint success
+[7:32:40 AM] - Logined
+[7:32:40 AM] - Trying to mint zomby, account: 6d37bc5b200a8f364792197bf7a9279afdb79c6449dfd3536eed9a8423caa1be
+[7:33:27 AM] - Zomby mint success
+[7:34:15 AM] - Logined
+[7:34:15 AM] - Trying to mint zomby, account: 32075748e2c9b8c0813aaad394efc511287bb1b7bd5314713f8382b39c2966f4
+[7:34:56 AM] - Zomby mint success
+[7:35:45 AM] - Logined
+[7:35:45 AM] - Trying to mint zomby, account: ac6ed0a4ee3c4775bfa326da009a0917cb8dddfc80b6adc50f836262b502149c
+[7:36:24 AM] - Zomby mint success
+[7:37:19 AM] - Logined
+[7:37:19 AM] - Trying to mint zomby, account: 8cab29f25ff52ee2ae822fc2f961e577c6c8d032aab9ba7ffa24475640daa389
+[7:38:00 AM] - Zomby mint success
+[7:38:52 AM] - Logined
+[7:38:52 AM] - Trying to mint zomby, account: ef4795f2cabe019d869cf071d355443ccaed84349315ba62ecd8dc49083a33ae
+[7:39:31 AM] - Zomby mint success
+[7:40:21 AM] - Logined
+[7:40:21 AM] - Trying to mint zomby, account: 2f03f0b2a4589a3aecf2cd4a1183e2f85f3da64dd8c99b50bfd6d2e4aacb77c2
+[7:41:01 AM] - Zomby mint success
+[7:41:47 AM] - Logined
+[7:41:47 AM] - Trying to mint zomby, account: 9485ba3da8b4e969158460631c1b046a2cf6560aa46a8ff437085b3874008e81
+[7:42:33 AM] - Zomby mint success
+[7:43:22 AM] - Logined
+[7:43:22 AM] - Trying to mint zomby, account: dae88bc269e8925821502516b28c57558083014672ca6831325c50873a9fe628
+[7:43:59 AM] - Zomby mint success
+[7:47:22 AM] - Logined
+[7:47:22 AM] - Trying to mint zomby, account: fc1611d9142ac8c8916dd8916628c9349ef497b276aa3f6dd3670e8af7e0baf2
+[7:47:59 AM] - Zomby mint success
+[7:48:48 AM] - Logined
+[7:48:48 AM] - Trying to mint zomby, account: 1bb5beebeea3a39a4f87bb0be806b2d6b32b33c84e19ac00319f91ee35d68ba6
+[7:49:31 AM] - Zomby mint success
+[7:50:20 AM] - Logined
+[7:50:20 AM] - Trying to mint zomby, account: 2abcfdb3749b6836005a1dd4b6fb19cd8e7a50b341e06a3512cc7a9a704dd454
+[7:50:59 AM] - Zomby mint success
+[7:51:45 AM] - Logined
+[7:51:45 AM] - Trying to mint zomby, account: 60654943b525fbb3e94ca48fded81188a939ce20a6e657ed2870bab181ee80f5
+[7:52:28 AM] - Zomby mint success
+[7:53:17 AM] - Logined
+[7:53:17 AM] - Trying to mint zomby, account: 3878a98a79f3a1695e8999280a084b8fce3637c9fe5192259c5175aaac35d116
+[7:54:01 AM] - Zomby mint success
+[7:54:50 AM] - Logined
+[7:54:50 AM] - Trying to mint zomby, account: c92b3f8d11bcdaeeaf99a402b1fa8752e05db1c1d6af77ec3865bb864a4c5a67
+[7:55:32 AM] - Zomby mint success
+[7:56:20 AM] - Logined
+[7:56:20 AM] - Trying to mint zomby, account: 9d9743f1c21fd75504e69c4fff6e7d7bff214d99bc7e224070f274bab921e84a
+[7:57:03 AM] - Zomby mint success
+[7:57:55 AM] - Logined
+[7:57:55 AM] - Trying to mint zomby, account: b62a3a3540f36ee938f133f260244675c67b332512bdad3588cf22faf84a7bb9
+[7:58:32 AM] - Zomby mint success
+[7:59:25 AM] - Logined
+[7:59:25 AM] - Trying to mint zomby, account: dd938e301a35cb127f375c779b9ed429ba77849b9aabc388a269949e22ac4a9d
+[8:00:03 AM] - Zomby mint success
+[8:00:50 AM] - Logined
+[8:00:50 AM] - Trying to mint zomby, account: 25700d3e0bfcd53529582b460b95cba46b21f8dc4b504284690c1967890d84c6
+[8:01:30 AM] - Zomby mint success
+[8:02:18 AM] - Logined
+[8:02:18 AM] - Trying to mint zomby, account: 25b1b311593093f32f754b8cdcd16f80958bb9a0e080fde311c71f5235264537
+[8:02:58 AM] - Zomby mint success
+[8:03:46 AM] - Logined
+[8:03:46 AM] - Trying to mint zomby, account: c0f1d914f047cfc866f266ee00d1058bfde9042c0fb2831de98edf812ae1a296
+[8:04:24 AM] - Zomby mint success
+[8:05:08 AM] - Logined
+[8:05:08 AM] - Trying to mint zomby, account: e38d760641d7fdd747f81cbc2d812774ad6f1a92b70b34106e31b5e715ea4529
+[8:05:47 AM] - Zomby mint success
+[8:06:35 AM] - Logined
+[8:06:35 AM] - Trying to mint zomby, account: be87e340e33ce5077090d6488068e490dd5c0c5a3047ad300d7402fac70b5467
+[8:07:12 AM] - Zomby mint success
+[8:08:00 AM] - Logined
+[8:08:00 AM] - Trying to mint zomby, account: 69e2ccf27d1ade0e2e58b01d40a16ab1ce2686aaeadd3cbbaca386f6a8de8bfe
+[8:08:41 AM] - Zomby mint success
+[8:09:26 AM] - Logined
+[8:09:26 AM] - Trying to mint zomby, account: ad0b4112acd771d5864dd1591ff615fc24c192ee1cc1e6c9c357e4e5bd21115d
+[8:10:07 AM] - Zomby mint success
+[8:10:51 AM] - Logined
+[8:10:51 AM] - Trying to mint zomby, account: 8ff1763f021736a6b588cdd506cd01406da1bf7a6376356cb83eb2ecc79666cf
+[8:11:29 AM] - Zomby mint success
+[12:39:39 PM] - Imported 0 . Excluded 441 accounts
+[12:39:39 PM] - Starting normal mode
+[12:39:39 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 5
+[12:39:39 PM] - Cuncurrency: 1
+[12:39:39 PM] - Proxy count setted: 10
+[12:39:39 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[12:39:39 PM] - Mode: 
+		transfer: none 
+		burn: false 
+		headless: false
+[12:39:48 PM] - Imported 0 . Excluded 441 accounts
+[12:39:48 PM] - Starting normal mode
+[12:39:48 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 5
+[12:39:48 PM] - Cuncurrency: 1
+[12:39:48 PM] - Proxy count setted: 10
+[12:39:48 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[12:39:48 PM] - Mode: 
+		transfer: none 
+		burn: false 
+		headless: false
+[12:39:48 PM] - Next mint at: Sat May 21 2022 22:34:46 GMT+0300 (Moscow Standard Time) going to sleep for: 35698000 ms
+[12:40:10 PM] - Error: Navigation failed because browser has disconnected! account: 7c3e1cf56eeba560eb2aaf2262a97eba5c548b253d4d1535740e80d757f5d8bf
+[12:44:19 PM] - Imported 0 . Excluded 441 accounts
+[12:44:19 PM] - Starting normal mode
+[12:44:19 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 5
+[12:44:19 PM] - Cuncurrency: 1
+[12:44:19 PM] - Proxy count setted: 10
+[12:44:19 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[12:44:19 PM] - Mode: 
+		transfer: none 
+		burn: false 
+		headless: false
+[12:57:36 PM] - Imported 0 . Excluded 441 accounts
+[12:57:36 PM] - Starting normal mode
+[12:57:36 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 5
+[12:57:36 PM] - Cuncurrency: 1
+[12:57:36 PM] - Proxy count setted: 10
+[12:57:36 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[12:57:36 PM] - Mode: 
+		transfer: none 
+		burn: false 
+		headless: false
+[12:58:40 PM] - Imported 0 . Excluded 441 accounts
+[12:58:40 PM] - Starting normal mode
+[12:58:40 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 5
+[12:58:40 PM] - Cuncurrency: 1
+[12:58:40 PM] - Proxy count setted: 10
+[12:58:40 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[12:58:40 PM] - Mode: 
+		transfer: none 
+		burn: false 
+		headless: false
+[12:59:09 PM] - Logined
+[12:59:09 PM] - Trying to mint zomby, account: 7c3e1cf56eeba560eb2aaf2262a97eba5c548b253d4d1535740e80d757f5d8bf
+[12:59:32 PM] - Zomby mint success
+[1:06:35 PM] - Imported 0 . Excluded 441 accounts
+[1:06:35 PM] - Starting normal mode
+[1:06:35 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 4
+[1:06:35 PM] - Cuncurrency: 1
+[1:06:35 PM] - Proxy count setted: 10
+[1:06:35 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[1:06:35 PM] - Mode: 
+		transfer: none 
+		burn: false 
+		headless: false
+[1:07:30 PM] - Imported 0 . Excluded 441 accounts
+[1:07:30 PM] - Starting normal mode
+[1:07:30 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 4
+[1:07:30 PM] - Cuncurrency: 1
+[1:07:30 PM] - Proxy count setted: 10
+[1:07:30 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[1:07:30 PM] - Mode: 
+		transfer: none 
+		burn: false 
+		headless: false
+[1:07:30 PM] - Start processing 4 of 441
+[1:07:59 PM] - Logined
+[1:07:59 PM] - Trying to mint zomby, account: 848b754214af1d863bb652f05f5384b1055a0b6673c60b7edcff912ad1d66652
+[1:08:21 PM] - Zomby mint success
+[1:10:33 PM] - Imported 0 . Excluded 441 accounts
+[1:10:33 PM] - Starting normal mode
+[1:10:33 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 3
+[1:10:33 PM] - Cuncurrency: 1
+[1:10:33 PM] - Proxy count setted: 10
+[1:10:33 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[1:10:33 PM] - Mode: 
+		transfer: none 
+		burn: false 
+		headless: false
+[1:10:33 PM] - Start processing 3 of 441
+[1:11:03 PM] - Logined
+[1:11:03 PM] - Trying to mint zomby, account: c84e9f55a3012f9919710109486553b8344aa08109b96abd2ac976dd33c530a5
+[1:11:25 PM] - Zomby mint success
+[1:11:58 PM] - Logined
+[1:11:58 PM] - Trying to mint zomby, account: f8e0d402c942e408dbe4d63ffe653d557ce6d96694ae610d828e5190f02a837f
+[1:12:20 PM] - Zomby mint success
+[1:12:47 PM] - Logined
+[1:12:47 PM] - Trying to mint zomby, account: 68b025324aa50f52101065d18481ef417bdca1a92df10252da1e81cbd4878598
+[1:13:08 PM] - Zomby mint success
+[1:13:08 PM] - done
+[1:13:08 PM] - Next mint at: Sat May 21 2022 22:34:46 GMT+0300 (Moscow Standard Time) going to sleep for: 33697000 ms

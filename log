@@ -1515,3 +1515,296 @@
 [1:13:08 PM] - Zomby mint success
 [1:13:08 PM] - done
 [1:13:08 PM] - Next mint at: Sat May 21 2022 22:34:46 GMT+0300 (Moscow Standard Time) going to sleep for: 33697000 ms
+[7:48:15 PM] - Starting normal mode
+[7:48:15 PM] - Worker: browser
+[7:48:15 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429
+[7:48:15 PM] - Cuncurrency: 1
+[7:48:15 PM] - Proxy count setted: 10
+[7:48:15 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[7:48:15 PM] - Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: true
+[7:48:15 PM] - Start processing 441 of 441
+[7:48:29 PM] - Starting normal mode
+[7:48:29 PM] - Worker: browser
+[7:48:29 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429
+[7:48:29 PM] - Cuncurrency: 1
+[7:48:29 PM] - Proxy count setted: 10
+[7:48:29 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[7:48:29 PM] - Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false
+[7:48:29 PM] - Start processing 441 of 441
+[7:48:58 PM] - Logined
+[7:48:58 PM] - Trying to mint zomby, account: d81458c1c9d6d7e54ccbdf4f1123f596ab47134ba6352d4967f4f57b86bf07cd
+[7:49:01 PM] - ERROR: cannot mint zomby: Not time yet
+[7:53:06 PM] - Starting normal mode
+[7:53:06 PM] - Worker: browser
+[7:53:06 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429
+[7:53:06 PM] - Cuncurrency: 1
+[7:53:06 PM] - Proxy count setted: 10
+[7:53:06 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[7:53:06 PM] - Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false
+[7:53:06 PM] - Start processing 440 of 441
+[7:53:35 PM] - Logined
+[7:53:35 PM] - Trying to mint zomby, account: c407cc29dab7ace487b76bc34875746abb63229c04910d34844ddeef56489cc2
+[7:53:38 PM] - ERROR: cannot mint zomby: Not time yet, to mint 2h47m30sDEBUG: last mint was at: Mon May 23 2022 17:55:26 GMT+0300 (Moscow Standard Time)
+[7:54:40 PM] - Starting normal mode
+[7:54:40 PM] - Worker: browser
+[7:54:40 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429
+[7:54:40 PM] - Cuncurrency: 1
+[7:54:40 PM] - Proxy count setted: 10
+[7:54:40 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[7:54:40 PM] - Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false
+[7:54:41 PM] - Start processing 439 of 441
+[7:55:07 PM] - Logined
+[7:55:07 PM] - Trying to mint zomby, account: b17882aaf969e565a27f3c1b010ac0e9a096b7ee59c921e2454c6e2e58300e8d
+[7:55:10 PM] - ERROR: cannot mint zomby: Not time yet, to mint 2h 46m 00s DEBUG: last mint was at: Mon May 23 2022 17:57:34 GMT+0300 (Moscow Standard Time) now date Sun May 22 2022 19:55:10 GMT+0300 (Moscow Standard Time)
+[7:59:32 PM] - Starting normal mode
+[7:59:32 PM] - Worker: browser
+[7:59:32 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429
+[7:59:32 PM] - Cuncurrency: 1
+[7:59:32 PM] - Proxy count setted: 10
+[7:59:32 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[7:59:32 PM] - Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false
+[7:59:32 PM] - Start processing 438 of 441
+[7:59:59 PM] - Logined
+[7:59:59 PM] - Trying to mint zomby, account: eb90855a86509e65688fde81cd9c64ee1422780e636035f2edc45122176b3417
+[8:00:02 PM] - ERROR: cannot mint zomby: Not time yet, to mint 2h 41m 09s DEBUG: last mint was at: Mon May 23 2022 18:02:47 GMT+0300 (Moscow Standard Time) now date Sun May 22 2022 20:00:02 GMT+0300 (Moscow Standard Time)
+[8:01:21 PM] - Starting normal mode
+[8:01:21 PM] - Worker: browser
+[8:01:21 PM] - Overall accounts: 441 
+		Without determined wallet: 0 
+		Without determined mint schedule: 429
+[8:01:21 PM] - Cuncurrency: 1
+[8:01:21 PM] - Proxy count setted: 10
+[8:01:21 PM] - Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150
+[8:01:21 PM] - Mode: 
+		transfer: zomby 
+		burn: false 
+		headless: false
+[8:01:21 PM] - Start processing 437 of 441
+[8:01:48 PM] - Logined
+[8:01:48 PM] - Trying to mint zomby, account: 2252896c236b8dc96730a956255bead1144ca92250dbb1360bd7778015d38a78
+[8:01:51 PM] - ERROR: cannot mint zomby: Not time yet, to mint 2h 40m 18s DEBUG: last mint was at: Sat May 21 2022 21:59:09 GMT+0300 (Moscow Standard Time) now date Sun May 22 2022 20:01:51 GMT+0300 (Moscow Standard Time)
+[8:17:29 PM] - 
+Starting normal mode 
+Worker: browser 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: zomby 
+	burn: false 
+	headless: false 
+Overall accounts: 441 
+	Without determined wallet: 0 
+	Without determined mint schedule: 429 
+Cuncurrency: 1 
+Proxy count setted: 10
+[8:17:29 PM] - Start processing 436 of 441
+[8:18:17 PM] - 
+Starting normal mode 
+Worker: browser 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: zomby 
+	burn: false 
+	headless: false 
+Overall accounts: 441 
+	Without determined wallet: 0 
+	Without determined mint schedule: 429 
+Cuncurrency: 1 
+Proxy count setted: 10
+[8:18:17 PM] - Start processing 436 of 441
+[8:18:45 PM] - Logined
+[8:18:45 PM] - Trying to mint zomby, account: cd80451a30144a89770fa10124ff6bddc8b76c25d3bbc970c1d6dc6e910c3135
+[8:18:48 PM] - ERROR: cannot mint zomby: Not time yet, to mint 2h 24m 11s
+[8:19:05 PM] - 
+Starting normal mode 
+Worker: browser 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: none 
+	burn: false 
+	headless: false 
+Overall accounts: 441 
+	Without determined wallet: 0 
+	Without determined mint schedule: 429 
+Cuncurrency: 1 
+Proxy count setted: 10
+[8:19:05 PM] - Start processing 435 of 441
+[8:19:35 PM] - Logined
+[8:19:35 PM] - Trying to mint zomby, account: b0192a31a2d0520647d5e8b092e30a3a327beb0b860a74a580f03b2f535870df
+[8:19:37 PM] - ERROR: cannot mint zomby: Not time yet, to mint 2h 32m 34s
+[8:20:04 PM] - Logined
+[8:20:04 PM] - Trying to mint zomby, account: f81810964d59253d17874355bab04bda444927f0b0b45dbaa91047a8481c76bb
+[8:20:07 PM] - ERROR: cannot mint zomby: Not time yet, to mint 2h 32m 18s
+[8:49:27 PM] - 
+Starting normal mode 
+Worker: browser 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: none 
+	burn: false 
+	headless: false 
+Overall accounts: 441 
+	Without determined wallet: 0 
+	Without determined mint schedule: 429 
+Cuncurrency: 1 
+Proxy count setted: 10
+[8:49:27 PM] - Start processing 433 of 441
+[8:49:56 PM] - Logined
+[8:49:56 PM] - Trying to mint zomby, account: 04536cfc3f4d0207bd65c0f1fc79b0bd9653b14fecc47d93407d5d8d54ada7ab
+[8:49:58 PM] - ERROR: cannot mint zomby: Not time yet, to mint 2h 03m 19s
+[8:50:02 PM] - ERROR: Error: Navigation failed because browser has disconnected! account: ffb44c4d14b4afba672c7e25c223d77cb634a810967199dc09ce9e4917a91bae
+[9:08:31 PM] - 
+Starting normal mode 
+Worker: browser 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: none 
+	burn: false 
+	headless: false 
+Overall accounts: 441 
+	Without determined wallet: 441 
+	Without determined mint schedule: 428 
+Cuncurrency: 1 
+Proxy count setted: 10
+[9:08:31 PM] - Start processing 441 of 441
+[9:09:00 PM] - Logined
+[9:09:00 PM] - Going to scrap wallet address
+[9:09:05 PM] - ERROR: TypeError: localStorage.getItem is not a function account: d81458c1c9d6d7e54ccbdf4f1123f596ab47134ba6352d4967f4f57b86bf07cd
+[9:11:11 PM] - 
+Starting normal mode 
+Worker: browser 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: none 
+	burn: false 
+	headless: false 
+Overall accounts: 441 
+	Without determined wallet: 441 
+	Without determined mint schedule: 428 
+Cuncurrency: 1 
+Proxy count setted: 10
+[9:11:11 PM] - Start processing 441 of 441
+[9:11:39 PM] - Logined
+[9:11:39 PM] - Going to scrap wallet address
+[9:11:45 PM] - ERROR: Error: Evaluation failed: ReferenceError: addr is not defined
+    at __puppeteer_evaluation_script__:1:51 account: d81458c1c9d6d7e54ccbdf4f1123f596ab47134ba6352d4967f4f57b86bf07cd
+[9:13:33 PM] - 
+Starting normal mode 
+Worker: browser 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: none 
+	burn: false 
+	headless: false 
+Overall accounts: 441 
+	Without determined wallet: 441 
+	Without determined mint schedule: 428 
+Cuncurrency: 1 
+Proxy count setted: 10
+[9:13:33 PM] - Start processing 441 of 441
+[9:14:03 PM] - Logined
+[9:14:03 PM] - Going to scrap wallet address
+[9:14:09 PM] - ERROR: Error: Evaluation failed: ReferenceError: addr is not defined
+    at __puppeteer_evaluation_script__:2:55 account: d81458c1c9d6d7e54ccbdf4f1123f596ab47134ba6352d4967f4f57b86bf07cd
+[9:18:38 PM] - 
+Starting normal mode 
+Worker: browser 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: none 
+	burn: false 
+	headless: false 
+Overall accounts: 441 
+	Without determined wallet: 441 
+	Without determined mint schedule: 428 
+Cuncurrency: 1 
+Proxy count setted: 10
+[9:18:38 PM] - Start processing 441 of 441
+[9:19:04 PM] - Logined
+[9:19:04 PM] - Going to scrap wallet address
+[9:20:27 PM] - 
+Starting normal mode 
+Worker: browser 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: none 
+	burn: false 
+	headless: false 
+Overall accounts: 441 
+	Without determined wallet: 440 
+	Without determined mint schedule: 428 
+Cuncurrency: 1 
+Proxy count setted: 10
+[9:20:27 PM] - Start processing 441 of 441
+[9:20:38 PM] - 
+Starting normal mode 
+Worker: browser 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: none 
+	burn: false 
+	headless: false 
+Overall accounts: 441 
+	Without determined wallet: 441 
+	Without determined mint schedule: 428 
+Cuncurrency: 1 
+Proxy count setted: 10
+[9:20:38 PM] - Start processing 441 of 441
+[9:21:08 PM] - Logined
+[9:21:08 PM] - Going to scrap wallet address
+[9:21:14 PM] - Added wallet: [object Object]
+[9:21:47 PM] - Logined
+[9:21:47 PM] - Going to scrap wallet address
+[9:21:53 PM] - Added wallet: [object Object]
+[9:22:21 PM] - Logined
+[9:22:21 PM] - Going to scrap wallet address
+[9:30:03 PM] - Transfer complete: [object Object]
+[10:55:06 PM] - 
+Starting normal mode 
+Worker: browser 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: none 
+	burn: false 
+	headless: false 
+Overall accounts: 441 
+	Without determined wallet: 439 
+	Without determined mint schedule: 428 
+Cuncurrency: 1 
+Proxy count setted: 10
+[10:55:06 PM] - Start processing 441 of 441

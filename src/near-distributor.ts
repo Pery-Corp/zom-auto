@@ -25,7 +25,8 @@ export async function sendNear(from: {addr: string, key: string}, to: string, am
 
     try {
         const result = await senderAccount.sendMoney(to, amount);
-        log("Transfer complete:", result.status)
+        log("Transfer complete:", result)
+// zone shift behind run illness trouble they tide tumble wet ghost together
     } catch(error) {
         log("Transfer error:", error);
     }

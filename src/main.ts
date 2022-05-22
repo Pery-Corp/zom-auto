@@ -1,213 +1,16 @@
 // import { Worker as nodeWorker } from 'worker_threads';
-import puppeteer from 'puppeteer'
+import { existsSync } from 'fs'
 import progress from 'progress'
-import { sleep, log, addTime } from './utils.js'
-import { Navigator } from './Navigator.js'
-import { accounts, Account } from './accounts.js'
-import { EventEmitter } from './EventEmitter.js'
 import { parse } from 'ts-command-line-args';
 import { Mutex } from 'async-mutex'
 import { Config } from './Config.js'
 import { sendNear } from './near-distributor.js'
-// @ts-ignore
-import { proxyRequest } from 'puppeteer-proxy'
-
-let browserOpts = () => {
-    return {
-        headless: Config().headless,
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-        ]
-    }
-}
-
-class Runner {
-    protected browser?: puppeteer.Browser;
-    protected page?: puppeteer.Page;
-
-    constructor(private account: Account) {}
-
-    private async prepare() {
-        this.browser = await puppeteer.launch(browserOpts())
-        return this.setupPage();
-    }
-
-    private async tryLogin() {
-        this.page = await Navigator.login.phrase(<puppeteer.Page>this.page, this.account)
-    }
-
-    private async tryMint() {
-        log("Trying to mint zomby, account:", this.account.id)
-        let ret = await Navigator.mint.zomby(<puppeteer.Page>this.page)
-        this.page = ret!.page
-        let desc=""
-        switch (ret.error.type) {
-            case "time":
-                this.account.lastMint =
-                    addTime(24-ret.error.time!.hours, 60-ret.error.time!.minutes, 60-ret.error.time!.seconds).getTime()
-                desc = "Not time yet"
-                break;
-            case "basic": desc = "basic error" + ret.error.msgs!.join("; ")
-                break;
-            case "payment": desc = "payment error: " + ret.error.msgs!.join("; ")
-                break;
-            case "ok": log("Zomby mint success"); this.account.updateLastMint(new Date().getTime())
-                break;
-            default: desc = "Unknown error while minting"
-                break;
-        }
-        if (desc != "") { log.error("cannot mint zomby:",  desc) }
-    }
-
-    private async tryBurn() {
-        let ret = await Navigator.burn.zombies(<puppeteer.Page>this.page)
-        switch (ret.error.type) {
-            case "payment":
-                log.error("payment error:", ret.error.msgs!.join("; "))
-                break;
-            case "ok":
-                log("all zombies burned")
-                break;
-            case "basic":
-                log.error("basic error", ret.error.msgs!.join("; "))
-                break;
-            default:
-                log.error(ret.error.type)
-        }
-    }
-
-    private async tryTransferZomby() {
-        let ret = await Navigator.transfer.zombies(<puppeteer.Page>this.page)
-        let desc = ""
-        switch (ret.error.type) {
-            case "payment":
-                desc = "payment error:" + ret.error.msgs!.join("; ")
-                break;
-            case "ok":
-                desc = "all zombies transfered"
-                break;
-            case "basic":
-                desc = "basic error:" + ret.error.msgs!.join("; ")
-                break;
-            default:
-                desc = "unknown: " + ret.error.type
-        }
-        if (desc != "") { log.error("zomby transfer:", desc) }
-    }
-
-    public async start() {
-        try {
-            this.page = await this.prepare()
-            await this.tryLogin()
-
-            await this.tryMint()
-
-            if (Config().burn) {
-                await this.tryBurn()
-            }
-
-            if (Config().mother != this.account.wallet) {
-                switch (Config().transfer) {
-                    case "zlt":
-                        // await this.tryT()
-                        break;
-                    case "zomby":
-                        await this.tryTransferZomby()
-                        break;
-                    case "none":
-                        break;
-                }
-            }
-
-        } catch (e) {
-            log.error(e, "account:", this.account.id)
-        } finally {
-            await this.account.sync()
-            await this.dispose()
-        }
-    }
-
-    public async dispose() {
-        await this.browser?.close();
-    }
-
-    protected async setupPage(): Promise<puppeteer.Page> {
-        try {
-            if (!this.browser) {
-                throw "setuping page before creating browser"
-            }
-            this.page = await this.browser.newPage();
-
-            if (Config().proxy.length) {
-                await this.page.setRequestInterception(true)
-
-                function randomProxy() {
-                    let proxy = Config().proxy.at(0+Math.floor(Math.random() * Config().proxy.length) )
-                    // @ts-ignore
-                    return "http://" + proxy.user + ":" + proxy.password + "@" + proxy.host;
-                }
-
-                this.page.on('request', async (request) => {
-                    await proxyRequest({
-                        page: this.page,
-                        proxyUrl: randomProxy(),
-                        request,
-                    });
-                });
-            }
-
-            await this.page
-                .setUserAgent(
-                    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3419.0 Safari/537.36')
-
-            await this.page.setViewport({ width: 1920, height: 1060 })
-            await this.page.setDefaultNavigationTimeout(500000);
-            await this.page.on('dialog', async (dialog: puppeteer.Dialog) => {
-                await dialog.accept();
-            });
-            await this.page.on('error', async (err) => {
-                const errorMessage = err.toString();
-                log.error('browser error: ' + errorMessage, "account:", this.account.id, " retraing")
-                await this.dispose()
-                await this.start()
-            });
-            await this.page.on('pageerror', async (err: any) => {
-                const errorMessage = err.toString();
-                log.error('browser this.page error: ' + errorMessage, "account:", this.account.id)
-                await this.dispose()
-                await this.start()
-            });
-        } catch (err) {
-            throw new Error('this.page initialization failed. Reason: ' + err);
-        }
-        return this.page;
-    }
-}
-
-class Worker extends EventEmitter<{'done': boolean}> {
-    constructor(private acc: Account) {
-        super()
-    }
-
-    get account() {
-        return this.acc
-    }
-
-    async run() {
-        let err = false
-        try {
-            let runner = new Runner(this.acc);
-            await runner.start()
-        } catch (e) {
-            err = true
-            log.error("Error occured while passing", this.acc.id, "account. Reason:", e)
-        } finally {
-            this.emit('done', err)
-        }
-    }
-}
+import BWorker from './browser-worker/worker.js'
+import NWorker from './near-worker/worker.js'
+import Worker from './worker.js'
+import { sleep, log, addTime } from './utils.js'
+import { accounts, Account } from './accounts.js'
+import { EventEmitter } from './EventEmitter.js'
 
 class Controller extends EventEmitter<{"done": void}> {
     private workers: Set<Worker>;
@@ -217,7 +20,7 @@ class Controller extends EventEmitter<{"done": void}> {
     private overall = 0;
     private progress: any
 
-    constructor(private cuncurrency: number) {
+    constructor(private cuncurrency: number, private createWorker: (...arg: any[])=>Worker) {
         super()
         this.workers = new Set<Worker>()
         this.mtx = new Mutex()
@@ -262,12 +65,12 @@ class Controller extends EventEmitter<{"done": void}> {
         let accs = accounts.getRange(0, accounts.count);
         let minTimeToMint = addTime(24, 0, 0).getTime();
         for (let a of accs) {
-            let nextMintTime = addTime(24, 0, 0, new Date(a.lastMint)).getTime()
-            if (nextMintTime <= new Date().getTime()) {
-                await this.addWork(new Worker(a))
-            } else {
-                minTimeToMint = Math.min(minTimeToMint, nextMintTime)
-            }
+            // let nextMintTime = addTime(24, 0, 0, new Date(a.lastMint)).getTime()
+            // if (nextMintTime <= new Date().getTime()) {
+                await this.addWork(this.createWorker(a))
+            // } else {
+            //     minTimeToMint = Math.min(minTimeToMint, nextMintTime)
+            // }
         }
 
         log.echo("Start processing", this.workers.size, "of", accounts.count)
@@ -295,12 +98,14 @@ class Controller extends EventEmitter<{"done": void}> {
 interface opts {
     importPath?: string,
     concurrency?: number,
-    mode?: string, 
+    mode?: string,
+    worker?: string,
 }
 
 class App {
     private concurrency: number = 1;
     private mode: "normal" | "provide" = "normal";
+    private worker = "browser"
 
     constructor() {
 
@@ -311,11 +116,16 @@ class App {
             importPath:  { type: String, alias: 'i', optional: true },
             concurrency: { type: Number, alias: 'c', optional: true },
             mode:        { type: String, alias: 'p', optional: true },
+            worker:      { type: String, alias: 'w', optional: true },
         })
         if (argv.importPath) {
+                log.echo("Importing accounts from:", argv.importPath)
             await accounts.importPhrases(argv.importPath)
         } else {
-            await accounts.importPhrases(Config().import)
+            if (Config().import != '' && existsSync(Config().import)) {
+                log.echo("Importing accounts from:", Config().import)
+                await accounts.importPhrases(Config().import)
+            }
         }
         if (argv.concurrency) {
             this.concurrency = argv.concurrency
@@ -325,30 +135,40 @@ class App {
 
         if (argv.mode === "provide") {
             this.mode = "provide"
-            
+
             log.echo("Starting provide mode")
             log.echo("NEAR Provider:", Config().NEARProvider.addr)
             log.echo("Send amount:", "Noet implemented, sending 0.1 NEAR")
             log.echo("Overall accounts:", accounts.count)
-            log.echo("Accounts with determined wallet:", accounts.count - (await Account.findMany({ wallet: "" })).length)
+            log.echo("Accounts with determined wallet:", accounts.count - (await Account.findMany({ wallet: {addr: "", key: ""} })).length)
         } else {
             this.mode = "normal"
 
+            if (argv.worker) {
+                if (argv.worker === "browser" || argv.worker === "near") {
+                    this.worker = argv.worker
+                } else {
+                    throw "Unknown worker " + argv.worker
+                }
+            }
+
             let accCount: number = accounts.count;
-            let withoutWL = (await Account.findMany({ wallet: "" })).length
+            let withoutWL = (await Account.findMany({ wallet: {addr: "", key: ""} })).length
             let withoutMintInfo = (await Account.findMany({ lastMint: 0 })).length
 
-            log.echo("Starting normal mode")
-            log.echo("Overall accounts:", accCount,
-                "\n\t\tWithout determined wallet:", withoutWL,
-                "\n\t\tWithout determined mint schedule:", withoutMintInfo)
-            log.echo("Cuncurrency:", this.concurrency)
-            log.echo("Proxy count setted:", Config().proxy.length)
-            log.echo("Mother account:", Config().mother)
-            log.echo("Mode:",
-                "\n\t\ttransfer:", Config().transfer,
-                "\n\t\tburn:", Config().burn,
-                "\n\t\theadless:", Config().headless)
+            log.echo("\nStarting normal mode",
+            "\nWorker:", this.worker,
+            "\nMother account:", Config().mother,
+            "\nNEAR provider:", Config().NEARProvider.addr,
+            "\nMode:",
+                "\n\ttransfer:", Config().transfer,
+                "\n\tburn:", Config().burn,
+                "\n\theadless:", Config().headless,
+            "\nOverall accounts:", accCount,
+                "\n\tWithout determined wallet:", withoutWL,
+                "\n\tWithout determined mint schedule:", withoutMintInfo,
+            "\nCuncurrency:", this.concurrency,
+            "\nProxy count setted:", Config().proxy.length)
         }
 
         return this
@@ -358,14 +178,20 @@ class App {
         // TODO check wallets before send
         let accs = accounts.getRange(0, accounts.count);
         for await (let acc of accs) {
-            if (acc.wallet != "" && acc.wallet != Config().NEARProvider.addr) {
-                await sendNear(Config().NEARProvider, acc.wallet, '0.1')
+            if (acc.wallet.addr != "" && acc.wallet.addr != Config().NEARProvider.addr) {
+                await sendNear(Config().NEARProvider, acc.wallet.addr, '0.1')
             }
         }
     }
 
     private async runNormalMode() {
-        let ctl = new Controller(this.concurrency)
+        let ctl = new Controller(this.concurrency,
+            (this.worker === "browser" ? (...arg: any[]) => { return new BWorker(arg[0]) } :
+                (this.worker === "near" ? (...arg: any[]) => { return new NWorker(arg[0]) } :
+                    (...arg: any[]) => { return new BWorker(arg[0]) } // default
+                )
+            )
+        )
         let next = await ctl.process()
 
         ctl.on("done", () => {

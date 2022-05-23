@@ -36,8 +36,8 @@ class Controller extends EventEmitter<{"done": void}> {
             w.on('done', (e) => this.onWorkDone(w, e))
             w.on('msg', (arg) => {
                 let { text, details } = arg
-                log(text, details)
-                this.progress.interrupt(text + '\t' + details.toString())
+                log(text, ...details)
+                this.progress.interrupt('\r' + text + '\t' + details)
             })
             if (this.active < this.cuncurrency) {
                 this.active++
@@ -84,12 +84,12 @@ class Controller extends EventEmitter<{"done": void}> {
         let accs = accounts.getRange(0, accounts.count);
         let minTimeToMint = addTime(24, 0, 0).getTime();
         for (let a of accs) {
-            let nextMintTime = addTime(24, 0, 0, new Date(a.lastMint)).getTime()
-            if (nextMintTime <= new Date().getTime()) {
+            // let nextMintTime = addTime(24, 0, 0, new Date(a.lastMint)).getTime()
+            // if (nextMintTime <= new Date().getTime()) {
                 await this.addWork(this.factory.produce(a))
-            } else {
-                minTimeToMint = Math.min(minTimeToMint, nextMintTime)
-            }
+            // } else {
+            //     minTimeToMint = Math.min(minTimeToMint, nextMintTime)
+            // }
         }
 
         log.echo("Start processing", this.workers.size, "of", accounts.count)

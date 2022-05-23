@@ -1,9 +1,9 @@
-import Worker from './../worker.js'
+import { Worker, WorkerFactory} from './../worker.js'
 import { Account } from './../accounts.js'
 import { Config } from './../Config.js'
 // @ts-ignore
 import { proxyRequest } from 'puppeteer-proxy'
-import { log, addTime } from './../utils.js'
+import { addTime } from './../utils.js'
 import puppeteer from 'puppeteer'
 import { Navigator } from './Navigator.js'
 
@@ -18,7 +18,13 @@ let browserOpts = () => {
     }
 }
 
-export default class BWorker extends  Worker {
+export class BWorkerFactory extends WorkerFactory {
+    constructor() { super() }
+    async init() { }
+    produce(acc: Account) { return new BWorker(acc) }
+}
+
+export class BWorker extends  Worker {
     protected browser?: puppeteer.Browser;
     protected page?: puppeteer.Page;
 
@@ -26,22 +32,19 @@ export default class BWorker extends  Worker {
         super(acc)
     }
 
-    dum() {
-        this.tryMint()
-    }
-
     private async runWraper() {
+        let err = false
         try {
             this.page = await this.prepare()
             await this.tryLogin()
 
-            // await this.tryMint()
+            await this.tryMint()
 
             if (Config().burn) {
                 await this.tryBurn()
             }
 
-            if (Config().mother != this.account.wallet.addr) {
+            if (Config().mother != this.account.wallet) {
                 switch (Config().transfer) {
                     case "zlt":
                         // await this.tryT()
@@ -53,21 +56,17 @@ export default class BWorker extends  Worker {
                         break;
                 }
             }
-
-        } catch (e) {
-            log.error(e, "account:", this.account.id)
         } finally {
             await this.account.sync()
             await this.dispose()
+            return err
         }
     }
 
     public async run(): Promise<void> {
         let err = false
         try {
-            await this.runWraper()
-        } catch (e) {
-            err = true // useless
+            err = await this.runWraper()
         } finally {
             this.emit('done', err)
         }
@@ -83,11 +82,15 @@ export default class BWorker extends  Worker {
     }
 
     private async tryLogin() {
-        this.page = await Navigator.login.phrase(<puppeteer.Page>this.page, this.account)
+        try {
+            this.page = await Navigator.login.phrase(<puppeteer.Page>this.page, this.account)
+        } catch (e) {
+            return true
+        }
+        return false
     }
 
     private async tryMint() {
-        log("Trying to mint zomby, account:", this.account.id)
         let ret = await Navigator.mint.zomby(<puppeteer.Page>this.page)
         this.page = ret!.page
         let desc=""
@@ -103,28 +106,33 @@ export default class BWorker extends  Worker {
                 break;
             case "payment": desc = "payment error: " + ret.error.msgs!.join("; ")
                 break;
-            case "ok": log("Zomby mint success"); this.account.updateLastMint(new Date().getTime())
+            case "ok": this.emit("msg", { text: "Zomby mint success", details: {} }); this.account.updateLastMint(new Date().getTime())
                 break;
             default: desc = "Unknown error while minting"
                 break;
         }
-        if (desc != "") { log.error("cannot mint zomby:",  desc) }
+        if (desc != "") { this.emit("msg", {text: "cannot mint zomby: " + desc, details: {} }); return true }
+        return false
     }
 
     private async tryBurn() {
         let ret = await Navigator.burn.zombies(<puppeteer.Page>this.page)
         switch (ret.error.type) {
             case "payment":
-                log.error("payment error:", ret.error.msgs!.join("; "))
+                this.emit("msg", { text: "payment error: " + ret.error.msgs!.join("; "), details: {}})
+                return true
                 break;
             case "ok":
-                log("all zombies burned")
+                this.emit("msg", {text: "all zombies burned", details: {} })
+                return false
                 break;
             case "basic":
-                log.error("basic error", ret.error.msgs!.join("; "))
+                this.emit("msg", { text:"basic error " + ret.error.msgs!.join("; "), details: {} })
+                return true
                 break;
             default:
-                log.error(ret.error.type)
+                this.emit("msg", { text:ret.error.type, details: {}})
+                return true
         }
     }
 
@@ -144,7 +152,8 @@ export default class BWorker extends  Worker {
             default:
                 desc = "unknown: " + ret.error.type
         }
-        if (desc != "") { log.error("zomby transfer:", desc) }
+        if (desc != "") { this.emit("msg", { text: "zomby transfer: " + desc, details: {}}); return true }
+        return false
     }
 
     protected async setupPage(): Promise<puppeteer.Page> {
@@ -185,13 +194,13 @@ export default class BWorker extends  Worker {
             });
             await this.page.on('error', async (err) => {
                 const errorMessage = err.toString();
-                log.error('browser error: ' + errorMessage, "account:", this.account.id, " retraing")
+                this.emit("msg", { text: 'browser error: ' + errorMessage + " account: " + this.account.id + " retraing", details: {}})
                 await this.dispose()
                 await this.run()
             });
             await this.page.on('pageerror', async (err: any) => {
                 const errorMessage = err.toString();
-                log.error('browser this.page error: ' + errorMessage, "account:", this.account.id)
+                this.emit("msg", { text: 'browser this.page error: ' + errorMessage + " account: " + this.account.id, details: {} })
                 await this.dispose()
                 await this.run()
             });

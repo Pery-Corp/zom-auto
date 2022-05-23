@@ -84,14 +84,14 @@ export const Navigator = (() => {
         await page.waitForNavigation({waitUntil: 'networkidle2'})
         log("Logined")
 
-        if (account.wallet.addr == "") {
+        if (account.wallet == "") {
             log("Going to scrap wallet address")
             await page.goto("https://wallet.near.org/profile", { waitUntil: 'domcontentloaded' })
             await page.waitForSelector('div[data-test-id="ownerAccount.accountId"] > span')
             let addr = await page.$eval('div[data-test-id="ownerAccount.accountId"] > span', e => e.textContent)
             if (addr) {
-                const key = await page.evaluate((addr) => localStorage.getItem("nearlib:keystore:" + addr + ":default")!.split(":")[1] , addr);
-                await account.setWallet({addr: addr, key: <string>key})
+                // const key = await page.evaluate((addr) => localStorage.getItem("nearlib:keystore:" + addr + ":default")!.split(":")[1] , addr);
+                await account.setWallet(addr)
                 log.echo("Added wallet:", JSON.stringify(account.wallet))
             } else {
                 log("Cannot scrap wallet")

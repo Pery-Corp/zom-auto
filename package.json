@@ -22,12 +22,13 @@
     "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "/usr/bin/tsc --build --pretty",
+        "build": "tsc --build --pretty",
         "postbuild": "cp -Ru node_modules dist/node_modules && tsc --removeComments",
         "go": "node dist/main.js"
     },
     "devDependencies": {
         "@tsconfig/esm": "^1.0.0",
+        "near-seed-phrase": "^0.2.0",
         "puppeteer-proxy": "^2.1.2",
         "typescript": "^4.6.3"
     }

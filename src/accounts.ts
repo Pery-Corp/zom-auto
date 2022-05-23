@@ -6,10 +6,7 @@ import { log } from './utils.js'
 
 interface IAccount {
     phrases: string[],
-    wallet?: {
-        addr: string,
-        key: string,
-    },
+    wallet?: string,
     id?: string,
     lastMint?: number,
     zombyCount?: number,
@@ -17,10 +14,7 @@ interface IAccount {
 
 const AccountSign = object({
     phrases: array(string()),
-    wallet: object({
-        addr: string(),
-        key: string(),
-    }),
+    wallet: string(),
     id: string(),
     lastMint: number(),
     zombyCount: number()
@@ -39,10 +33,7 @@ let accounts_db = new Database<IAccount>({
 export class Account implements IAccount {
     readonly phrases: string[];
     readonly id: string;
-    wallet: {
-        addr: string,
-        key: string
-    };
+    wallet: string;
     lastMint: number;
     zombyCount: number;
 
@@ -54,7 +45,7 @@ export class Account implements IAccount {
         this.id = acc.id ?? crypt.createHash('sha256').update(this.phrases.join(" ")).digest('hex')
         this.lastMint = acc.lastMint ?? 0
         this.zombyCount = acc.zombyCount ?? 0
-        this.wallet = ( acc.wallet ?? {addr: "", key: ""} )
+        this.wallet = acc.wallet ?? ""
     }
 
     async sync() {
@@ -75,7 +66,7 @@ export class Account implements IAccount {
         return await this.sync()
     }
 
-    async setWallet(wal: {addr: string, key: string}) {
+    async setWallet(wal: string) {
         this.wallet = wal
         return await this.sync()
     }

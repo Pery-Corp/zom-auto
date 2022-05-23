@@ -1,5 +1,6 @@
 import { ElementHandle } from 'puppeteer'
 import { appendFileSync } from 'fs'
+import chalk from 'chalk'
 
 export function sleep(ms: number) { return new Promise(resolve => setTimeout(resolve, ms)); }
 
@@ -31,18 +32,22 @@ function logTime() {
     return '[' + new Date().toLocaleTimeString() + ']'
 }
 
+const logFileName = "log_" + new Date().toLocaleDateString().replaceAll('/', '.') + "_" + new Date().toLocaleTimeString("ru")
+
 type ExtendedLog = {
     (...arg: any[]): void,
     echo:  (...arg: any[]) => void
     error: (...arg: any[]) => void
 }
 export let log = <ExtendedLog>function(...arg: any[]): void {
-    appendFileSync("log", logTime() + ' - ' + arg.join(" ") + "\n")
+    appendFileSync(logFileName, logTime() + ' - ' + arg.join(" ") + "\n")
 }
 
 log.error = function(...arg: any[]) {
     log("ERROR:", ...arg)
-    console.error(logTime(), '-', ...arg)
+    
+    // progress remove \r
+    console.error(logTime(), '-', chalk.red(...arg))
 }
 log.echo = function(...arg: any[]) {
     log(...arg)

@@ -5,6 +5,77 @@ const { KeyPair, keyStores, utils } = near;
 // @ts-ignore
 import * as seed from 'near-seed-phrase'
 
+// const createNewTransaction = async ({
+//       receiverId,
+//       actions,
+//       nonceOffset = 1,
+    
+// }) => {
+//       const nearInternal = window.walletConnection._near;
+//     const localKey = await nearInternal.connection.signer.getPublicKey(
+//             window.accountId,
+//             nearInternal.config.networkId
+          
+//     );
+
+//       const accessKey = await window.walletConnection
+//         .account()
+//         .accessKeyForTransaction(receiverId, actions, localKey);
+//     if (!accessKey) {
+//         throw new Error(
+//                   `Cannot find matching key for transaction sent to ${receiverId}`
+                
+//         );
+          
+//     }
+
+//     const block = await nearInternal.connection.provider.block({
+//             finality: "final",
+          
+//     });
+//       const blockHash = base_decode(block.header.hash);
+//       const publicKey = PublicKey.from(accessKey.public_key);
+//       const nonce = accessKey.access_key.nonce + nonceOffset;
+
+//     return createTransaction(
+//             window.walletConnection.account().accountId,
+//             publicKey,
+//             receiverId,
+//             nonce,
+//             actions,
+//             blockHash
+          
+//     );
+    
+// };
+
+// export const signAndSendMultipleTransactions = async (
+//       transactions,
+//       callbackUrl
+    
+// ) => {
+//     const nearTransactions = await Promise.all(
+//             transactions.map((tx, i) =>
+//                 createNewTransaction({
+//                             receiverId: tx.receiverId,
+//                             nonceOffset: i + 1,
+//                             actions: tx.functionCalls.map((fc) =>
+//                                       functionCall(fc.methodName, fc.args, fc.gas, fc.attachedDeposit)
+//                                     ),
+                          
+//                 })
+//                 )
+          
+//     );
+
+//     return window.walletConnection.requestSignTransactions({
+//             transactions: nearTransactions,
+//             callbackUrl,
+          
+//     });
+    
+// };
+
 export interface ZombieNFT {
     token_id: string;
     card_rarity: string;

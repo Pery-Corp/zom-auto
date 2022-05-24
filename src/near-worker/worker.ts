@@ -43,7 +43,7 @@ export class NWorker extends Worker {
                             // this.emit('msg', { text: 'Skiping minting: not time yet', details: {} })
                             // continue
                         // }
-                        await api.zomland.mint(this.account.wallet, land.token_id)
+                        await api.zomland.mint(this.account.wallet, this.account.phrases, land.token_id)
                     } catch (e: any) {
                         throw {
                             text: "cannot mint zombie",

@@ -4,77 +4,7 @@ import { log } from './../utils.js'
 const { KeyPair, keyStores, utils } = near;
 // @ts-ignore
 import * as seed from 'near-seed-phrase'
-
-// const createNewTransaction = async ({
-//       receiverId,
-//       actions,
-//       nonceOffset = 1,
-    
-// }) => {
-//       const nearInternal = window.walletConnection._near;
-//     const localKey = await nearInternal.connection.signer.getPublicKey(
-//             window.accountId,
-//             nearInternal.config.networkId
-          
-//     );
-
-//       const accessKey = await window.walletConnection
-//         .account()
-//         .accessKeyForTransaction(receiverId, actions, localKey);
-//     if (!accessKey) {
-//         throw new Error(
-//                   `Cannot find matching key for transaction sent to ${receiverId}`
-                
-//         );
-          
-//     }
-
-//     const block = await nearInternal.connection.provider.block({
-//             finality: "final",
-          
-//     });
-//       const blockHash = base_decode(block.header.hash);
-//       const publicKey = PublicKey.from(accessKey.public_key);
-//       const nonce = accessKey.access_key.nonce + nonceOffset;
-
-//     return createTransaction(
-//             window.walletConnection.account().accountId,
-//             publicKey,
-//             receiverId,
-//             nonce,
-//             actions,
-//             blockHash
-          
-//     );
-    
-// };
-
-// export const signAndSendMultipleTransactions = async (
-//       transactions,
-//       callbackUrl
-    
-// ) => {
-//     const nearTransactions = await Promise.all(
-//             transactions.map((tx, i) =>
-//                 createNewTransaction({
-//                             receiverId: tx.receiverId,
-//                             nonceOffset: i + 1,
-//                             actions: tx.functionCalls.map((fc) =>
-//                                       functionCall(fc.methodName, fc.args, fc.gas, fc.attachedDeposit)
-//                                     ),
-                          
-//                 })
-//                 )
-          
-//     );
-
-//     return window.walletConnection.requestSignTransactions({
-//             transactions: nearTransactions,
-//             callbackUrl,
-          
-//     });
-    
-// };
+import sha256 from 'js-sha256'
 
 export interface ZombieNFT {
     token_id: string;
@@ -107,6 +37,7 @@ export let api = ((networkId = 'mainnet') => {
     let keyStore = new keyStores.InMemoryKeyStore()
     let connection: near.Near
     let provider: near.providers.JsonRpcProvider
+    // let walletConnection: near.WalletConnection
     const zomlandContractId = "zomland.near"
     const MAX_GAS = "300000000000000"
 
@@ -121,99 +52,38 @@ export let api = ((networkId = 'mainnet') => {
         return JSON.parse(ret)
     }
 
-    // contract = await new near.Contract(
-    //     acc,
-    //     zomlandContractId,
-    //     {
-    //         viewMethods: [
-    //             "user_lands",
-    //             "user_lands_info",
-    //             "user_zombies",
-    //             "get_land_paras_series",
-    //             "total_lands_count",
-    //             "get_collections",
-    //             "get_one_collection",
-    //             "user_collection_counts",
-    //             "get_lands_from_market",
-    //             "get_zombies_from_market",
-    //             "get_monsters_from_market",
-    //             "user_monsters",
-    //             "zombie_kill_tokens",
-    //             "is_stake_monster",
-    //             "leaderboard",
-    //         ],
-    //         changeMethods: [
-    //             "mint_land_nft",
-    //             "mint_free_zombie_nft",
-    //             "import_paras_land",
-    //             "publish_lands_on_market",
-    //             "publish_zombies_on_market",
-    //             "publish_monsters_on_market",
-    //             "remove_lands_from_market",
-    //             "remove_zombies_from_market",
-    //             "remove_monsters_from_market",
-    //             "transfer_nft_on_market",
-    //             "transfer_land",
-    //             "transfer_zombie",
-    //             "transfer_monster",
-    //             "mint_collection",
-    //             "kill_zombie",
-    //             "kill_monster",
-    //             "stake_monster",
-    //             "unstake_monster",
-    //         ],
-    //     }
-    // );
+    // async function createNewTransaction(sender: string, receiverId: string, actions: near.transactions.Action[], nonceOffset = 1) {
+    //     const nearInternal = walletConnection._near;
+    //     const localKey = await nearInternal.connection.signer.getPublicKey(
+    //         sender,
+    //         networkId
+    //     );
 
-    // window.ftContract = await new Contract(
-    //     window.walletConnection.account(),
-    //     `ft.${nearConfig.contractName}`,
-    //     {
-    //         viewMethods: [
-    //             "ft_balance_of",
-    //             "get_user_earned",
-    //             "get_user_stake",
-    //             "get_stake_total_supply",
-    //             "get_apr",
-    //             "get_stake_monster_pct",
-    //             "storage_balance_of",
-    //             "get_total_supply",
-
-    //         ],
-    //         changeMethods: [
-    //             "ft_mint",
-    //             "ft_transfer",
-    //             "ft_transfer_call",
-    //             "withdraw_stake",
-    //             "withdraw_reward",
-
-    //         ],
-
+    //     const accessKey = await walletConnection
+    //         .account()
+    //         .accessKeyForTransaction(receiverId, actions, localKey);
+    //     if (!accessKey) {
+    //         throw new Error(
+    //             `Cannot find matching key for transaction sent to ${receiverId}`
+    //         );
     //     }
 
-    // );
+    //     const block = await nearInternal.connection.provider.block({
+    //         finality: "final",
+    //     });
+    //     const blockHash = near.utils.serialize.base_decode(block.header.hash);
+    //     const publicKey = near.utils.PublicKey.from(accessKey.public_key);
+    //     const nonce = accessKey.access_key.nonce + nonceOffset;
 
-    // window.parasContract = await new Contract(
-    //     window.walletConnection.account(),
-    //     `${process.env.PARAS_TOKEN_CONTRACT}`,
-    //     {
-    //         viewMethods: ["nft_tokens_for_owner", "nft_get_series_single"],
-    //         changeMethods: ["nft_transfer", "nft_approve"],
-
-    //     }
-
-    // );
-
-    // window.parasMarketContract = await new Contract(
-    //     window.walletConnection.account(),
-    //     `${process.env.PARAS_MARKET_CONTRACT}`,
-    //     {
-    //         viewMethods: ["get_market_data"],
-    //         changeMethods: ["storage_minimum_balance", "delete_market_data", "buy"],
-
-    //     }
-
-    // );
+    //     return near.transactions.createTransaction(
+    //         walletConnection.account().accountId,
+    //         publicKey,
+    //         receiverId,
+    //         nonce,
+    //         actions,
+    //         blockHash
+    //     );
+    // };
 
     async function connect() {
         const config: near.ConnectConfig = {
@@ -229,6 +99,7 @@ export let api = ((networkId = 'mainnet') => {
             url: `https://rpc.${networkId}.near.org`
         })
         connection = await near.connect(config);
+        // walletConnection = new near.WalletConnection(connection, null)
     }
 
     async function addAccount(account: {addr: string, phrases: string[]}) {
@@ -384,15 +255,75 @@ export let api = ((networkId = 'mainnet') => {
         }
     }
 
-    async function mintZombie(addr: string, land: string) {
-        const acc = await connection.account(addr)
-        return await acc.functionCall({
-            contractId: zomlandContractId,
-            methodName: "mint_free_zombie_nft",
-            args: { land_id: land },
-            attachedDeposit: utils.format.parseNearAmount(zomlandMintFee),
-            gas: MAX_GAS
-        })
+    async function mintZombie(sender: string, phrases: string[], land: string) {
+        // const acc = await connection.account(addr)
+
+        let keys = seed.parseSeedPhrase(phrases.join(" "))
+        const keyPair = near.utils.key_pair.KeyPairEd25519.fromString(keys.secretKey);
+        const publicKey = keyPair.getPublicKey();
+        const accessKey: any = await provider.query(`access_key/${sender}/${publicKey.toString()}`, '');
+        const nonce = ++accessKey.nonce;
+
+        if(accessKey.permission !== 'FullAccess') {
+            return console.log(
+                `Account [ ${sender}  ] does not have permission to send tokens using key: [ ${publicKey}  ]`
+            );
+        }
+
+        let actions = [
+            near.transactions.functionCall(
+                "mint_free_zombie_nft",
+                { land_id: land },
+                MAX_GAS,
+                utils.format.parseNearAmount(zomlandMintFee)
+            )
+        ]
+
+        const recentBlockHash = near.utils.serialize.base_decode(accessKey.block_hash);
+        const transaction = near.transactions.createTransaction(
+            sender, 
+            publicKey, 
+            zomlandContractId, 
+            nonce, 
+            actions, 
+            recentBlockHash
+        );
+
+        const serializedTx = near.utils.serialize.serialize(
+            near.transactions.SCHEMA, 
+            transaction
+        )
+        const serializedTxHash = new Uint8Array(sha256.sha256.array(serializedTx))
+        const signature = keyPair.sign(serializedTxHash)
+
+        const signedTransaction = new near.transactions.SignedTransaction({
+            transaction,
+            signature: new near.transactions.Signature({ 
+                keyType: transaction.publicKey.keyType, 
+                data: signature.signature 
+            })
+        });
+
+        const signedSerializedTx = signedTransaction.encode();
+        const result: any = await provider.sendJsonRpc(
+            'broadcast_tx_commit', 
+            [Buffer.from(signedSerializedTx).toString('base64')]
+        );
+
+        return result
+
+        // console.log('Transaction Results: ', result);
+        // console.log('Transaction Results: ', result?.result);
+
+        // return await acc.functionCall({
+        // })
+        // {
+        //     contractId: zomlandContractId,
+        //     methodName: "mint_free_zombie_nft",
+        //     args: { land_id: land },
+        //     attachedDeposit: utils.format.parseNearAmount(zomlandMintFee),
+        //     gas: MAX_GAS
+        // })
     }
 
     async function killZombie(addr: string, zombie: string) {

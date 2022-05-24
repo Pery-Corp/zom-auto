@@ -33,8 +33,8 @@ class Controller extends EventEmitter<{"done": void}> {
         this.overall++
         const lock = await this.mtx.acquire();
         try {
-            w.on('done', (e) => this.onWorkDone(w, e))
             w.on('msg', (arg) => {
+            w.on('done', (e) => this.onWorkDone(w, e))
                 let { text, details } = arg
                 log(text, details)
                 this.progress.interrupt(text + '\t' + details.toString())
@@ -64,15 +64,14 @@ class Controller extends EventEmitter<{"done": void}> {
                 this.workers.values().next().value.run()
             }
         } finally {
-            lock()
             this.progress.tick({
                 ok: this.ok,
                 err: this.err
             })
             if (this.workers.size === 0) {
-                log.echo("done")
                 this.emit("done")
             }
+            lock()
         }
     }
 

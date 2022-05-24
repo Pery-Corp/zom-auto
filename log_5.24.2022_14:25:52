@@ -1,0 +1,20 @@
+[2:25:52 PM] - 
+Starting normal mode 
+Worker: browser 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: none 
+	burn: false 
+	headless: true 
+Overall accounts: 441 
+	Without determined wallet: 0 
+	Without determined mint schedule: 426 
+Cuncurrency: 1 
+Proxy count setted: 10
+[2:25:52 PM] - Start processing 431 of 441
+[2:26:21 PM] - Logined
+[2:26:23 PM] - cannot mint zomby: Not time yet, to mint 0h 01m 25s [object Object]
+[2:26:30 PM] - browser this.page error: Error: ReferenceError: recaptcha is not defined
+    at https://www.recaptcha.net/recaptcha/enterprise/anchor?ar=1&k=6LcpJ3EcAAAAAFgA-nixKFNGWMo9IG9FQhH4XjSY&co=aHR0cHM6Ly93YWxsZXQubmVhci5vcmc6NDQz&hl=en&v=M-QqaF9xk6BpjLH22uHZRhXt&size=invisible&cb=w4q3raym3e04:183:7 account: 448af8cce3188c45dbf802aa5443c24b7e466c4de78bcde4b6a83891968c845c [object Object]
+[2:26:30 PM] - cannot mint zomby: basic errorno zomby [object Object]

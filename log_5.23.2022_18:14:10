@@ -1,0 +1,21 @@
+[6:14:10 PM] - 
+Starting normal mode 
+Worker: browser 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: none 
+	burn: false 
+	headless: true 
+Overall accounts: 441 
+	Without determined wallet: 0 
+	Without determined mint schedule: 429 
+Cuncurrency: 1 
+Proxy count setted: 10
+[6:14:10 PM] - Start processing 435 of 441
+[6:14:39 PM] - Logined
+[6:15:02 PM] - Zomby mint success [object Object]
+[6:15:29 PM] - Logined
+[6:15:51 PM] - Zomby mint success [object Object]
+[6:16:18 PM] - Logined
+[6:16:38 PM] - Zomby mint success [object Object]

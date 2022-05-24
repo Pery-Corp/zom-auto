@@ -1,0 +1,66 @@
+[3:03:07 PM] - 
+Starting normal mode 
+Worker: near 
+Mother account: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+NEAR provider: 110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150 
+Mode: 
+	transfer: none 
+	burn: false 
+	headless: true 
+Overall accounts: 441 
+	Without determined wallet: 0 
+	Without determined mint schedule: 422 
+Cuncurrency: 1 
+Proxy count setted: 10
+[3:03:07 PM] - Start processing 428 of 441
+[3:03:25 PM] - cannot mint zombie Error: The account  wouldn't have enough balance to cover storage, required to have 55437124299001934088138 yoctoNEAR more
+[3:03:33 PM] - cannot mint zombie Error: The account  wouldn't have enough balance to cover storage, required to have 1692037605464134088127 yoctoNEAR more
+[3:03:37 PM] - cannot mint zombie Error: Sender 46f71ad402b8b81bcc80175e3a35a22e8c52d0e90f8ff9d296fc7c5af1f277da does not have enough balance 0.142566141356180999999999 for operation costing 0.190272455688835334088124
+[3:03:38 PM] - cannot mint zombie Error: Sender 7b42f62948553aa16022aea44462cf6ff97abe68b1a2456315a9329e6f19a93b does not have enough balance 0.1456845205443587 for operation costing 0.190272455688835334088124
+[3:03:39 PM] - cannot mint zombie Error: Sender a6d96a374e96bdd3f5ce29f4809760792ef14936b1e3cf2239e418f4491a1fc2 does not have enough balance 0.1457316582491853 for operation costing 0.190272455688835334088124
+[3:03:39 PM] - cannot mint zombie Error: Sender 3f6ef45507ee2c4b01bb79db5c6a74304481184e0a76ffaaa93be2b306104c03 does not have enough balance 0.140912081236787299999999 for operation costing 0.190272455688835334088124
+[3:03:40 PM] - cannot mint zombie Error: Sender 0847b4f35bfc47a7fc3d2709e93a16465f7f540fabf70464df3c74fc2d42497b does not have enough balance 0.142815982550984299999999 for operation costing 0.190272455688835334088124
+[3:03:41 PM] - cannot mint zombie Error: Sender 81597c3f1dbd64ed0d66531f2b0245cc3de8a1f2812286e809a58c46e969d84c does not have enough balance 0.142520727996027999999999 for operation costing 0.190272455688835334088124
+[3:03:41 PM] - cannot mint zombie Error: Sender db17ea7e4f212c57a8aa91f5c5a94a9be6d1e805fd5cab17a6d3d3f339aa4b87 does not have enough balance 0.142655052298712699999999 for operation costing 0.190272455688835334088124
+[3:03:42 PM] - cannot mint zombie Error: Sender 81c7ebcdbd2d6b5e39989f398f386c5c4bce063ccd1e6c55c2d23bc44d4f1c44 does not have enough balance 0.142889815734596199999999 for operation costing 0.190272455688835334088124
+[3:03:43 PM] - cannot mint zombie Error: Sender c5abc6659f4655b969376ff2025ac56097038069381cb6325bf24b1a5c0b8bc3 does not have enough balance 0.142845959688286499999999 for operation costing 0.190272455688835334088124
+[3:03:44 PM] - cannot mint zombie Error: Sender a93ef741e55e0af5d18110dce145ca5e6a3048523ed7bee78c2255b3e646bdf8 does not have enough balance 0.142910742872545499999999 for operation costing 0.190272455688835334088124
+[3:03:44 PM] - cannot mint zombie Error: Sender 5f68ad36ca71e5069333b9b31216c4b2e7e1fc29c75b98c69d57f27fd549e283 does not have enough balance 0.142906332412845999999999 for operation costing 0.190272455688835334088124
+[3:03:45 PM] - cannot mint zombie Error: Sender 23ad8e0696fb0a1c8f079dad16a52b161ffe48f22cb970c458938cf521045cb8 does not have enough balance 0.142627032458946499999999 for operation costing 0.190272455688835334088124
+[3:03:46 PM] - cannot mint zombie Error: Sender 0ef9e2d3a98b0c10af59d473ff025969890299272c5f55f959d1ea20c24b6c2c does not have enough balance 0.142084334230487499999999 for operation costing 0.190272455688835334088124
+[3:03:46 PM] - cannot mint zombie Error: Sender 58ae5fd3240e70982cc21a6719893b34d38e62dfb888ac45fda5d8d48a960efd does not have enough balance 0.142873922699532299999999 for operation costing 0.190272455688835334088124
+[3:03:47 PM] - cannot mint zombie Error: Sender bdcb60e55f44023979c098e0d2e8ce317d15f842faa0befa37896d0c6dfe6525 does not have enough balance 0.142168991631515099999999 for operation costing 0.190272455688835334088124
+[3:03:48 PM] - cannot mint zombie Error: Sender 357d71e1ab2cc684d8be997392a1d534c01456aafaebb9be0ec35d1ef7e8a934 does not have enough balance 0.142786534487806599999999 for operation costing 0.190272455688835334088124
+[3:03:48 PM] - cannot mint zombie Error: Sender 444824d5e582f7d4f11876ef4a19e0958f5f67651a48d6e768ac6a17c1cec263 does not have enough balance 0.129865561965925799999999 for operation costing 0.190272455688835334088124
+[3:03:49 PM] - cannot mint zombie Error: Sender b48dfded5d4fae962ee68fbf2a326a5f20cfa50352385616105bc114073803af does not have enough balance 0.142791657056018299999999 for operation costing 0.190272455688835334088124
+[3:03:50 PM] - cannot mint zombie Error: Sender f0f875da6a2733488f22c3793f79f97127853cc58543baf0542341eaf0ef9a06 does not have enough balance 0.143068155914808699999999 for operation costing 0.190272455688835334088124
+[3:03:50 PM] - cannot mint zombie Error: Sender f6071fdd38c1215690a22297007af6554c505bd2f6bce09420590bb8b1fbef5e does not have enough balance 0.142090398529582299999999 for operation costing 0.190272455688835334088124
+[3:03:51 PM] - cannot mint zombie Error: Sender 03fb9bcdc2133d1ec9ff348146b747b6599ef79d04f67b1e53ca0ad0292054f6 does not have enough balance 0.142843448789078599999999 for operation costing 0.190272455688835334088124
+[3:03:52 PM] - cannot mint zombie Error: Sender 97de0351b6107a70c0ec9218cfacf1c696e3126b14d8e6046bfd694a3c26e2d3 does not have enough balance 0.142763837248161599999999 for operation costing 0.190272455688835334088124
+[3:03:52 PM] - cannot mint zombie Error: Sender 1543e29cb30a81e8bad7652a39da488ad1ac9819cf97b51cf65cab8360e1b7e0 does not have enough balance 0.142819177106635699999999 for operation costing 0.190272455688835334088124
+[3:03:53 PM] - cannot mint zombie Error: Sender f58bacf51fa2e5781021c547701049e1c1d6a93bc7b655c2bf01f27023780522 does not have enough balance 0.141832449128030999999999 for operation costing 0.190272455688835334088124
+[3:03:54 PM] - cannot mint zombie Error: Sender 4c0997a7ab3c0aab2abb659838a6bfbe8d41b0b8eab08440e2d8c687c351286c does not have enough balance 0.142199585004841799999999 for operation costing 0.190272455688835334088124
+[3:03:54 PM] - cannot mint zombie Error: Sender 741ab796469f2a612d236fa15a478a172a1404abe3ce0b6536df02e7e0377817 does not have enough balance 0.142963575198745499999999 for operation costing 0.190272455688835334088124
+[3:03:55 PM] - cannot mint zombie Error: Sender c78b930286e9b34ab262036aa4885157d280c27e2ba2f51f13415d8c77b6e71e does not have enough balance 0.142738097210661499999999 for operation costing 0.190272455688835334088124
+[3:03:56 PM] - cannot mint zombie Error: Sender 4145d0d905c476437c210524f01c1a65e0c5044aa72e5e71a3a363f65804b5ee does not have enough balance 0.143044598229348299999999 for operation costing 0.190272455688835334088124
+[3:03:56 PM] - cannot mint zombie Error: Sender d0064adee5251a467d82cd35c8707942845cafec0d84fa62a4e0bb7953b21a51 does not have enough balance 0.142648922477444799999999 for operation costing 0.190272455688835334088124
+[3:03:57 PM] - cannot mint zombie Error: Sender b84c6d770c8d83674acf6fe5d44d73fef11d2487c3f40586ea6f137e9da0c763 does not have enough balance 0.142100384816157799999999 for operation costing 0.190272455688835334088124
+[3:03:58 PM] - cannot mint zombie Error: Sender 40e54517085dd8aab6e4bb6acd4369127241d68f1cc87dd078e28798ee5b4364 does not have enough balance 0.142694276393755099999999 for operation costing 0.190272455688835334088124
+[3:03:58 PM] - cannot mint zombie Error: Sender f965c5858a3b14bae458bf4a7691a9659fa06b0551095b134d931f6502094c4f does not have enough balance 0.142785968596818499999999 for operation costing 0.190272455688835334088124
+[3:03:59 PM] - cannot mint zombie Error: Sender 655986651b60e93bc174a32120fe2d32a7fc3c2b01691baea8d3bac52e6c906d does not have enough balance 0.142940366275055499999999 for operation costing 0.190272455688835334088124
+[3:03:59 PM] - cannot mint zombie Error: Sender 8060871ac26876a42fd9b265e29e29cececb4a3cb25b4f0f7b2a27dd95b221bd does not have enough balance 0.141693837918731799999999 for operation costing 0.190272455688835334088124
+[3:04:00 PM] - cannot mint zombie Error: Sender 2cf958d993a5a3cb00c80676f90e6b7b587fe443d8c0d05cc03d0593b70090af does not have enough balance 0.142147883225469299999999 for operation costing 0.190272455688835334088124
+[3:04:01 PM] - cannot mint zombie Error: Sender 2219dd6b5741740ce89b3542e9d23baf264aa9fd730b5b9dba5a0a7ccca97a0f does not have enough balance 0.142814664500339099999999 for operation costing 0.190272455688835334088124
+[3:04:01 PM] - cannot mint zombie Error: Sender 0d9b416e5df0ac612e86cea24acf0a487a64d588b3a18bdea771bac8ed2c84d8 does not have enough balance 0.142877553859281699999999 for operation costing 0.190272455688835334088124
+[3:04:02 PM] - cannot mint zombie Error: Sender a85c6b3ea14fa4007e402924c9450415d1f1908582ed1a0e8fed80b771dcfa0a does not have enough balance 0.143080345533653799999999 for operation costing 0.190272455688835334088124
+[3:04:03 PM] - cannot mint zombie Error: Sender 7e340512af54a2bfe8e5698970d29eaa322b40d16ddde3dd62f145e89b3a7589 does not have enough balance 0.143016150060746299999999 for operation costing 0.190272455688835334088124
+[3:04:03 PM] - cannot mint zombie Error: Sender 415fc04747c0ef136dee735b3f6e7d924041da2e9bdca02fbbccb972cd9c40c6 does not have enough balance 0.141964998094573999999999 for operation costing 0.190272455688835334088124
+[3:04:04 PM] - cannot mint zombie Error: Sender c4c9bff6d665ba5c4bcac1051e74932c4bee6966c58f95b8a5baf5c28fedaf7f does not have enough balance 0.142783988820877699999999 for operation costing 0.190272455688835334088124
+[3:04:05 PM] - cannot mint zombie Error: Sender eb8395d4829ba7893e52c8e1f7d8d38a8179407036fd84499131c8df85a96ad4 does not have enough balance 0.143069588022058799999999 for operation costing 0.190272455688835334088124
+[3:04:05 PM] - cannot mint zombie Error: Sender a903fb0ed3c9af0a9ff78b6c4c06f834e81e7184a02b9bfe4d46e4720b232880 does not have enough balance 0.142667842664649999999999 for operation costing 0.190272455688835334088124
+[3:04:06 PM] - cannot mint zombie Error: Sender 5be04a62a058b4c28a9afb2c805ef242940d09ebb6c361d4a139093e127708e4 does not have enough balance 0.141760679874170899999999 for operation costing 0.190272455688835334088124
+[3:04:07 PM] - cannot mint zombie Error: Sender 0c02a40286aba56851c7f1e4b06dbe0b85ac5f005f4798a4aa3f367aef4261ae does not have enough balance 0.141918285028452199999999 for operation costing 0.190272455688835334088124
+[3:04:07 PM] - cannot mint zombie Error: Sender d62ba1228bff3382cac8f076daeda5096666df06dc56358a02d624105f1467a9 does not have enough balance 0.142725771520286099999999 for operation costing 0.190272455688835334088124
+[3:04:08 PM] - cannot mint zombie Error: Sender cf9d5d18ac93fc1c49f0e2f9e7ce10752c428a1d4190f3800d222ee328976c19 does not have enough balance 0.142987410570232199999999 for operation costing 0.190272455688835334088124
+[3:04:09 PM] - cannot mint zombie Error: Sender e3bededad0a6d4edc1ebf65622eca8372a02aedb8d768f31c56e8434ca64dd45 does not have enough balance 0.143012512724359499999999 for operation costing 0.190272455688835334088124
+[3:04:09 PM] - cannot mint zombie Error: Sender f63bfb76b5ac0fcd6484eef1cdde91ba620d1c939f3c5ecb169bd7545d323ff7 does not have enough balance 0.142726967253200099999999 for operation costing 0.190272455688835334088124

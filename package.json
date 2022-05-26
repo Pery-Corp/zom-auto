@@ -12,6 +12,7 @@
         "es": "^0.8.0",
         "es6": "^0.0.7",
         "js-sha256": "^0.9.0",
+        "multi-progress-bars": "^4.2.3",
         "near-api-js": "^0.44.2",
         "progress": "^2.0.3",
         "puppeteer": "^14.1.0",
@@ -25,9 +26,9 @@
     "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "tsc --build --pretty",
-        "postbuild": "cp -Ru node_modules dist/node_modules && tsc --removeComments",
-        "go": "node dist/main.js"
+        "build": "bash build.sh",
+        "near": "node dist/main.js --worker='near'",
+        "browser": "node dist/main.js --worker='browser'"
     },
     "devDependencies": {
         "@tsconfig/esm": "^1.0.0",

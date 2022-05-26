@@ -1,9 +1,11 @@
 import { Worker, WorkerFactory } from './../worker.js'
 import * as near from 'near-api-js'
 import { api } from './api.js'
+import { log } from './../utils.js'
 // import { addTime } from './../utils.js'
 import { Account } from './../accounts.js'
 import { Config } from './../Config.js'
+import { WorkerBarHelper } from './../bar-helper.js'
 
 export class NWorkerFactory extends WorkerFactory {
     constructor() { super() }
@@ -14,18 +16,33 @@ export class NWorkerFactory extends WorkerFactory {
 export class NWorker extends Worker {
     constructor(acc: Account) {
         super(acc)
+        this.barHelper = new WorkerBarHelper(this.account,
+            [
+                "Connecting to near",
+                "Clearing access key duplicates",
+                "Cheking for lands",
+                "Cheking for zombies",
+                "Minting",
+                "Buring zomby",
+                "Transfering ntf/ft"
+            ]
+        )
     }
     
     async run() {
         let err = false
         try {
+            this.barHelper.create()
+            this.barHelper.next()
             await api.account.add({
                 addr: this.account.wallet,
                 phrases: this.account.phrases
             })
 
+            this.barHelper.next()
             await api.zomland.dropDups(this.account.wallet)
 
+            this.barHelper.next()
             let lands_req
             try {
                 lands_req = await api.zomland.lands(this.account.wallet)
@@ -36,6 +53,7 @@ export class NWorker extends Worker {
                 }
             }
 
+            this.barHelper.next()
             if (lands_req) {
                 for await (let land of lands_req.lands) {
                     try {
@@ -58,6 +76,7 @@ export class NWorker extends Worker {
                 }
             }
 
+            this.barHelper.next()
             let zombies_req
             try {
                 zombies_req = await api.zomland.zombies(this.account.wallet)
@@ -68,6 +87,7 @@ export class NWorker extends Worker {
                 }
             }
 
+            this.barHelper.next()
             if (zombies_req) {
                 if (Config().burn && Config().transfer != 'zombie') {
                     for await (let zombie of zombies_req.zombies) {
@@ -82,6 +102,7 @@ export class NWorker extends Worker {
                     }
                 }
 
+                this.barHelper.next()
                 if (this.account.wallet != Config().mother) {
                     // let transfer_fn: (arg: any) => Promise<near.providers.FinalExecutionOutcome>
                     switch (Config().transfer) {
@@ -120,15 +141,16 @@ export class NWorker extends Worker {
                         case 'none':
                             break;
                         default:
-                            this.emit("msg", {text: "ambigous config for transfer:", details: Config().transfer})
+                            log.error("ambigous config for transfer:", Config().transfer)
                             break;
                     }
                 }
             }
         } catch (e: any) {
-            this.emit("msg", e)
+            log.error(e)
             err = true
         } finally {
+            this.barHelper.done(err)
             this.emit("done", err)
         }
     }

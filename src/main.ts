@@ -1,7 +1,5 @@
 // import { Worker as nodeWorker } from 'worker_threads';
 import { existsSync } from 'fs'
-import progress from 'progress'
-import chalk from 'chalk'
 import { parse } from 'ts-command-line-args';
 import { Mutex } from 'async-mutex'
 import { Config } from './Config.js'
@@ -10,8 +8,10 @@ import { BWorkerFactory } from './browser-worker/worker.js'
 import { NWorkerFactory } from './near-worker/worker.js'
 import { Worker, WorkerFactory } from './worker.js'
 import { sleep, log, addTime } from './utils.js'
-import { accounts, Account } from './accounts.js'
+import { accounts, db, Account } from './accounts.js'
 import { EventEmitter } from './EventEmitter.js'
+import { createMainProgress, updateMainProgress } from './bar-helper.js'
+// import { addParentTask, updateParentTask, doneReferalTask } from './libs/bar-helper.js'
 
 class Controller extends EventEmitter<{"done": void}> {
     private workers: Set<Worker>;
@@ -21,8 +21,6 @@ class Controller extends EventEmitter<{"done": void}> {
     private overall = 0;
     private ok = 0;
     private err = 0;
-    // @ts-ignore
-    private progress: progress
 
     constructor(private cuncurrency: number, private factory: WorkerFactory) {
         super()
@@ -34,12 +32,7 @@ class Controller extends EventEmitter<{"done": void}> {
         this.overall++
         const lock = await this.mtx.acquire();
         try {
-            w.on('msg', (arg) => {
             w.on('done', (e) => this.onWorkDone(w, e))
-                let { text, details } = arg
-                log(text, details)
-                this.progress?.interrupt(text + '\t' + details?.toString())
-            })
             if (this.active < this.cuncurrency) {
                 this.active++
                 w.run()
@@ -54,10 +47,8 @@ class Controller extends EventEmitter<{"done": void}> {
         const lock = await this.mtx.acquire();
         try {
             if (err) {
-                this.progress?.interrupt(chalk.red("Failed"))
                 this.err++
             } else {
-                this.progress?.interrupt(chalk.green("Success"))
                 this.ok++
             }
             this.workers.delete(w)
@@ -65,10 +56,7 @@ class Controller extends EventEmitter<{"done": void}> {
                 this.workers.values().next().value.run()
             }
         } finally {
-            this.progress?.tick({
-                ok: this.ok,
-                err: this.err
-            })
+            updateMainProgress(this.err+this.ok, this.overall, this.err)
             if (this.workers.size === 0) {
                 this.emit("done")
             }
@@ -76,49 +64,50 @@ class Controller extends EventEmitter<{"done": void}> {
         }
     }
 
-    async process() {
-        this.overall = 0
-        this.ok = 0
-        this.err = 0
-        await this.factory.init()
-        let accs = accounts.getRange(0, accounts.count);
+    async process(): Promise<Date> {
         let minTimeToMint = addTime(24, 0, 0).getTime();
-        for (let a of accs) {
-            let nextMintTime = addTime(24, 0, 0, new Date(a.lastMint)).getTime()
-            if (nextMintTime <= new Date().getTime()) {
-                await this.addWork(this.factory.produce(a))
-            } else {
+        let accs = (await db.accounts.findMany((a) => {
+            let nextMintTime = addTime(24, 0, 0, new Date(<number>a.lastMint)).getTime()
+            if (nextMintTime <= new Date().getTime() || a.lastMint == 0) {
+                return true
+            } else if (a.lastMint != 0) {
                 minTimeToMint = Math.min(minTimeToMint, nextMintTime)
+                return false
+            } else {
+                return false
             }
+        })).map(a => new Account(a))
+
+        this.overall = 0
+        this.err = 0
+        this.ok = db.accounts.documents.length-accs.length
+        createMainProgress(this.ok, db.accounts.documents.length)
+
+        await this.factory.init()
+        log.echo("Initializing workers queue")
+        for (let a of accs) {
+            await this.addWork(this.factory.produce(a))
         }
 
-        log.echo("Start processing", this.workers.size, "of", accounts.count)
+        if (this.workers.size === 0) {
+            this.emit("done")
+        }
 
-        this.progress = new progress("Processing [:bar] :ok/:err/:total :percent :etas rate :rate", {
-            complete: '=',
-            incomplete: '-',
-            head: '>',
-            width: process.stdout.columns,
-            total: this.overall,
+        let waitDonePromise: Promise<Date> = new Promise(resolve => {
+            this.on("done", () => {
+                resolve(new Date(minTimeToMint))
+            })
         })
 
-        this.progress?.tick(0)
-
-        sleep(100).then(() => {
-            if (this.workers.size === 0) {
-                this.emit("done")
-            }
-        })
-
-        return new Date(minTimeToMint)
+        return await waitDonePromise
     }
 }
 
 interface opts {
     importPath?: string,
-    concurrency?: number,
-    mode?: string,
-    worker?: string,
+        concurrency?: number,
+        mode?: string,
+        worker?: string,
 }
 
 class App {
@@ -128,6 +117,60 @@ class App {
 
     constructor() { }
 
+    private async import(path: any) {
+        if (path) {
+            log.echo("Importing accounts from:", path)
+            await accounts.importPhrases(path)
+        } else {
+            if (Config().import != '' && existsSync(Config().import)) {
+                log.echo("Importing accounts from:", Config().import)
+                await accounts.importPhrases(Config().import)
+            }
+        }
+    }
+
+    private async setCuncurrency(val: any) {
+        this.concurrency = val ?? Config().concurrency
+    }
+
+    private setWorker(worker: any) {
+        if (worker) {
+            if (worker === "browser" || worker === "near") {
+                this.worker = worker
+            } else {
+                throw "Unknown worker " + worker
+            }
+        }
+    }
+
+    private setMode(mode: any) {
+        if (mode === "provide") {
+            this.mode = "provide"
+
+            log.echo("Starting provide mode")
+            log.echo("NEAR Provider:", Config().NEARProvider.addr)
+            log.echo("Send amount:", "Noet implemented, sending 0.1 NEAR")
+            log.echo("Overall accounts:", accounts.count)
+        } else {
+            this.mode = "normal"
+
+            let accCount: number = accounts.count;
+
+            log.echo("\nStarting normal mode",
+                "\nWorker:", this.worker,
+                "\nMother account:", Config().mother,
+                "\nNEAR provider:", Config().NEARProvider.addr,
+                "\nMode:",
+                "\n\ttransfer:", Config().transfer,
+                "\n\tburn:", Config().burn,
+                "\n\theadless:", Config().headless,
+                "\nOverall accounts:", accCount,
+                "\nCuncurrency:", this.concurrency,
+                "\nProxy count setted:", Config().proxy.length)
+        }
+
+    }
+
     async init() {
         let argv = parse<opts>({
             importPath:  { type: String, alias: 'i', optional: true },
@@ -135,58 +178,11 @@ class App {
             mode:        { type: String, alias: 'p', optional: true },
             worker:      { type: String, alias: 'w', optional: true },
         })
-        if (argv.importPath) {
-                log.echo("Importing accounts from:", argv.importPath)
-            await accounts.importPhrases(argv.importPath)
-        } else {
-            if (Config().import != '' && existsSync(Config().import)) {
-                log.echo("Importing accounts from:", Config().import)
-                await accounts.importPhrases(Config().import)
-            }
-        }
-        if (argv.concurrency) {
-            this.concurrency = argv.concurrency
-        } else {
-            this.concurrency = Config().concurrency
-        }
 
-        if (argv.mode === "provide") {
-            this.mode = "provide"
-
-            log.echo("Starting provide mode")
-            log.echo("NEAR Provider:", Config().NEARProvider.addr)
-            log.echo("Send amount:", "Noet implemented, sending 0.1 NEAR")
-            log.echo("Overall accounts:", accounts.count)
-            log.echo("Accounts with determined wallet:", accounts.count - (await Account.findMany({ wallet: "" })).length)
-        } else {
-            this.mode = "normal"
-
-            if (argv.worker) {
-                if (argv.worker === "browser" || argv.worker === "near") {
-                    this.worker = argv.worker
-                } else {
-                    throw "Unknown worker " + argv.worker
-                }
-            }
-
-            let accCount: number = accounts.count;
-            let withoutWL = (await Account.findMany({ wallet: "" })).length
-            let withoutMintInfo = (await Account.findMany({ lastMint: 0 })).length
-
-            log.echo("\nStarting normal mode",
-            "\nWorker:", this.worker,
-            "\nMother account:", Config().mother,
-            "\nNEAR provider:", Config().NEARProvider.addr,
-            "\nMode:",
-                "\n\ttransfer:", Config().transfer,
-                "\n\tburn:", Config().burn,
-                "\n\theadless:", Config().headless,
-            "\nOverall accounts:", accCount,
-                "\n\tWithout determined wallet:", withoutWL,
-                "\n\tWithout determined mint schedule:", withoutMintInfo,
-            "\nCuncurrency:", this.concurrency,
-            "\nProxy count setted:", Config().proxy.length)
-        }
+        this.import(argv.importPath)
+        this.setCuncurrency(argv.concurrency)
+        this.setWorker(argv.worker)
+        this.setMode(argv.mode)
 
         return this
     }
@@ -211,19 +207,17 @@ class App {
         )
         let next = await ctl.process()
 
-        ctl.on("done", () => {
-            let now = new Date()
-            let sleepDate = new Date(next.getTime() - now.getTime())
-            let sleepMs = sleepDate.getUTCHours() * 60 * 60 * 1000 +
-                sleepDate.getUTCMinutes() * 60 * 1000 +
-                sleepDate.getUTCSeconds() * 1000
+        let now = new Date()
+        let sleepDate = new Date(next.getTime() - now.getTime())
+        let sleepMs = sleepDate.getUTCHours() * 60 * 60 * 1000 +
+            sleepDate.getUTCMinutes() * 60 * 1000 +
+            sleepDate.getUTCSeconds() * 1000
 
-            log.echo("Next mint at:", next, "going to sleep for:", sleepMs, "ms")
+        log.echo("Next mint at:", next, "going to sleep for:", sleepMs, "ms")
 
-            sleep(sleepMs).then(async () => {
-                log.echo("Going to next loop")
-                await this.runNormalMode()
-            })
+        sleep(sleepMs).then(async () => {
+            log.echo("Going to next loop")
+            await this.runNormalMode()
         })
     }
 

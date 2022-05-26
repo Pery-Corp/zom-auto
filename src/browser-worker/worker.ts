@@ -6,6 +6,8 @@ import { proxyRequest } from 'puppeteer-proxy'
 import { addTime } from './../utils.js'
 import puppeteer from 'puppeteer'
 import { Navigator } from './Navigator.js'
+import { WorkerBarHelper } from './../bar-helper.js'
+import { log } from './../utils.js'
 
 let browserOpts = () => {
     return {
@@ -30,20 +32,32 @@ export class BWorker extends  Worker {
 
     constructor(acc: Account) {
         super(acc)
+        this.barHelper = new WorkerBarHelper(this.account,
+            [
+                "Login",
+                "Minting",
+                "Buring zomby",
+                "Transfering ntf/ft"
+            ]
+        )
     }
 
     private async runWraper() {
+        this.barHelper.create()
         let err = false
         try {
             this.page = await this.prepare()
             await this.tryLogin()
 
+            this.barHelper.next()
             await this.tryMint()
 
-            if (Config().burn) {
+            this.barHelper.next()
+            if (Config().burn && Config().transfer != "zomby") {
                 await this.tryBurn()
             }
 
+            this.barHelper.next()
             if (Config().mother != this.account.wallet) {
                 switch (Config().transfer) {
                     case "zlt":
@@ -57,6 +71,7 @@ export class BWorker extends  Worker {
                 }
             }
         } finally {
+            this.barHelper.done(err)
             await this.account.sync()
             await this.dispose()
             return err
@@ -106,12 +121,12 @@ export class BWorker extends  Worker {
                 break;
             case "payment": desc = "payment error: " + ret.error.msgs!.join("; ")
                 break;
-            case "ok": this.emit("msg", { text: "Zomby mint success", details: {} }); this.account.updateLastMint(new Date().getTime())
+            case "ok": log.echo("Zomby mint success"); this.account.updateLastMint(new Date().getTime())
                 break;
             default: desc = "Unknown error while minting"
                 break;
         }
-        if (desc != "") { this.emit("msg", {text: "cannot mint zomby: " + desc, details: {} }); return true }
+        if (desc != "") { log.error("cannot mint zomby: " + desc); return true }
         return false
     }
 
@@ -119,19 +134,19 @@ export class BWorker extends  Worker {
         let ret = await Navigator.burn.zombies(<puppeteer.Page>this.page)
         switch (ret.error.type) {
             case "payment":
-                this.emit("msg", { text: "payment error: " + ret.error.msgs!.join("; "), details: {}})
+                log.error("payment error:", ret.error.msgs)
                 return true
                 break;
             case "ok":
-                this.emit("msg", {text: "all zombies burned", details: {} })
+                log.echo("all zombies burned")
                 return false
                 break;
             case "basic":
-                this.emit("msg", { text:"basic error " + ret.error.msgs!.join("; "), details: {} })
+                log.error("basic error:", ret.error.msgs)
                 return true
                 break;
             default:
-                this.emit("msg", { text:ret.error.type, details: {}})
+                log.error(ret.error.type)
                 return true
         }
     }
@@ -144,7 +159,7 @@ export class BWorker extends  Worker {
                 desc = "payment error:" + ret.error.msgs!.join("; ")
                 break;
             case "ok":
-                desc = "all zombies transfered"
+                log.echo("All zomby transfered")
                 break;
             case "basic":
                 desc = "basic error:" + ret.error.msgs!.join("; ")
@@ -152,7 +167,7 @@ export class BWorker extends  Worker {
             default:
                 desc = "unknown: " + ret.error.type
         }
-        if (desc != "") { this.emit("msg", { text: "zomby transfer: " + desc, details: {}}); return true }
+        if (desc != "") { log.error("zomby transfer:", desc); return true }
         return false
     }
 
@@ -194,13 +209,13 @@ export class BWorker extends  Worker {
             });
             await this.page.on('error', async (err) => {
                 const errorMessage = err.toString();
-                this.emit("msg", { text: 'browser error: ' + errorMessage + " account: " + this.account.id + " retraing", details: {}})
+                log.error('browser error: ' + errorMessage)
                 await this.dispose()
                 await this.run()
             });
             await this.page.on('pageerror', async (err: any) => {
                 const errorMessage = err.toString();
-                this.emit("msg", { text: 'browser this.page error: ' + errorMessage + " account: " + this.account.id, details: {} })
+                log.error('browser this.page error:', errorMessage)
                 await this.dispose()
                 await this.run()
             });

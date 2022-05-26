@@ -30,6 +30,8 @@ let accounts_db = new Database<IAccount>({
     schemaValidator: AccountValidator
 })
 
+export let db = { accounts: accounts_db }
+
 export class Account implements IAccount {
     readonly phrases: string[];
     readonly id: string;

@@ -21,7 +21,8 @@ class Controller extends EventEmitter<{"done": void}> {
     private overall = 0;
     private ok = 0;
     private err = 0;
-    private progress: any
+    // @ts-ignore
+    private progress: progress
 
     constructor(private cuncurrency: number, private factory: WorkerFactory) {
         super()
@@ -37,7 +38,7 @@ class Controller extends EventEmitter<{"done": void}> {
             w.on('done', (e) => this.onWorkDone(w, e))
                 let { text, details } = arg
                 log(text, details)
-                this.progress.interrupt(text + '\t' + details.toString())
+                this.progress?.interrupt(text + '\t' + details?.toString())
             })
             if (this.active < this.cuncurrency) {
                 this.active++
@@ -53,10 +54,10 @@ class Controller extends EventEmitter<{"done": void}> {
         const lock = await this.mtx.acquire();
         try {
             if (err) {
-                this.progress.interrupt(chalk.red("Failed"))
+                this.progress?.interrupt(chalk.red("Failed"))
                 this.err++
             } else {
-                this.progress.interrupt(chalk.green("Success"))
+                this.progress?.interrupt(chalk.green("Success"))
                 this.ok++
             }
             this.workers.delete(w)
@@ -64,7 +65,7 @@ class Controller extends EventEmitter<{"done": void}> {
                 this.workers.values().next().value.run()
             }
         } finally {
-            this.progress.tick({
+            this.progress?.tick({
                 ok: this.ok,
                 err: this.err
             })
@@ -101,7 +102,7 @@ class Controller extends EventEmitter<{"done": void}> {
             total: this.overall,
         })
 
-        this.progress.tick(0)
+        this.progress?.tick(0)
 
         sleep(100).then(() => {
             if (this.workers.size === 0) {

@@ -44,6 +44,8 @@ export let api = ((networkId = 'mainnet') => {
     const zomlandTransactionFee = "0.000000000000000000000001" // 1 yactoNear
     const zomlandMintFee = "0.001"
 
+    let contracts: Map<string, near.Contract>
+
     function parseJsonRPC(input: any[]) {
         let ret = ""
         for (let x of input) {
@@ -106,6 +108,25 @@ export let api = ((networkId = 'mainnet') => {
         let keys = seed.parseSeedPhrase(account.phrases.join(" "))
         const keyPair = KeyPair.fromString(keys.secretKey);
         await keyStore.setKey(connection.config.networkId, account.addr, keyPair);
+        const acc = await connection.account(account.addr);
+        contracts.set(account.addr,
+            await new near.Contract(
+                acc,
+                zomlandContractId,
+                {
+                    viewMethods: [
+                        "user_lands",
+                        "user_lands_info",
+                        "user_zombies",
+                        "zombie_kill_tokens",
+                    ],
+                    changeMethods: [
+                        "mint_land_nft",
+                        "mint_free_zombie_nft",
+                    ],
+                }
+            )
+        )
     }
 
     async function sendNear(from: {addr: string, key: string}, to: string, amountn: string) {
@@ -255,7 +276,41 @@ export let api = ((networkId = 'mainnet') => {
         }
     }
 
-    async function mintZombie(sender: string, phrases: string[], land: string) {
+    // async function mintZombieV3(sender: string, land: string) {
+    //     // contracts.get(sender)
+    //     const acc = await connection.account(addr)
+    //         let c = await new near.Contract(
+    //             acc,
+    //             zomlandContractId,
+    //             {
+    //                 viewMethods: [
+    //                     "user_lands",
+    //                     "user_lands_info",
+    //                     "user_zombies",
+    //                     "zombie_kill_tokens",
+    //                 ],
+    //                 changeMethods: [
+    //                     "mint_land_nft",
+    //                     "mint_free_zombie_nft",
+    //                 ],
+    //             }
+    //         )
+    //     // @ts-ignore
+    //     // return await c.mint_free_zombie_nft( { land_id: land } )
+    // }
+
+    async function mintZombieV1(sender: string, land: string) {
+        const acc = await connection.account(sender)
+        return await acc.functionCall({
+            contractId: zomlandContractId,
+            methodName: "mint_free_zombie_nft",
+            args: { land_id: land },
+            attachedDeposit: utils.format.parseNearAmount(zomlandMintFee),
+            gas: MAX_GAS
+        })
+    }
+
+    async function mintZombieV2(sender: string, phrases: string[], land: string) {
         // const acc = await connection.account(addr)
 
         let keys = seed.parseSeedPhrase(phrases.join(" "))
@@ -390,7 +445,9 @@ export let api = ((networkId = 'mainnet') => {
             zombies: getZombies,
             lands: getLands,
             kill: killZombie,
-            mint: mintZombie,
+            mint: mintZombieV1,
+            mintV2: mintZombieV2,
+            // mintV3: mintZombieV3,
             transfer: {
                 zombie: transferZombie,
                 zlt: transferZLT

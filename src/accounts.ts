@@ -126,8 +126,7 @@ export class Accounts {
 
     private readRawPhrases(file: fs.PathLike) {
         let blob = fs.readFileSync(file).toString()
-        blob.replace(/[^\w ]/g, '')
-        let ph = blob.split(" ")
+        let ph = blob.split("\r\n")
         let wordc = 0;
         let phrases: Array<Array<string>> = new Array();
         phrases[0] = new Array<string>();

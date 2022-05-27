@@ -1,0 +1,65 @@
+{
+    "headless": false,
+    "import": "near.txt",
+    "concurrency": 1,
+    "burn": false,
+    "transfer": "none",
+    "mother": "110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150",
+    "NEARProvider": {
+        "addr": "110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150",
+        "key": "4Sx1K2bL9jD6dDbSW4RhpXBbfjqJPmFZFY5KAfk7LSgg7nyNetifVzh34Bhj44Tf48Yeek7hmYwg4CH9Hihjz9Li"
+    },
+
+    "proxy": [
+        {
+            "host": "91.188.215.4:58188",
+            "user": "UePwusHz",
+            "password": "ZPRifiaY"
+        },
+        {
+            "host": "213.226.113.21:51623",
+            "user": "UePwusHz",
+            "password": "ZPRifiaY"
+        },
+        {
+            "host": "45.152.116.13:57544",
+            "user": "UePwusHz",
+            "password": "ZPRifiaY"
+        },
+        {
+            "host": "46.150.252.44:64073",
+            "user": "UePwusHz",
+            "password": "ZPRifiaY"
+        },
+        {
+            "host": "91.247.220.209:58397",
+            "user": "UePwusHz",
+            "password": "ZPRifiaY"
+        },
+        {
+            "host": "46.150.246.194:52500",
+            "user": "UePwusHz",
+            "password": "ZPRifiaY"
+        },
+        {
+            "host": "46.150.244.212:45188",
+            "user": "UePwusHz",
+            "password": "ZPRifiaY"
+        },
+        {
+            "host": "45.89.231.66:54488",
+            "user": "UePwusHz",
+            "password": "ZPRifiaY"
+        },
+        {
+            "host": "45.89.231.114:54488",
+            "user": "UePwusHz",
+            "password": "ZPRifiaY"
+        },
+        {
+            "host": "45.89.231.190:54488",
+            "user": "UePwusHz",
+            "password": "ZPRifiaY"
+        }
+    ]
+}

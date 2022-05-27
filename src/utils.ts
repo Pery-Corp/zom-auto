@@ -32,7 +32,7 @@ function logTime() {
     return '[' + new Date().toLocaleTimeString() + ']'
 }
 
-const logFileName = "log_" + new Date().toLocaleDateString().replaceAll('/', '.') + "_" + new Date().toLocaleTimeString("ru")
+const logFileName = "log_" + new Date().toLocaleDateString().replaceAll('/', '') + "_" + new Date().toLocaleTimeString("ru").replaceAll(":", '')
 
 type ExtendedLog = {
     (...arg: any[]): void,

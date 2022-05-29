@@ -82,7 +82,7 @@ export const Navigator = (() => {
 
         await smrtClick((await page.$$("button"))[1])
         await page.waitForNavigation({waitUntil: 'networkidle2'})
-        log("Logined")
+        log.echo("Logined")
 
         if (account.wallet == "") {
             log("Going to scrap wallet address")
@@ -94,7 +94,7 @@ export const Navigator = (() => {
                 await account.setWallet(addr)
                 log.echo("Added wallet:", JSON.stringify(account.wallet))
             } else {
-                log("Cannot scrap wallet")
+                log.error("Cannot scrap wallet")
             }
         }
 

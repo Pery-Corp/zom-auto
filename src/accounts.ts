@@ -126,7 +126,7 @@ export class Accounts {
 
     private readRawPhrases(file: fs.PathLike) {
         let blob = fs.readFileSync(file).toString()
-        let ph = blob.split("\r\n")
+        let ph = blob.split(" ")
         let wordc = 0;
         let phrases: Array<Array<string>> = new Array();
         phrases[0] = new Array<string>();
@@ -150,8 +150,10 @@ export class Accounts {
         let imported = 0;
         let existed = 0;
         for await (let ph of phs) {
+            console.log(ph)
             if (await accounts_db.findOne({
-                            id: crypt.createHash('sha256').update(ph.join(" ")).digest('hex') })) {
+                            id: crypt.createHash('sha256').update(ph.join(" ")).digest('hex') })
+            ) {
                 existed++;
             } else {
                 let account = new Account({ phrases: ph })

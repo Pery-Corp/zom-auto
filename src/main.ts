@@ -68,6 +68,8 @@ class Controller extends EventEmitter<{"done": void}> {
         let minTimeToMint = addTime(24, 0, 0).getTime();
         let accs = (await db.accounts.findMany((a) => {
             let nextMintTime = addTime(24, 0, 0, new Date(<number>a.lastMint)).getTime()
+            // if (a.wallet == "") return true
+            // else return false
             if (nextMintTime <= new Date().getTime() || a.lastMint == 0) {
                 return true
             } else if (a.lastMint != 0) {

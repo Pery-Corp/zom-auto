@@ -1,16 +1,14 @@
-if [[ ! -d node_modules ]]
-then
-    npm i
-fi
-
+echo "Building"
 tsc --build --pretty
 
-if [[ $? == "" ]]
+if [[ $? == 0 ]]
 then
+    echo "Build success"
     if [[ ! -d dist/node_modules ]]
     then
-        mkdir -p dist/node_modules
-        ln -s "$(realpath node_modules)" "$(realpath dist/node_modules)"
+        ln -s "$(realpath node_modules)" "$(realpath dist/)"
     fi
     tsc --removeComments
+else
+    echo "Build failed"
 fi

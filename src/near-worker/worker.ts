@@ -28,10 +28,13 @@ export class NWorker extends Worker {
             ]
         )
     }
-    
+
     async run() {
         let err = false
         try {
+            if (this.account.wallet == "") {
+                throw "No wallet address"
+            }
             this.barHelper.create()
             this.barHelper.next()
             await api.account.add({
@@ -47,10 +50,7 @@ export class NWorker extends Worker {
             try {
                 lands_req = await api.zomland.lands(this.account.wallet)
             } catch (e: any) {
-                throw {
-                    text: "cannot get lands details",
-                    details: e
-                }
+                throw "cannot get lands details"
             }
 
             this.barHelper.next()
@@ -63,17 +63,11 @@ export class NWorker extends Worker {
                         // }
                         await api.zomland.mint(this.account.wallet, land.token_id)
                     } catch (e: any) {
-                        throw {
-                            text: "cannot mint zombie",
-                            details: e
-                        }
+                        log.error("Cannot mint zombie")
                     }
                 }
             } else {
-                throw {
-                    text: "no avalible lands",
-                    details: {}
-                }
+                throw "no avalible lands"
             }
 
             this.barHelper.next()
@@ -81,10 +75,7 @@ export class NWorker extends Worker {
             try {
                 zombies_req = await api.zomland.zombies(this.account.wallet)
             } catch (e: any) {
-                throw {
-                    text: "cannot get zombies",
-                    details: e
-                }
+                throw "Cannot get zombies"
             }
 
             this.barHelper.next()
@@ -94,10 +85,7 @@ export class NWorker extends Worker {
                         try {
                             await api.zomland.kill(this.account.wallet, zombie.token_id)
                         } catch (e: any) {
-                            throw {
-                                text: "cannot kill zombie",
-                                details: e
-                            }
+                            log.error("Cannot kill zombie:", zombie.token_id)
                         }
                     }
                 }
@@ -112,10 +100,7 @@ export class NWorker extends Worker {
                                 try {
                                     await api.zomland.transfer.zombie(this.account.wallet, Config().mother, zombie)
                                 } catch (e:any) {
-                                    throw {
-                                        text: "cannot transfer zombie",
-                                        details: e
-                                    }
+                                    log.error("Cannot transfer zombie:", zombie.token_id)
                                 }
                             }
                             break;
@@ -126,10 +111,7 @@ export class NWorker extends Worker {
                                     await api.zomland.transfer.zlt(this.account.wallet, Config().mother,
                                         near.utils.format.formatNearAmount(balance!.zlt))
                                 } catch (e: any) {
-                                    throw {
-                                        text: "cannot transfer zlt",
-                                        details: e
-                                    }
+                                    log.echo("Cannot transfer zlt")
                                 }
                             } catch(e: any){
                                 throw {

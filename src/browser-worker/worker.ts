@@ -42,12 +42,12 @@ export class BWorker extends  Worker {
         )
     }
 
-    private async runWraper() {
-        this.barHelper.create()
+    public async run(): Promise<void> {
         let err = false
+        this.barHelper.create()
         try {
             this.page = await this.prepare()
-            await this.tryLogin()
+            err = await this.tryLogin()
 
             this.barHelper.next()
             await this.tryMint()
@@ -74,15 +74,6 @@ export class BWorker extends  Worker {
             this.barHelper.done(err)
             await this.account.sync()
             await this.dispose()
-            return err
-        }
-    }
-
-    public async run(): Promise<void> {
-        let err = false
-        try {
-            err = await this.runWraper()
-        } finally {
             this.emit('done', err)
         }
     }
@@ -100,6 +91,7 @@ export class BWorker extends  Worker {
         try {
             this.page = await Navigator.login.phrase(<puppeteer.Page>this.page, this.account)
         } catch (e) {
+            log.error(e)
             return true
         }
         return false

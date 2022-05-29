@@ -42,7 +42,7 @@ export const Navigator = (() => {
                 }
             }
 
-            await page.waitForNavigation({waitUntil: 'networkidle2'})
+            await page.waitForNavigation({waitUntil: 'networkidle2', timeout: 10000})
         } catch(e: any) {
             return {
                 error: {

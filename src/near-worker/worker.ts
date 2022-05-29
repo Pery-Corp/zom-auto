@@ -32,9 +32,9 @@ export class NWorker extends Worker {
     async run() {
         let err = false
         try {
-            if (this.account.wallet == "") {
-                throw "No wallet address"
-            }
+            // if (this.account.wallet == "") {
+            //     throw "No wallet address"
+            // }
             this.barHelper.create()
             this.barHelper.next()
             await api.account.add({
@@ -129,8 +129,8 @@ export class NWorker extends Worker {
                 }
             }
         } catch (e: any) {
-            log.error(e)
             err = true
+            log.error(e)
         } finally {
             this.barHelper.done(err)
             this.emit("done", err)

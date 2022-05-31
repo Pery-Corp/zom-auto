@@ -52,13 +52,12 @@ export let api = ((networkId = 'mainnet') => {
         kill: String( 280000000000000 )
     }
 
-    // not fee, its deposits xD
     const DEPOSITS ={
         mint: near.utils.format.parseNearAmount("0.01"),
         kill: near.utils.format.parseNearAmount("0.000000000000000000000001"),
         transfer: {
-            zomby: near.utils.format.parseNearAmount("0.000000000000000000000001"),
-            zlt: near.utils.format.parseNearAmount("0.009")
+            zomby: near.utils.format.parseNearAmount("0.009"),
+            zlt: near.utils.format.parseNearAmount("0.000000000000000000000001")
         },
     }
 
@@ -279,7 +278,7 @@ export let api = ((networkId = 'mainnet') => {
             contractId: zomlandContractId,
             methodName: "mint_free_zombie_nft",
             args: { land_id: land },
-            attachedDeposit: utils.format.parseNearAmount(zomlandMintFee),
+            attachedDeposit: DEPOSITS.mint,
             gas: GAS_PRICES.mint
         })
     }
@@ -304,7 +303,7 @@ export let api = ((networkId = 'mainnet') => {
                 "mint_free_zombie_nft",
                 { land_id: land },
                 (await MAX_GAS_REAL()),
-                utils.format.parseNearAmount(zomlandMintFee)
+                DEPOSITS.mint,
             )
         ]
 
@@ -363,7 +362,7 @@ export let api = ((networkId = 'mainnet') => {
             args: {
                 zombie_list: zombies
             },
-            attachedDeposit: utils.format.parseNearAmount(zomlandTransactionFee),
+            attachedDeposit: DEPOSITS.kill,
             gas: GAS_PRICES.kill
         })
     }
@@ -377,7 +376,7 @@ export let api = ((networkId = 'mainnet') => {
                 token_id: zombie.token_id,
                 recipient_id: to
             },
-            attachedDeposit: utils.format.parseNearAmount(zomlandTransferFee),
+            attachedDeposit: DEPOSITS.transfer.zomby,
             gas: GAS_PRICES.transfer.zomby
         })
     }
@@ -391,7 +390,7 @@ export let api = ((networkId = 'mainnet') => {
                 receiver_id: to,
                 amount: near.utils.format.parseNearAmount(amount)
             },
-            attachedDeposit: utils.format.parseNearAmount(zomlandTransactionFee),
+            attachedDeposit: DEPOSITS.transfer.zlt,
             gas: GAS_PRICES.transfer.zlt
         })
     }

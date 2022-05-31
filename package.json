@@ -22,7 +22,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "bash build.sh",
         "near": "node dist/main.js --worker='near'",
-        "browser": "node dist/main.js --worker='browser'"
+        "browser": "node dist/main.js --worker='browser'",
+        "distribute": "node dist/main.js --mode='provide'"
     },
     "devDependencies": {
         "@tsconfig/esm": "^1.0.0",

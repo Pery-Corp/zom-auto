@@ -5,6 +5,7 @@ const { KeyPair, keyStores, utils } = near;
 // @ts-ignore
 import * as seed from 'near-seed-phrase'
 import sha256 from 'js-sha256'
+import https from 'https'
 
 export interface ZombieNFT {
     token_id: string;
@@ -41,10 +42,15 @@ export let api = ((networkId = 'mainnet') => {
     const zomlandContractId = "zomland.near"
     const MAX_GAS = "300000000000000"
 
-    const zomlandTransactionFee = "0.000000000000000000000001" // 1 yactoNear
-    const zomlandMintFee = "0.001"
+    const GAS_PRICES = {
 
-    let contracts: Map<string, near.Contract>
+    }
+
+    const zomlandTransactionFee = "0.000000000000000000000001" // 1 yactoNear
+    const zomlandMintFee = "0.01"
+    const zomlandTransferFee = "0.009"
+
+    // let contracts: Map<string, near.Contract>
 
     function parseJsonRPC(input: any[]) {
         let ret = ""
@@ -53,39 +59,6 @@ export let api = ((networkId = 'mainnet') => {
         }
         return JSON.parse(ret)
     }
-
-    // async function createNewTransaction(sender: string, receiverId: string, actions: near.transactions.Action[], nonceOffset = 1) {
-    //     const nearInternal = walletConnection._near;
-    //     const localKey = await nearInternal.connection.signer.getPublicKey(
-    //         sender,
-    //         networkId
-    //     );
-
-    //     const accessKey = await walletConnection
-    //         .account()
-    //         .accessKeyForTransaction(receiverId, actions, localKey);
-    //     if (!accessKey) {
-    //         throw new Error(
-    //             `Cannot find matching key for transaction sent to ${receiverId}`
-    //         );
-    //     }
-
-    //     const block = await nearInternal.connection.provider.block({
-    //         finality: "final",
-    //     });
-    //     const blockHash = near.utils.serialize.base_decode(block.header.hash);
-    //     const publicKey = near.utils.PublicKey.from(accessKey.public_key);
-    //     const nonce = accessKey.access_key.nonce + nonceOffset;
-
-    //     return near.transactions.createTransaction(
-    //         walletConnection.account().accountId,
-    //         publicKey,
-    //         receiverId,
-    //         nonce,
-    //         actions,
-    //         blockHash
-    //     );
-    // };
 
     async function connect() {
         const config: near.ConnectConfig = {
@@ -109,30 +82,42 @@ export let api = ((networkId = 'mainnet') => {
         const keyPair = KeyPair.fromString(keys.secretKey);
         await keyStore.setKey(connection.config.networkId, account.addr, keyPair);
         const acc = await connection.account(account.addr);
-        contracts.set(account.addr,
-            await new near.Contract(
-                acc,
-                zomlandContractId,
-                {
-                    viewMethods: [
-                        "user_lands",
-                        "user_lands_info",
-                        "user_zombies",
-                        "zombie_kill_tokens",
-                    ],
-                    changeMethods: [
-                        "mint_land_nft",
-                        "mint_free_zombie_nft",
-                    ],
-                }
-            )
-        )
     }
 
-    async function sendNear(from: {addr: string, key: string}, to: string, amountn: string) {
+    interface NearBlocksIO_Block {
+        block_height: 0,
+        block_hash: string,
+        block_timestamp: number,
+        txn: number,
+        receipt: number,
+        author: string,
+        gas_used: number,
+        gas_limit: number,
+        gas_fee: string
+    }
+
+    async function getBlocks(count: number = 1, offset: number = 0): Promise<NearBlocksIO_Block[]> {
+        let raw: string = ""
+        return new Promise(resolve => {
+            https.get(`https://nearblocks.io/api/blocks?limit=${count}&offset=${offset}`, (res) => {
+                res.on('data', (chunk) => {
+                    raw += chunk
+                })
+                res.on("end", () => {
+                    resolve(JSON.parse(raw).blocks)
+                })
+            })
+        })
+    }
+
+    async function gasPrice(blockHash: string): Promise<number> {
+        return parseInt((await provider.gasPrice(blockHash)).gas_price)
+    }
+
+    async function sendNear(from: string, to: string, amountn: string) {
         const amount = utils.format.parseNearAmount(amountn);
 
-        const senderAccount = await connection.account(from.addr);
+        const senderAccount = await connection.account(from);
 
         try {
             const result = await senderAccount.sendMoney(to, amount);
@@ -269,35 +254,12 @@ export let api = ((networkId = 'mainnet') => {
                 block_height: res.block_height,
                 // @ts-ignore
                 logs: res.logs,
-                zombies: zombies
+                zombies: zombies[1]
             }
         } else {
             return null
         }
     }
-
-    // async function mintZombieV3(sender: string, land: string) {
-    //     // contracts.get(sender)
-    //     const acc = await connection.account(addr)
-    //         let c = await new near.Contract(
-    //             acc,
-    //             zomlandContractId,
-    //             {
-    //                 viewMethods: [
-    //                     "user_lands",
-    //                     "user_lands_info",
-    //                     "user_zombies",
-    //                     "zombie_kill_tokens",
-    //                 ],
-    //                 changeMethods: [
-    //                     "mint_land_nft",
-    //                     "mint_free_zombie_nft",
-    //                 ],
-    //             }
-    //         )
-    //     // @ts-ignore
-    //     // return await c.mint_free_zombie_nft( { land_id: land } )
-    // }
 
     async function mintZombieV1(sender: string, land: string) {
         const acc = await connection.account(sender)
@@ -319,7 +281,7 @@ export let api = ((networkId = 'mainnet') => {
         const accessKey: any = await provider.query(`access_key/${sender}/${publicKey.toString()}`, '');
         const nonce = ++accessKey.nonce;
 
-        if(accessKey.permission !== 'FullAccess') {
+        if (accessKey.permission !== 'FullAccess') {
             return console.log(
                 `Account [ ${sender}  ] does not have permission to send tokens using key: [ ${publicKey}  ]`
             );
@@ -381,13 +343,13 @@ export let api = ((networkId = 'mainnet') => {
         // })
     }
 
-    async function killZombie(addr: string, zombie: string) {
+    async function killZombie(addr: string, zombies: string[]) {
         const acc = await connection.account(addr)
         return await acc.functionCall({
             contractId: zomlandContractId,
             methodName: "kill_zombie",
             args: {
-                zombie_id: zombie
+                zombie_list: zombies
             },
             attachedDeposit: utils.format.parseNearAmount(zomlandTransactionFee),
             gas: MAX_GAS
@@ -403,7 +365,7 @@ export let api = ((networkId = 'mainnet') => {
                 token_id: zombie.token_id,
                 recipient_id: to
             },
-            attachedDeposit: utils.format.parseNearAmount(zomlandTransactionFee),
+            attachedDeposit: utils.format.parseNearAmount(zomlandTransferFee),
             gas: MAX_GAS
         })
     }
@@ -424,6 +386,9 @@ export let api = ((networkId = 'mainnet') => {
 
     return {
         connect,
+        lastBlock: async () => (await getBlocks(1, 0))[0],
+        getBlocks: getBlocks,
+        gasPrice: gasPrice,
         account: {
             add: addAccount,
             autorizedApps: autorizedApps,
@@ -447,7 +412,6 @@ export let api = ((networkId = 'mainnet') => {
             kill: killZombie,
             mint: mintZombieV1,
             mintV2: mintZombieV2,
-            // mintV3: mintZombieV3,
             transfer: {
                 zombie: transferZombie,
                 zlt: transferZLT
@@ -467,3 +431,8 @@ export let api = ((networkId = 'mainnet') => {
 // // console.log(await api.account.view(acc.wallet))
 // // await api.zomland.dropDups("110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150")
 // // console.log(await api.account.autorizedApps("110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150"))
+
+await api.connect()
+// let block = await api.lastBlock()
+let price = await api.gasPrice("2UWduj1oT2hdCojZx4PZ8QAPQLRY7iEUXWSNesxFnArD")
+console.log(price)

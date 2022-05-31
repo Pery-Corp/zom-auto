@@ -6,7 +6,7 @@ const ConfigSign = object({
     import: string(),
     concurrency: number(),
     burn: boolean(),
-    transfer: enums([ "none", "zml", "zomby" ]),
+    transfer: string(),
     mother: string(),
     NEARProvider: object({
         addr: string(),

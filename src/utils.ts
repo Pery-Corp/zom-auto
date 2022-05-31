@@ -1,6 +1,7 @@
 import { ElementHandle } from 'puppeteer'
 import { appendFileSync } from 'fs'
 import chalk from 'chalk'
+import * as fs from 'fs'
 
 export function sleep(ms: number) { return new Promise(resolve => setTimeout(resolve, ms)); }
 
@@ -32,7 +33,10 @@ function logTime() {
     return '[' + new Date().toLocaleTimeString() + ']'
 }
 
-const logFileName = "log_" + new Date().toLocaleDateString().replaceAll('/', '') + "_" + new Date().toLocaleTimeString("ru").replaceAll(":", '')
+if (!fs.existsSync("./.log/")) {
+    fs.mkdirSync("./.log")
+}
+const logFileName = "./.log/log_" + new Date().toLocaleDateString().replaceAll('/', '') + "_" + new Date().toLocaleTimeString("ru").replaceAll(":", '')
 
 type ExtendedLog = {
     (...arg: any[]): void,

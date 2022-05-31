@@ -3,7 +3,8 @@ import { existsSync } from 'fs'
 import { parse } from 'ts-command-line-args';
 import { Mutex } from 'async-mutex'
 import { Config } from './Config.js'
-import { sendNear } from './near-distributor.js'
+// import { sendNear } from './near-distributor.js'
+import { api } from './near-worker/api.js'
 import { BWorkerFactory } from './browser-worker/worker.js'
 import { NWorkerFactory } from './near-worker/worker.js'
 import { Worker, WorkerFactory } from './worker.js'
@@ -192,9 +193,24 @@ class App {
     private async runProvideMode() {
         // TODO check wallets before send
         let accs = accounts.getRange(0, accounts.count);
+        await api.connect()
+        let wallet_id = Config().NEARProvider.addr
+        await api.account.add({
+            addr: wallet_id,
+            phrases: (await db.accounts.findOne({ wallet: wallet_id }))!.phrases
+        })
+        let passed = 0
         for await (let acc of accs) {
+            if (acc.wallet != "" && passed == 0 && acc.wallet != wallet_id) {
+                passed++
+                continue
+            }
             if (acc.wallet != "" && acc.wallet != Config().NEARProvider.addr) {
-                await sendNear(Config().NEARProvider, acc.wallet, '0.1')
+                console.log(await api.send.near(wallet_id, acc.wallet, '0.1'))
+                passed++
+                if (passed === 100) {
+                    break
+                }
             }
         }
     }

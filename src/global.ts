@@ -9,5 +9,5 @@ export let mpb: MultiProgressBars = new MultiProgressBars({
 });
 
 export function accountBarID(account: Account) {
-    return "id:"+account.id
+    return "id:"+account.wallet
 }

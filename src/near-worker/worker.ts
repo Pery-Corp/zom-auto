@@ -139,7 +139,7 @@ export class NWorker extends Worker {
             err = true
             log.error(e)
         } finally {
-            this.barHelper.done(err)
+            this.barHelper.done(!err)
             this.emit("done", err)
         }
     }

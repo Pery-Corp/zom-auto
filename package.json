@@ -10,6 +10,7 @@
         "js-sha256": "^0.9.0",
         "multi-progress-bars": "^4.2.3",
         "near-api-js": "^0.44.2",
+        "nodeplotlib": "^1.0.1",
         "puppeteer": "^14.1.0",
         "superstruct": "^0.15.4",
         "ts-command-line-args": "^2.3.1"

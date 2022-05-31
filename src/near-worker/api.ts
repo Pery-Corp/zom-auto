@@ -40,15 +40,27 @@ export let api = ((networkId = 'mainnet') => {
     let provider: near.providers.JsonRpcProvider
     // let walletConnection: near.WalletConnection
     const zomlandContractId = "zomland.near"
-    const MAX_GAS = "300000000000000"
+    const MAX_GAS_CONST = "300000000000000"
+    const MAX_GAS_REAL = async () => ( await getBlocks(1, 0) )[0].gas_limit.toString()
 
     const GAS_PRICES = {
-
+        transfer: {
+            zomby: String( 80000000000000 ),
+            zlt: String( 20000000000000 ),
+        },
+        mint: String( 280000000000000 ),
+        kill: String( 280000000000000 )
     }
 
-    const zomlandTransactionFee = "0.000000000000000000000001" // 1 yactoNear
-    const zomlandMintFee = "0.01"
-    const zomlandTransferFee = "0.009"
+    // not fee, its deposits xD
+    const DEPOSITS ={
+        mint: near.utils.format.parseNearAmount("0.01"),
+        kill: near.utils.format.parseNearAmount("0.000000000000000000000001"),
+        transfer: {
+            zomby: near.utils.format.parseNearAmount("0.000000000000000000000001"),
+            zlt: near.utils.format.parseNearAmount("0.009")
+        },
+    }
 
     // let contracts: Map<string, near.Contract>
 
@@ -268,7 +280,7 @@ export let api = ((networkId = 'mainnet') => {
             methodName: "mint_free_zombie_nft",
             args: { land_id: land },
             attachedDeposit: utils.format.parseNearAmount(zomlandMintFee),
-            gas: MAX_GAS
+            gas: GAS_PRICES.mint
         })
     }
 
@@ -291,7 +303,7 @@ export let api = ((networkId = 'mainnet') => {
             near.transactions.functionCall(
                 "mint_free_zombie_nft",
                 { land_id: land },
-                MAX_GAS,
+                (await MAX_GAS_REAL()),
                 utils.format.parseNearAmount(zomlandMintFee)
             )
         ]
@@ -352,7 +364,7 @@ export let api = ((networkId = 'mainnet') => {
                 zombie_list: zombies
             },
             attachedDeposit: utils.format.parseNearAmount(zomlandTransactionFee),
-            gas: MAX_GAS
+            gas: GAS_PRICES.kill
         })
     }
 
@@ -366,7 +378,7 @@ export let api = ((networkId = 'mainnet') => {
                 recipient_id: to
             },
             attachedDeposit: utils.format.parseNearAmount(zomlandTransferFee),
-            gas: MAX_GAS
+            gas: GAS_PRICES.transfer.zomby
         })
     }
 
@@ -380,7 +392,7 @@ export let api = ((networkId = 'mainnet') => {
                 amount: near.utils.format.parseNearAmount(amount)
             },
             attachedDeposit: utils.format.parseNearAmount(zomlandTransactionFee),
-            gas: MAX_GAS
+            gas: GAS_PRICES.transfer.zlt
         })
     }
 
@@ -416,6 +428,10 @@ export let api = ((networkId = 'mainnet') => {
                 zombie: transferZombie,
                 zlt: transferZLT
             }
+        },
+        CONSTANTS: {
+            GAS_PRICES,
+            DEPOSITS
         }
     }
 })()
@@ -432,7 +448,7 @@ export let api = ((networkId = 'mainnet') => {
 // // await api.zomland.dropDups("110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150")
 // // console.log(await api.account.autorizedApps("110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150"))
 
-await api.connect()
-// let block = await api.lastBlock()
-let price = await api.gasPrice("2UWduj1oT2hdCojZx4PZ8QAPQLRY7iEUXWSNesxFnArD")
-console.log(price)
+// await api.connect()
+// // let block = await api.lastBlock()
+// let price = await api.gasPrice("2UWduj1oT2hdCojZx4PZ8QAPQLRY7iEUXWSNesxFnArD")
+// console.log(price)

@@ -7,7 +7,7 @@ await api.connect()
 let accounts = db.accounts.documents.map(a => new Account(a))
 
 for (const acc of accounts) {
-    if (acc.wallet === "" || acc.wallet == Config().mother) {
+    if (acc.wallet === "" || acc.wallet == Config().NEARProvider.addr) {
         continue
     }
     await api.account.add({
@@ -21,7 +21,7 @@ for (const acc of accounts) {
     if (balance > 1) {
         console.log("Balance:", balance)
         console.log("Sending:", String( balance - 0.3 ))
-        await api.account.send.near(acc.wallet, Config().mother, String( balance - 0.3 ))
+        await api.account.send.near(acc.wallet, Config().NEARProvider.addr, String( balance - 0.3 ))
     }
 }
 

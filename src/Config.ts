@@ -6,6 +6,7 @@ const ConfigSign = object({
     import: string(),
     concurrency: number(),
     burn: boolean(),
+    burnRarities: string(),
     transfer: string(),
     mother: string(),
     NEARProvider: object({

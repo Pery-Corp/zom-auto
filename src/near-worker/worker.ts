@@ -1,8 +1,8 @@
 import { Worker, WorkerFactory } from './../worker.js'
 import * as near from 'near-api-js'
 import { api } from './api.js'
-import { log } from './../utils.js'
-// import { addTime } from './../utils.js'
+import { log, msToHMS } from './../utils.js'
+import { addTime } from './../utils.js'
 import { Account } from './../accounts.js'
 import { Config } from './../Config.js'
 import { WorkerBarHelper } from './../bar-helper.js'
@@ -19,11 +19,11 @@ export class NWorker extends Worker {
         this.barHelper = new WorkerBarHelper(this.account,
             [
                 "Connecting to near",
-                "Clearing access key duplicates",
+                // "Clearing access key duplicates",
                 "Cheking for lands",
                 "Cheking for zombies",
                 "Minting",
-                "Buring zomby",
+                "Buring zombie",
                 "Transfering ntf/ft"
             ]
         )
@@ -35,6 +35,7 @@ export class NWorker extends Worker {
             if (this.account.wallet == "") {
                 throw "No wallet address"
             }
+            // TODO check wallet
             this.barHelper.create()
             this.barHelper.next()
             await api.account.add({
@@ -42,13 +43,13 @@ export class NWorker extends Worker {
                 phrases: this.account.phrases
             })
 
-            this.barHelper.next()
-            await api.zomland.dropDups(this.account.wallet)
+            // this.barHelper.next()
+            // await api.zomland.dropDups(this.account.wallet)
 
             this.barHelper.next()
             let lands_req
             try {
-                lands_req = await api.zomland.lands(this.account.wallet)
+                lands_req = await api.account.zomland.lands(this.account.wallet)
             } catch (e: any) {
                 throw "cannot get lands details"
             }
@@ -58,11 +59,14 @@ export class NWorker extends Worker {
                 for await (let land of lands_req.lands) {
                     try {
                         log.echo("Trying mint on land:", land.token_id)
-                        // if (addTime(24, 0, 0, new Date(Number((land.last_zombie_claim/1000000).toFixed()))).getTime() <= new Date().getTime()) {
-                            // this.emit('msg', { text: 'Skiping minting: not time yet', details: {} })
-                            // continue
-                        // }
-                        await api.zomland.mint(this.account.wallet, land.token_id)
+                        // @ts-ignore
+                        // @ts-ignore
+                        if (addTime(24, 0, 0, new Date(parseInt(land.last_zombie_claim/1000000))).getTime() >= new Date().getTime()) {
+                        // @ts-ignore
+                            log.echo("Not time to mint, next mint in next", msToHMS(addTime(24, 0, 0, new Date(parseInt(land.last_zombie_claim/1000000))).getTime() - new Date().getTime()))
+                            continue
+                        }
+                        await api.account.zomland.zombie.mint(this.account.wallet, land.token_id)
                     } catch (e: any) {
                         log.error("Cannot mint zombie:", e)
                     }
@@ -74,7 +78,7 @@ export class NWorker extends Worker {
             this.barHelper.next()
             let zombies_req
             try {
-                zombies_req = await api.zomland.zombies(this.account.wallet)
+                zombies_req = await api.account.zomland.zombie.get(this.account.wallet)
             } catch (e: any) {
                 throw "Cannot get zombies " + e
             }
@@ -84,14 +88,14 @@ export class NWorker extends Worker {
                 if (Config().burn && Config().transfer != 'zombie') {
                     let zombies = new Array()
                     for await (let zombie of zombies_req.zombies) {
-                        if (zombie.card_rarity === "Common") {
+                        if (Config().burnRarities.includes(zombie.card_rarity)) {
                             zombies.push(zombie)
                         }
                     }
                     try {
                         if (zombies.length > 0) {
                             log.echo("Killing zombies:", zombies.map(z => z.token_id))
-                            await api.zomland.kill(this.account.wallet, zombies.map(z => z.token_id))
+                            await api.account.zomland.zombie.kill(this.account.wallet, zombies.map(z => z.token_id))
                         }
                     } catch (e: any) {
                         log.error("Cannot kill zombies:", e)
@@ -100,15 +104,15 @@ export class NWorker extends Worker {
 
                 this.barHelper.next()
                 if (this.account.wallet != Config().mother) {
-                    if (Config().transfer.includes("zomby")) {
+                    if (Config().transfer.includes("zombie")) {
                             for await (let zombie of zombies_req.zombies) {
                                 // skip to burn common cards
-                                if (zombie.card_rarity === "Common") {
+                                if (Config().burnRarities.includes(zombie.card_rarity)) {
                                     continue
                                 }
                                 try {
                                     log.echo("Transfering zombie:", zombie.token_id)
-                                    await api.zomland.transfer.zombie(this.account.wallet, Config().mother, zombie)
+                                    await api.account.zomland.zombie.transfer(this.account.wallet, Config().mother, zombie)
                                 } catch (e:any) {
                                     log.error("Cannot transfer zombie:", zombie.token_id, e)
                                 }
@@ -116,11 +120,11 @@ export class NWorker extends Worker {
                     }
                     if (Config().transfer.includes("zlt")) {
                         try {
-                            let balance = await api.account.balances.zomland.zlt(this.account.wallet)
+                            let balance = await api.account.zomland.balances.zlt.get(this.account.wallet)
                             try {
                                 if (balance?.zlt > 0) {
                                     log.echo("Transfering", balance?.zlt, "zlt")
-                                    await api.zomland.transfer.zlt(this.account.wallet, Config().mother,
+                                    await api.account.zomland.balances.zlt.transfer(this.account.wallet, Config().mother,
                                         near.utils.format.formatNearAmount(balance!.zlt))
                                 }
                             } catch (e: any) {

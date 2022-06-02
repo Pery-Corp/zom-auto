@@ -12,6 +12,8 @@ import { sleep, log, addTime } from './utils.js'
 import { accounts, db, Account } from './accounts.js'
 import { EventEmitter } from './EventEmitter.js'
 import { createMainProgress, updateMainProgress } from './bar-helper.js'
+import { mpb } from './global.js'
+import * as fs from 'fs'
 // import { addParentTask, updateParentTask, doneReferalTask } from './libs/bar-helper.js'
 
 class Controller extends EventEmitter<{"done": void}> {
@@ -44,6 +46,7 @@ class Controller extends EventEmitter<{"done": void}> {
         }
     }
 
+    private shift = false
     private async onWorkDone(w: Worker, err: boolean) {
         const lock = await this.mtx.acquire();
         try {
@@ -57,6 +60,11 @@ class Controller extends EventEmitter<{"done": void}> {
                 this.workers.values().next().value.run()
             }
         } finally {
+            if (this.shift ||
+                ( (this.err+this.ok)%8 == 0 && (this.err+this.ok) != 0 )) {
+                this.shift = true
+                mpb.removeTask(2, true)
+            }
             updateMainProgress(this.err+this.ok, this.overall, this.err)
             if (this.workers.size === 0) {
                 this.emit("done")
@@ -68,13 +76,10 @@ class Controller extends EventEmitter<{"done": void}> {
     async process(): Promise<Date> {
         let minTimeToMint = addTime(24, 0, 0).getTime();
         let accs = (await db.accounts.findMany((a) => {
-            let nextMintTime = addTime(24, 0, 0, new Date(<number>a.lastMint)).getTime()
-            // if (a.wallet == "") return true
-            // else return false
-            if (nextMintTime <= new Date().getTime() || a.lastMint == 0) {
+            if ( <number>a.nextMint == 0 || <number>a.nextMint <= new Date().getTime()) {
                 return true
-            } else if (a.lastMint != 0) {
-                minTimeToMint = Math.min(minTimeToMint, nextMintTime)
+            } else if (a.nextMint != 0) {
+                minTimeToMint = Math.min(minTimeToMint, <number>a.nextMint)
                 return false
             } else {
                 return false
@@ -107,27 +112,29 @@ class Controller extends EventEmitter<{"done": void}> {
 }
 
 interface opts {
-    importPath?: string,
-        concurrency?: number,
-        mode?: string,
-        worker?: string,
+    importPath?: string;
+    concurrency?: number;
+    mode?: string;
+    worker?: string;
 }
 
 class App {
     private concurrency: number = 1;
     private mode: "normal" | "provide" = "normal";
-    private worker = "near"
+    private worker: "browser" | "near" = "near"
 
     constructor() { }
 
     private async import(path: any) {
         if (path) {
             log.echo("Importing accounts from:", path)
-            await accounts.importPhrases(path)
+            let pathes = path.split(' ')
+            await accounts.importPhrases(pathes[0], pathes[1] ?? undefined)
         } else {
             if (Config().import != '' && existsSync(Config().import)) {
                 log.echo("Importing accounts from:", Config().import)
-                await accounts.importPhrases(Config().import)
+                let pathes = Config().import.split(' ')
+                await accounts.importPhrases(pathes[0], pathes[1] ?? undefined)
             }
         }
     }
@@ -175,14 +182,14 @@ class App {
     }
 
     async init() {
-        let argv = parse<opts>({
+        const argv: opts = parse<opts>({
             importPath:  { type: String, alias: 'i', optional: true },
             concurrency: { type: Number, alias: 'c', optional: true },
             mode:        { type: String, alias: 'p', optional: true },
             worker:      { type: String, alias: 'w', optional: true },
         })
 
-        this.import(argv.importPath)
+        await this.import(argv.importPath)
         this.setCuncurrency(argv.concurrency)
         this.setWorker(argv.worker)
         this.setMode(argv.mode)
@@ -194,24 +201,43 @@ class App {
         // TODO check wallets before send
         let accs = accounts.getRange(0, accounts.count);
         await api.connect()
-        let wallet_id = Config().NEARProvider.addr
+        let provider_id = Config().NEARProvider.addr
         await api.account.add({
-            addr: wallet_id,
-            phrases: (await db.accounts.findOne({ wallet: wallet_id }))!.phrases
+            addr: provider_id,
+            phrases: (await db.accounts.findOne({ wallet: provider_id }))!.phrases
         })
         let passed = 0
         for await (let acc of accs) {
-            if (acc.wallet != "" && passed == 0 && acc.wallet != wallet_id) {
+            if (acc.wallet != ""
+                && passed == 0
+                && acc.wallet != provider_id) {
                 passed++
                 continue
             }
-            if (acc.wallet != "" && acc.wallet != Config().NEARProvider.addr) {
-                console.log(await api.send.near(wallet_id, acc.wallet, '0.1'))
-                passed++
-                if (passed === 100) {
-                    break
-                }
+
+            await api.account.add({
+                addr: acc.wallet,
+                phrases: acc.phrases
+            })
+            let _balance = await api.account.balances.near.yactoNear(acc.wallet)
+            let balance = parseInt(_balance.available) * Math.pow(10, -24)
+            // TODO serve more then one land
+            if (await api.account.zomland.lands(acc.wallet)) {
+
+            } else {
+                fs.appendFileSync("./unminted", JSON.stringify(acc))
             }
+
+            if (balance >= 0.16) { // todo
+                console.log("Skiping:", balance.toFixed(4), "near")
+                continue
+            }
+
+            if (acc.wallet != "" && acc.wallet != provider_id) {
+                log.echo("Sending to", acc.wallet, "id: ", acc.id)
+                await api.account.send.near(provider_id, acc.wallet, String(.16-balance+0.05))
+            }
+            passed++
         }
     }
 

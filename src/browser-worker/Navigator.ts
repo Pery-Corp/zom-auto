@@ -101,7 +101,7 @@ export const Navigator = (() => {
         return page;
     }
 
-    async function mintZomby(page: puppeteer.Page):
+    async function mintZombie(page: puppeteer.Page):
         Promise<{
             error: {
                 type: string,
@@ -118,7 +118,7 @@ export const Navigator = (() => {
                 await smrtClick(await page.$(".mt-8 > button"))
                 await sleep(1000)
             } catch (e) {
-                throw { type: "basic", msgs: [ "no zomby" ] }
+                throw { type: "basic", msgs: [ "no zombie" ] }
             }
 
             try {
@@ -169,12 +169,12 @@ export const Navigator = (() => {
         // buttons ".mt-4>button", from 0 to 3, by land size grows
     }
 
-    enum ZombyMenuItem {
+    enum ZombieMenuItem {
         transfer = 0,
         sell = 1,
         burn = 2,
     }
-    async function selectZombyMenu(page: puppeteer.Page, menuItem: ZombyMenuItem) {
+    async function selectZombieMenu(page: puppeteer.Page, menuItem: ZombieMenuItem) {
         try {
             await page.goto(url.myZomy, { waitUntil: "domcontentloaded" })
             await sleep(1000)
@@ -183,7 +183,7 @@ export const Navigator = (() => {
                 await page.waitForSelector("div.w-full > div > div > div > div > div > div > div > button", { timeout: 5000 })
                 await smrtClick(await page.$("div.w-full > div > div > div > div > div > div > div > button"))
             } catch (e) {
-                throw { type: "basic", msgs: [ "no zomby" ] }
+                throw { type: "basic", msgs: [ "no zombie" ] }
             }
 
             await sleep(1500)
@@ -195,7 +195,7 @@ export const Navigator = (() => {
             try {
                 await smrtClick(menuItems[menuItem])
             } catch(e) {
-                throw { type: "basic", msgs: ["zomby menu not avalible"] }
+                throw { type: "basic", msgs: ["zombie menu not avalible"] }
             }
             await sleep(1000)
         } catch (e: any) {
@@ -226,7 +226,7 @@ export const Navigator = (() => {
         }>
     {
         try {
-            let ret = await selectZombyMenu(page, ZombyMenuItem.transfer)
+            let ret = await selectZombieMenu(page, ZombieMenuItem.transfer)
             page = ret.page
             if (ret.error.type != "ok") {
                 throw ret.error
@@ -282,7 +282,7 @@ export const Navigator = (() => {
         }>
     {
         try {
-            let ret = await selectZombyMenu(page, ZombyMenuItem.burn)
+            let ret = await selectZombieMenu(page, ZombieMenuItem.burn)
             page = ret.page
             if (ret.error.type != "ok") {
                 throw ret.error
@@ -329,7 +329,7 @@ export const Navigator = (() => {
         },
         mint: {
             land: mintLand,
-            zomby: mintZomby,
+            zombie: mintZombie,
         },
     }})()
 

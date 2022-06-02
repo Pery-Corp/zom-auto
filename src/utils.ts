@@ -65,3 +65,35 @@ export function addTime(h: number, m: number, s: number, date = new Date()) {
         m * 6000 +
         s * 1000))
 }
+
+export function msToHMS(duration: number): string {
+    // @ts-ignore
+    var milliseconds = parseInt((duration % 1000) / 100),
+    // @ts-ignore
+        seconds = parseInt((duration / 1000) % 60),
+    // @ts-ignore
+        minutes = parseInt((duration / (1000 * 60)) % 60),
+    // @ts-ignore
+        hours = parseInt((duration / (1000 * 60 * 60)) % 24);
+
+    // @ts-ignore
+    hours = (hours < 10) ? "0" + hours : hours;
+    // @ts-ignore
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    // @ts-ignore
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+    return hours + "h " + minutes + "m " + seconds + "s " + milliseconds + "ms";
+    // let seconds = ms / 1000;
+    // // @ts-ignore
+    // const hours = parseInt( seconds / 3600  ); // 3,600 seconds in 1 hour
+    // seconds = seconds % 3600; // seconds remaining after extracting hours
+    // // @ts-ignore
+    // const minutes = parseInt( seconds / 60  ); // 60 seconds in 1 minute
+    // seconds = seconds % 60;
+    // return "%Hh %Mm %S %s"
+    //     .replace("%H", hours.toString())
+    //     .replace("%M", minutes.toString())
+    //     .replace("%S", seconds.toString())
+    //     .replace("%s", ( (ms%1000) ).toString())
+}

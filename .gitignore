@@ -1,5 +1,8 @@
 # Logs
+*.txt
 logs
+*.json
+*.save
 *.log
 *.txt
 log*

@@ -36,7 +36,7 @@ export class BWorker extends  Worker {
             [
                 "Login",
                 "Minting",
-                "Buring zomby",
+                "Buring zombie",
                 "Transfering ntf/ft"
             ]
         )
@@ -53,7 +53,7 @@ export class BWorker extends  Worker {
             await this.tryMint()
 
             this.barHelper.next()
-            if (Config().burn && Config().transfer != "zomby") {
+            if (Config().burn && Config().transfer != "zombie") {
                 await this.tryBurn()
             }
 
@@ -63,8 +63,8 @@ export class BWorker extends  Worker {
                     case "zlt":
                         // await this.tryT()
                         break;
-                    case "zomby":
-                        await this.tryTransferZomby()
+                    case "zombie":
+                        await this.tryTransferZombie()
                         break;
                     case "none":
                         break;
@@ -98,27 +98,27 @@ export class BWorker extends  Worker {
     }
 
     private async tryMint() {
-        let ret = await Navigator.mint.zomby(<puppeteer.Page>this.page)
+        let ret = await Navigator.mint.zombie(<puppeteer.Page>this.page)
         this.page = ret!.page
         let desc=""
         switch (ret.error.type) {
             case "time":
-                this.account.updateLastMint(
-                    addTime(ret.error.time!.hours - 24,
-                        ret.error.time!.minutes - 60,
-                        ret.error.time!.seconds - 60).getTime())
+                this.account.updateNextMint(
+                    addTime(ret.error.time!.hours,
+                        ret.error.time!.minutes,
+                        ret.error.time!.seconds).getTime())
                 desc = "Not time yet, to mint " + ret.error.time!.hours + "h " + ret.error.time!.minutes + "m " + ret.error.time!.seconds + "s"
                 break;
             case "basic": desc = "basic error" + ret.error.msgs!.join("; ")
                 break;
             case "payment": desc = "payment error: " + ret.error.msgs!.join("; ")
                 break;
-            case "ok": log.echo("Zomby mint success"); this.account.updateLastMint(new Date().getTime())
+            case "ok": log.echo("Zombie mint success"); this.account.updateNextMint(addTime(24, 0, 0).getTime())
                 break;
             default: desc = "Unknown error while minting"
                 break;
         }
-        if (desc != "") { log.error("cannot mint zomby: " + desc); return true }
+        if (desc != "") { log.error("cannot mint zombie: " + desc); return true }
         return false
     }
 
@@ -143,7 +143,7 @@ export class BWorker extends  Worker {
         }
     }
 
-    private async tryTransferZomby() {
+    private async tryTransferZombie() {
         let ret = await Navigator.transfer.zombies(<puppeteer.Page>this.page)
         let desc = ""
         switch (ret.error.type) {
@@ -151,7 +151,7 @@ export class BWorker extends  Worker {
                 desc = "payment error:" + ret.error.msgs!.join("; ")
                 break;
             case "ok":
-                log.echo("All zomby transfered")
+                log.echo("All zombie transfered")
                 break;
             case "basic":
                 desc = "basic error:" + ret.error.msgs!.join("; ")
@@ -159,7 +159,7 @@ export class BWorker extends  Worker {
             default:
                 desc = "unknown: " + ret.error.type
         }
-        if (desc != "") { log.error("zomby transfer:", desc); return true }
+        if (desc != "") { log.error("zombie transfer:", desc); return true }
         return false
     }
 
@@ -217,4 +217,3 @@ export class BWorker extends  Worker {
         return this.page;
     }
 }
-

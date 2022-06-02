@@ -5,19 +5,17 @@ import { Database } from 'aloedb-node'
 import { log } from './utils.js'
 
 interface IAccount {
+    id?: number,
     phrases: string[],
     wallet?: string,
-    id?: string,
-    lastMint?: number,
-    zombyCount?: number,
+    nextMint?: number,
 }
 
 const AccountSign = object({
+    id: number(),
     phrases: array(string()),
     wallet: string(),
-    id: string(),
-    lastMint: number(),
-    zombyCount: number()
+    nextMint: number(),
 })
 
 const AccountValidator = (document: any) => assert(document, AccountSign)
@@ -34,19 +32,28 @@ export let db = { accounts: accounts_db }
 
 export class Account implements IAccount {
     readonly phrases: string[];
-    readonly id: string;
+    readonly id: number;
     wallet: string;
-    lastMint: number;
-    zombyCount: number;
+    nextMint: number;
 
     constructor(acc: IAccount) {
+        if (acc.id) {
+            this.id = acc.id
+        } else {
+            if (accounts_db.documents.length == 0) {
+                this.id = 0
+            } else {
+                this.id = Math.max(...accounts_db.documents.map(a => <number>a.id))+1
+            }
+        }
+        if (this.id == null) {
+            this.id = 0
+        }
         this.phrases = acc.phrases
         if (this.phrases.length != 12) {
             throw new Error("Creating account with " + this.phrases.length + " phrases")
         }
-        this.id = acc.id ?? crypt.createHash('sha256').update(this.phrases.join(" ")).digest('hex')
-        this.lastMint = acc.lastMint ?? 0
-        this.zombyCount = acc.zombyCount ?? 0
+        this.nextMint = acc.nextMint ?? 0
         this.wallet = acc.wallet ?? ""
     }
 
@@ -58,13 +65,8 @@ export class Account implements IAccount {
         }
     }
 
-    async updateLastMint(date: number) {
-        this.lastMint = date
-        return await this.sync()
-    }
-
-    async updateZombyCount(num: number) {
-        this.zombyCount = num
+    async updateNextMint(date: number) {
+        this.nextMint= date
         return await this.sync()
     }
 
@@ -116,7 +118,7 @@ export class Accounts {
         return ret;
     }
 
-    async getAccountById(id: string) {
+    async getAccountById(id: number) {
         return await Account.findOne({ id: id })
     }
 
@@ -126,7 +128,7 @@ export class Accounts {
 
     private readRawPhrases(file: fs.PathLike) {
         let blob = fs.readFileSync(file).toString()
-        let ph = blob.split(" ")
+        let ph = blob.replace(/(\[rn]|[\r\n]+)+/g, ' ').split(" ")
         let wordc = 0;
         let phrases: Array<Array<string>> = new Array();
         phrases[0] = new Array<string>();
@@ -144,19 +146,30 @@ export class Accounts {
         return phrases
     }
 
-    async importPhrases(file: fs.PathLike) {
+    private readRawWallets(file: fs.PathLike) {
+        let blob = fs.readFileSync(file).toString()
+        return blob.replace(/(\[rn]|[\r\n]+)+/g, ' ').split(" ")
+    }
+
+    async importPhrases(file: fs.PathLike, fileWallets?: fs.PathLike) {
         let phs = this.readRawPhrases(file)
+
+        let wallets
+        if (fileWallets) {
+            wallets = this.readRawWallets(fileWallets)
+        }
+
+        // if (wallets && wallets.length != phs.length) {
+        //     throw "Incorect import"
+        // }
 
         let imported = 0;
         let existed = 0;
-        for await (let ph of phs) {
-            console.log(ph)
-            if (await accounts_db.findOne({
-                            id: crypt.createHash('sha256').update(ph.join(" ")).digest('hex') })
-            ) {
+        for await (let [ i, ph ] of phs.entries()) {
+            if (await accounts_db.findOne(a => a.phrases.join('') === ph.join(''))) {
                 existed++;
             } else {
-                let account = new Account({ phrases: ph })
+                let account = new Account({ phrases: ph, wallet: wallets ? wallets[i] : "" })
                 await account.sync()
                 imported++;
             }
@@ -164,7 +177,7 @@ export class Accounts {
 
         await accounts_db.save();
 
-        log("Imported", imported, ". Excluded", existed, "accounts")
+        log.echo("Imported", imported, ". Excluded", existed, "accounts")
     }
 }
 

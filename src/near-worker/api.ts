@@ -7,9 +7,47 @@ import * as seed from 'near-seed-phrase'
 import sha256 from 'js-sha256'
 import https from 'https'
 
+type ZL_MarketHistoryEntry = {
+    from_user: string;
+    to_user: string;
+    price: number;
+    token_id: string;
+    nft_type: ZL_NFT_Type,
+    timestamp: number
+}
+
+export enum Collection {
+    Mummy = 1,
+    Pirate = 2,
+    Punk = 3,
+    Stylish = 4,
+    Combat = 5
+}
+
+export type Rarity = "Common" | "Uncommon" | "Rare" | "Epic"
+
+type ZL_NFT_Type = 'Zombie' | 'Monster'
+
+export interface MonsterNFT {
+    token_id: string,
+    card_rarity: Rarity,
+    sale_price: null,
+    kill_tokens: string,
+    collection_id: number,
+    media: string,
+    mint_date: number,
+    health: number,
+    attack: number,
+    brain: number,
+    nft_type: ZL_NFT_Type,
+    owner_id: string,
+    next_land_discovery: number,
+    next_battle: number
+}
+
 export interface ZombieNFT {
     token_id: string;
-    card_rarity: string;
+    card_rarity: Rarity;
     sale_price: any;
     kill_tokens: string;
     media: string;
@@ -20,10 +58,10 @@ export interface ZombieNFT {
     attack: number;
     brain: number;
     speed: number;
-    nft_type: string | 'Zombie';
+    nft_type: ZL_NFT_Type;
     owner_id: string;
     modifier_items: any[];
-    next_battle:number 
+    next_battle: number 
 }
 
 export interface LandNFT {
@@ -35,33 +73,50 @@ export interface LandNFT {
 }
 
 export let api = ((networkId = 'mainnet') => {
+    type ZLQ_Result = {
+        block_hash: string,
+        block_height: number,
+        logs: any[],
+        result: any[]
+    }
+
     let keyStore = new keyStores.InMemoryKeyStore()
     let connection: near.Near
     let provider: near.providers.JsonRpcProvider
-    // let walletConnection: near.WalletConnection
     const zomlandContractId = "zomland.near"
     const MAX_GAS_CONST = "300000000000000"
     const MAX_GAS_REAL = async () => ( await getBlocks(1, 0) )[0].gas_limit.toString()
 
     const GAS_PRICES = {
         transfer: {
-            zomby: String( 80000000000000 ),
+            zombie: String( 80000000000000 ),
             zlt: String( 20000000000000 ),
         },
+        publish: String( 180000000000000 ),
         mint: String( 280000000000000 ),
-        kill: String( 280000000000000 )
+        kill: String( 280000000000000 ),
+        real_est_T: {
+            transfer: {
+                zombie: 26,
+                zlt: 6,
+            },
+            mint: {
+                zombie: 26,
+                collection: 76
+            },
+            kill: 6
+        }
     }
 
-    const DEPOSITS ={
+    const DEPOSITS = {
         mint: near.utils.format.parseNearAmount("0.01"),
         kill: near.utils.format.parseNearAmount("0.000000000000000000000001"),
+        publish: near.utils.format.parseNearAmount("0.000001"),
         transfer: {
-            zomby: near.utils.format.parseNearAmount("0.009"),
+            zombie: near.utils.format.parseNearAmount("0.009"),
             zlt: near.utils.format.parseNearAmount("0.000000000000000000000001")
         },
     }
-
-    // let contracts: Map<string, near.Contract>
 
     function parseJsonRPC(input: any[]) {
         let ret = ""
@@ -85,7 +140,6 @@ export let api = ((networkId = 'mainnet') => {
             url: `https://rpc.${networkId}.near.org`
         })
         connection = await near.connect(config);
-        // walletConnection = new near.WalletConnection(connection, null)
     }
 
     async function addAccount(account: {addr: string, phrases: string[]}) {
@@ -97,14 +151,14 @@ export let api = ((networkId = 'mainnet') => {
 
     interface NearBlocksIO_Block {
         block_height: 0,
-        block_hash: string,
-        block_timestamp: number,
-        txn: number,
-        receipt: number,
-        author: string,
-        gas_used: number,
-        gas_limit: number,
-        gas_fee: string
+            block_hash: string,
+            block_timestamp: number,
+            txn: number,
+            receipt: number,
+            author: string,
+            gas_used: number,
+            gas_limit: number,
+            gas_fee: string
     }
 
     async function getBlocks(count: number = 1, offset: number = 0): Promise<NearBlocksIO_Block[]> {
@@ -139,29 +193,12 @@ export let api = ((networkId = 'mainnet') => {
     }
 
     async function ZLviewAccount(addr: string) {
-        // const acc = await connection.account(addr)
         let res = await provider.query({
             account_id: addr,
             finality: "optimistic",
             request_type: "view_account"
         })
-        // let conf = await provider.experimental_protocolConfig()
-        // conf.
         return res
-        // // @ts-ignore
-        // if (res && res.result) {
-        //     // @ts-ignore
-        //     let result = parseJsonRPC(res.result)
-        //     return {
-        //         block_hash: res.block_hash,
-        //         block_height: res.block_height,
-        //         // @ts-ignore
-        //         logs: res.logs,
-        //         result: result
-        //     }
-        // } else {
-        //     return null
-        // }
     }
 
     async function autorizedApps(addr: string) {
@@ -186,13 +223,68 @@ export let api = ((networkId = 'mainnet') => {
         }
     }
 
+    type MarketSearch = {
+        start?: number,
+        count?: number,
+        collection?: Collection,
+        rarity?: Rarity
+    }
+
+    async function getMarket<NFT>(nft_type: ZL_NFT_Type, search_arg?: MarketSearch) {
+        let def_arg  = { start: 0, count: 20 }
+        let arg = { ...def_arg, ...search_arg }
+        const payload = {
+            start: arg.start,
+            limit: arg.count,
+            filter_rarity: arg.rarity,
+            filter_collection: arg.collection
+        }
+        if (!payload.filter_rarity) delete payload.filter_rarity
+        if (!payload.filter_collection) delete payload.filter_collection
+        let res = <ZLQ_Result>await provider.query({
+            account_id: zomlandContractId,
+            args_base64: Base64.encode(JSON.stringify(payload)),
+            finality: "optimistic",
+            method_name: (nft_type == "Monster" ? "get_monsters_from_market" : "get_zombies_from_market"),
+            request_type: "call_function"
+        })
+        if (res && res.result) {
+            let m = parseJsonRPC(res.result)
+            return {
+                ...res,
+                count: m[0],
+                nft: <NFT[]>m[1]
+            }
+        } else {
+            return undefined
+        }
+    }
+
+    async function getMarketHistory() {
+        let res = <ZLQ_Result>await provider.query({
+            account_id: zomlandContractId,
+            args_base64: Base64.encode(JSON.stringify({})),
+            finality: "optimistic",
+            method_name: "get_last_market_history",
+            request_type: "call_function"
+        })
+        if (res && res.result) {
+            return {
+                ...res,
+                nft: <ZL_MarketHistoryEntry>parseJsonRPC(res.result)
+            }
+        } else {
+            return undefined
+        }
+    }
+
     async function getYactoNearBalance(addr: string) {
         const acc = await connection.account(addr)
         return await acc.getAccountBalance()
     }
 
     async function getZLTBalance(addr: string) {
-        let res = await provider.query({
+        let res = <ZLQ_Result>await provider.query({
             account_id: "ft." + zomlandContractId,
             args_base64: Base64.encode(JSON.stringify({
                 account_id: addr
@@ -201,24 +293,18 @@ export let api = ((networkId = 'mainnet') => {
             method_name: "ft_balance_of",
             request_type: "call_function"
         })
-        // @ts-ignore
         if (res && res.result) {
-            // @ts-ignore
-            let zlt = parseJsonRPC(res.result)
             return {
-                block_hash: res.block_hash,
-                block_height: res.block_height,
-                // @ts-ignore
-                logs: res.logs,
-                zlt: zlt
+                ...res,
+                zlt: parseJsonRPC(res.result)
             }
         } else {
             return null
         }
     }
 
-    async function getLands(addr: string): Promise<{block_hash: string, block_height: number, logs: any[], lands: LandNFT[]} | null> {
-        let res = await provider.query({
+    async function getLands(addr: string): Promise<( ZLQ_Result & { lands: LandNFT[] } ) | null> {
+        let res = <ZLQ_Result>await provider.query({
             account_id: zomlandContractId,
             args_base64: Base64.encode(JSON.stringify({
                 id_list:[],
@@ -228,48 +314,116 @@ export let api = ((networkId = 'mainnet') => {
             method_name: "user_lands_info",
             request_type: "call_function"
         })
-        // @ts-ignore
         if (res && res.result) {
-            // @ts-ignore
-            let lands = parseJsonRPC(res.result)
             return {
-                block_hash: res.block_hash,
-                block_height: res.block_height,
-                // @ts-ignore
-                logs: res.logs,
-                lands: lands
+                ...res,
+                lands: parseJsonRPC(res.result)
             }
         } else {
             return null
         }
     }
 
-    async function getZombies(addr: string): Promise<{block_hash: string, block_height: number, logs: any[], zombies: ZombieNFT[]} | null> {
-        let res = await provider.query({
+    async function getZombiesById(id: string[]) {
+        let res = <ZLQ_Result>await provider.query({
+            account_id: zomlandContractId,
+            args_base64: Base64.encode(JSON.stringify({
+                id_list: id
+            })),
+            finality: "optimistic",
+            method_name: "get_zombies_by_id",
+            request_type: "call_function"
+        })
+        if (res && res.result) {
+            return {
+                ...res,
+                zombie: parseJsonRPC(res.result)
+            }
+        } else {
+            return null
+        }
+    }
+
+    async function getZombies(addr: string, page = 1, count = 20): Promise<( ZLQ_Result&{zombies_count: number, zombies: ZombieNFT[]} ) | null> {
+        let res = <ZLQ_Result>await provider.query({
             account_id: zomlandContractId,
             args_base64: Base64.encode(JSON.stringify({
                 account_id: addr,
-                page_num: "1",
-                page_limit: "20"
+                page_num: page.toString(),
+                page_limit: count.toString() 
             })),
             finality: "optimistic",
             method_name: "user_zombies",
             request_type: "call_function"
         })
-        // @ts-ignore
         if (res && res.result) {
-            // @ts-ignore
             let zombies = parseJsonRPC(res.result)
             return {
-                block_hash: res.block_hash,
-                block_height: res.block_height,
-                // @ts-ignore
-                logs: res.logs,
+                ...res,
+                zombies_count: Number(zombies[0]),
                 zombies: zombies[1]
             }
         } else {
             return null
         }
+    }
+
+    async function getMonstersById(id: string) {
+        let res = <ZLQ_Result>await provider.query({
+            account_id: zomlandContractId,
+            args_base64: Base64.encode(JSON.stringify({
+                id_list: id
+            })),
+            finality: "optimistic",
+            method_name: "get_monsters_by_id",
+            request_type: "call_function"
+        })
+        if (res && res.result) {
+            return {
+                ...res,
+                monster: parseJsonRPC(res.result)
+            }
+        } else {
+            return null
+        }
+    }
+
+    async function getMonsters(addr: string, page = 1, count = 20) {
+        let res = <ZLQ_Result>await provider.query({
+            account_id: zomlandContractId,
+            args_base64: Base64.encode(JSON.stringify({
+                account_id: addr,
+                page_num: page.toString(),
+                page_limit: count.toString() 
+            })),
+            finality: "optimistic",
+            method_name: "user_monsters",
+            request_type: "call_function"
+        })
+        if (res && res.result) {
+            let monsters = parseJsonRPC(res.result)
+            return {
+                ...res,
+                monsters_count: monsters[0],
+                monsters: monsters[1]
+            }
+        } else {
+            return null
+        }
+    }
+
+    async function mintCollection(addr: string, zombies: string[], collection_id: number) {
+        const acc = await connection.account(addr)
+        return await acc.functionCall({
+            contractId: zomlandContractId,
+            methodName: "mint_free_zombie_nft",
+            args: {
+                collection_id: collection_id,
+                zombie_list: zombies
+            },
+            attachedDeposit: DEPOSITS.mint,
+            gas: GAS_PRICES.mint
+        })
     }
 
     async function mintZombieV1(sender: string, land: string) {
@@ -284,8 +438,6 @@ export let api = ((networkId = 'mainnet') => {
     }
 
     async function mintZombieV2(sender: string, phrases: string[], land: string) {
-        // const acc = await connection.account(addr)
-
         let keys = seed.parseSeedPhrase(phrases.join(" "))
         const keyPair = near.utils.key_pair.KeyPairEd25519.fromString(keys.secretKey);
         const publicKey = keyPair.getPublicKey();
@@ -294,7 +446,7 @@ export let api = ((networkId = 'mainnet') => {
 
         if (accessKey.permission !== 'FullAccess') {
             return console.log(
-                `Account [ ${sender}  ] does not have permission to send tokens using key: [ ${publicKey}  ]`
+                `Account [ ${sender}  ] does not have permission to send tockens using key: [ ${publicKey}  ]`
             );
         }
 
@@ -336,22 +488,9 @@ export let api = ((networkId = 'mainnet') => {
         const result: any = await provider.sendJsonRpc(
             'broadcast_tx_commit', 
             [Buffer.from(signedSerializedTx).toString('base64')]
-        );
+        )
 
         return result
-
-        // console.log('Transaction Results: ', result);
-        // console.log('Transaction Results: ', result?.result);
-
-        // return await acc.functionCall({
-        // })
-        // {
-        //     contractId: zomlandContractId,
-        //     methodName: "mint_free_zombie_nft",
-        //     args: { land_id: land },
-        //     attachedDeposit: utils.format.parseNearAmount(zomlandMintFee),
-        //     gas: MAX_GAS
-        // })
     }
 
     async function killZombie(addr: string, zombies: string[]) {
@@ -376,8 +515,8 @@ export let api = ((networkId = 'mainnet') => {
                 token_id: zombie.token_id,
                 recipient_id: to
             },
-            attachedDeposit: DEPOSITS.transfer.zomby,
-            gas: GAS_PRICES.transfer.zomby
+            attachedDeposit: DEPOSITS.transfer.zombie,
+            gas: GAS_PRICES.transfer.zombie
         })
     }
 
@@ -395,6 +534,26 @@ export let api = ((networkId = 'mainnet') => {
         })
     }
 
+    async function publishMonsterOnMarket(publisher: string, ...price_list: { id: string, price: string }[]) {
+        const acc = await connection.account(publisher)
+        let payload = {
+            token_price_list: {
+            },
+            account_id: publisher
+        }
+        price_list.forEach(e => {
+            // @ts-ignore
+            payload.token_price_list[e.id] = e.price
+        })
+        return await acc.functionCall({
+            contractId: zomlandContractId,
+            methodName: "publish_monsters_on_market",
+            args: payload,
+            attachedDeposit: DEPOSITS.publish,
+            gas: GAS_PRICES.publish
+        })
+    }
+
     return {
         connect,
         lastBlock: async () => (await getBlocks(1, 0))[0],
@@ -408,46 +567,62 @@ export let api = ((networkId = 'mainnet') => {
                 near: {
                     yactoNear: getYactoNearBalance,
                 },
-                zomland: {
-                    zlt: getZLTBalance
-                }
+            },
+            send: {
+                near: sendNear
+            },
+            zomland: {
+                balances: {
+                    zlt: {
+                        get: getZLTBalance,
+                        transfer: transferZLT
+                    }
+                },
+                dropDups: ZLdeleteDuplicateAutorization,
+                marketHistory: getMarketHistory,
+                zombie: {
+                    mint: mintZombieV1,
+                    transfer: transferZombie,
+                    get: getZombies,
+                    getById: getZombiesById,
+                    kill: killZombie,
+                    market: {
+                        get: (arg?: MarketSearch) => getMarket<ZombieNFT>("Zombie", arg),
+                        sell: {},
+                        remove_from_market: {},
+                        buy: {}
+                    }
+                },
+                monster: {
+                    mint: mintCollection,
+                    get: getMonsters,
+                    getById: getMonstersById,
+                    transfer: {},
+                    kill: {},
+                    market: {
+                        get: (arg?: MarketSearch) => getMarket<MonsterNFT>("Monster", arg),
+                        sell: publishMonsterOnMarket,
+                        remove_from_market: () => { throw "Not impl" },
+                        buy: {}
+                    }
+                },
+                lands: getLands,
             },
         },
-        send: {
-            near: sendNear
-        },
-        zomland: {
-            dropDups: ZLdeleteDuplicateAutorization,
-            zombies: getZombies,
-            lands: getLands,
-            kill: killZombie,
-            mint: mintZombieV1,
-            mintV2: mintZombieV2,
-            transfer: {
-                zombie: transferZombie,
-                zlt: transferZLT
-            }
-        },
-        CONSTANTS: {
+        constants: {
             GAS_PRICES,
             DEPOSITS
         }
     }
 })()
 
-// import { accounts } from './../accounts.js'
+// import { Account, db } from './../accounts.js'
+
+// let account = new Account(db.accounts.documents[0])
 
 // await api.connect()
-// let acc = await accounts.getAccountById("2252896c236b8dc96730a956255bead1144ca92250dbb1360bd7778015d38a78")
-// await api.account.add({ addr: acc!.wallet, phrases: acc!.phrases })
-// let landr = await api.zomland.lands(acc!.wallet)
-// console.log(landr)
-// console.log(await api.zomland.mint(acc!.wallet, landr!.lands[0].token_id))
-// // console.log(await api.account.view(acc.wallet))
-// // await api.zomland.dropDups("110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150")
-// // console.log(await api.account.autorizedApps("110df5cc208086fcdf85e06f3b74f8bec48acb4717fa5bd1f18904ce859a1150"))
-
-// await api.connect()
-// // let block = await api.lastBlock()
-// let price = await api.gasPrice("2UWduj1oT2hdCojZx4PZ8QAPQLRY7iEUXWSNesxFnArD")
-// console.log(price)
+// await api.account.add({addr:account.wallet, phrases:account.phrases})
+// console.log(await api.account.zomland.lands(account.wallet))
+// // console.log(await api.account.zomland.zombie.get(account.wallet))
+// // console.log((await api.account.zomland.marketHistory()))
+// // await api.account.zomland.monster.market.sell("address", { id: "1", price: "123123" }, { id: "123", price: "9812123" })

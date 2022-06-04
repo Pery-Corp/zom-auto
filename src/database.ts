@@ -1,8 +1,26 @@
 import * as fs from 'fs'
 import * as crypt from 'crypto'
-import { number, array, assert, object, string } from 'superstruct'
+import { Describe, Infer, union, number, array, assert, object, string } from 'superstruct'
 import { Database } from 'aloedb-node'
 import { log } from './utils.js'
+import { ZombieNFT, ZombieNFTSign, MonsterNFT, MonsterNFTSign, ZL_NFT_Type, ZL_NFT_TypeSign } from './near-worker/api.js'
+
+const MarketHistoryEntrySign: Describe<IMarketHistoryEntry> = object({
+    nft: union([ ZombieNFTSign, MonsterNFTSign ]),
+    nft_type: ZL_NFT_TypeSign,
+    date: number(),
+    price: number(),
+    price_yacto: number()
+})
+
+// export type IMarketHistoryEntry = Infer<typeof MarketHistoryEntrySign>
+export interface IMarketHistoryEntry {
+    nft: any,
+    nft_type: ZL_NFT_Type,
+    date: number,
+    price: number,
+    price_yacto: number 
+}
 
 interface IAccount {
     id?: number,
@@ -19,6 +37,7 @@ const AccountSign = object({
 })
 
 const AccountValidator = (document: any) => assert(document, AccountSign)
+const MarketHistoryEntryValidator = (document: any) => assert(document, MarketHistoryEntrySign)
 let accounts_db = new Database<IAccount>({
     path: "./accounts.json",
     pretty: true,
@@ -28,7 +47,40 @@ let accounts_db = new Database<IAccount>({
     schemaValidator: AccountValidator
 })
 
-export let db = { accounts: accounts_db }
+let market_db = new Database<IMarketHistoryEntry>({
+    path: "./market.json",
+    pretty: true,
+    autoload: true,
+    immutable: true,
+    onlyInMemory: false,
+    schemaValidator: MarketHistoryEntryValidator
+})
+
+export let db = { accounts: accounts_db, market: market_db }
+
+export class MarketHistoryEntry implements IMarketHistoryEntry {
+    nft: ZombieNFT | MonsterNFT;
+    nft_type: ZL_NFT_Type;
+    date: number;
+    price: number;
+    price_yacto: number;
+
+    constructor(e: IMarketHistoryEntry) {
+        this.nft = e.nft
+        this.nft_type = e.nft_type
+        this.price = e.price
+        this.price_yacto = e.price_yacto
+        this.date = e.date
+    }
+
+    async sync() {
+        if (await market_db.findOne({ nft: { token_id: this.nft.token_id } })) {
+            return await market_db.updateOne({ nft: { token_id: this.nft.token_id } }, this);
+        } else {
+            return await market_db.insertOne(this);
+        }
+    }
+}
 
 export class Account implements IAccount {
     readonly phrases: string[];

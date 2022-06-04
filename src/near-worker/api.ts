@@ -2,6 +2,7 @@ import near from 'near-api-js'
 import {Base64} from './../base64.js'
 import { log } from './../utils.js'
 const { KeyPair, keyStores, utils } = near;
+import { Describe, optional, nullable, enums, number, array, assert, object, string } from 'superstruct'
 // @ts-ignore
 import * as seed from 'near-seed-phrase'
 import sha256 from 'js-sha256'
@@ -26,12 +27,15 @@ export enum Collection {
 
 export type Rarity = "Common" | "Uncommon" | "Rare" | "Epic"
 
-type ZL_NFT_Type = 'Zombie' | 'Monster'
+const RaritySign = enums([ "Common", "Uncommon", "Rare", "Epic" ])
+
+export type ZL_NFT_Type = 'Zombie' | 'Monster'
+export const ZL_NFT_TypeSign = enums([ "Zombie", "Monster" ])
 
 export interface MonsterNFT {
     token_id: string,
     card_rarity: Rarity,
-    sale_price: null,
+    sale_price: number | null,
     kill_tokens: string,
     collection_id: number,
     media: string,
@@ -45,10 +49,27 @@ export interface MonsterNFT {
     next_battle: number
 }
 
+export const MonsterNFTSign: Describe<MonsterNFT> = object({
+    token_id: string(),
+    card_rarity: RaritySign,
+    sale_price: nullable(number()),
+    kill_tokens: string(),
+    collection_id: number(),
+    media: string(),
+    mint_date: number(),
+    health: number(),
+    attack: number(),
+    brain: number(),
+    nft_type: ZL_NFT_TypeSign,
+    owner_id: string(),
+    next_land_discovery: number(),
+    next_battle: number()
+})
+
 export interface ZombieNFT {
     token_id: string;
     card_rarity: Rarity;
-    sale_price: any;
+    sale_price: number | null;
     kill_tokens: string;
     media: string;
     collection_id: number;
@@ -63,6 +84,25 @@ export interface ZombieNFT {
     modifier_items: any[];
     next_battle: number 
 }
+
+export const ZombieNFTSign: Describe<ZombieNFT> = object({
+    token_id: string(),
+    card_rarity: RaritySign,
+    sale_price: nullable(number()),
+    kill_tokens: string(),
+    media: string(),
+    collection_id: number(),
+    collection_index: number(),
+    mint_date: number(),
+    health: number(),
+    attack: number(),
+    brain: number(),
+    speed: number(),
+    nft_type: ZL_NFT_TypeSign,
+    owner_id: string(),
+    modifier_items: array(string()),
+    next_battle:  number()
+})
 
 export interface LandNFT {
     token_id: string,
@@ -271,7 +311,7 @@ export let api = ((networkId = 'mainnet') => {
         if (res && res.result) {
             return {
                 ...res,
-                nft: <ZL_MarketHistoryEntry>parseJsonRPC(res.result)
+                nft: <ZL_MarketHistoryEntry[]>parseJsonRPC(res.result)
             }
         } else {
             return undefined
@@ -368,7 +408,7 @@ export let api = ((networkId = 'mainnet') => {
         }
     }
 
-    async function getMonstersById(id: string) {
+    async function getMonstersById(id: string[]) {
         let res = <ZLQ_Result>await provider.query({
             account_id: zomlandContractId,
             args_base64: Base64.encode(JSON.stringify({
@@ -616,7 +656,7 @@ export let api = ((networkId = 'mainnet') => {
     }
 })()
 
-// import { Account, db } from './../accounts.js'
+// import { Account, db } from './../database.js'
 
 // let account = new Account(db.accounts.documents[0])
 

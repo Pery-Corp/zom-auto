@@ -1,5 +1,5 @@
 import { MultiProgressBars  } from 'multi-progress-bars';
-import { Account } from "./accounts.js"
+import { Account } from "./database.js"
 
 export let mpb: MultiProgressBars = new MultiProgressBars({
     initMessage: ' $ Zomland ',

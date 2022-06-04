@@ -1,5 +1,5 @@
 import { EventEmitter } from './EventEmitter.js'
-import { Account } from './accounts.js'
+import { Account } from './database.js'
 import { WorkerBarHelper } from './bar-helper.js'
 
 export class WorkerFactory {

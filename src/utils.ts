@@ -97,3 +97,38 @@ export function msToHMS(duration: number): string {
     //     .replace("%S", seconds.toString())
     //     .replace("%s", ( (ms%1000) ).toString())
 }
+
+export let time = (() => {
+    function toDate(date: any) {
+        if (date === void 0) {
+            return new Date(0);
+        }
+        if (isDate(date)) {
+            return date;
+        } else {
+            return new Date(parseFloat(date.toString()));
+        }
+    }
+
+    function isDate(date: any) {
+        return (date instanceof Date);
+    }
+
+    function format(date: any, format: string) {
+        var d = toDate(date);
+        return format
+            .replace(/Y/gm, d.getFullYear().toString())
+            .replace(/m/gm, ('0' + (d.getMonth() + 1)).substr(-2))
+            .replace(/d/gm, ('0' + (d.getDate() + 1)).substr(-2))
+            .replace(/H/gm, ('0' + (d.getHours() + 0)).substr(-2))
+            .replace(/i/gm, ('0' + (d.getMinutes() + 0)).substr(-2))
+            .replace(/s/gm, ('0' + (d.getSeconds() + 0)).substr(-2))
+            .replace(/v/gm, ('0000' + (d.getMilliseconds() % 1000)).substr(-3));
+    }
+
+    return {
+        toDate,
+        isDate,
+        format
+    }
+})()

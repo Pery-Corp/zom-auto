@@ -1,6 +1,6 @@
 import { mpb, accountBarID } from './global.js'
 import chalk from 'chalk';
-import { Account } from './accounts.js'
+import { Account } from './database.js'
 
 export class WorkerBarHelper {
     private curTask = 0

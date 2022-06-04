@@ -9,7 +9,7 @@ import { BWorkerFactory } from './browser-worker/worker.js'
 import { NWorkerFactory } from './near-worker/worker.js'
 import { Worker, WorkerFactory } from './worker.js'
 import { sleep, log, addTime } from './utils.js'
-import { accounts, db, Account } from './accounts.js'
+import { accounts, db, Account } from './database.js'
 import { EventEmitter } from './EventEmitter.js'
 import { createMainProgress, updateMainProgress } from './bar-helper.js'
 import { mpb } from './global.js'
@@ -228,14 +228,15 @@ class App {
                 fs.appendFileSync("./unminted", JSON.stringify(acc))
             }
 
-            if (balance >= 0.16) { // todo
+            if (balance >= 0.16) { // todo, determine by mints count
                 console.log("Skiping:", balance.toFixed(4), "near")
                 continue
             }
 
             if (acc.wallet != "" && acc.wallet != provider_id) {
                 log.echo("Sending to", acc.wallet, "id: ", acc.id)
-                await api.account.send.near(provider_id, acc.wallet, String(.16-balance+0.05))
+                // await api.account.send.near(provider_id, acc.wallet, String(.16-balance+0.05))
+                await api.account.send.near(provider_id, acc.wallet, String(0.1))
             }
             passed++
         }

@@ -1,5 +1,5 @@
 import { Worker, WorkerFactory} from './../worker.js'
-import { Account } from './../accounts.js'
+import { Account } from './../database.js'
 import { Config } from './../Config.js'
 // @ts-ignore
 import { proxyRequest } from 'puppeteer-proxy'

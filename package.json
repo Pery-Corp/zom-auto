@@ -24,7 +24,8 @@
         "build": "bash build.sh",
         "near": "node dist/main.js --worker='near'",
         "browser": "node dist/main.js --worker='browser'",
-        "distribute": "node dist/main.js --mode='provide'"
+        "distribute": "node dist/main.js --mode='provide'",
+        "market-watch": "node dist/market-watcher.js"
     },
     "devDependencies": {
         "@tsconfig/esm": "^1.0.0",

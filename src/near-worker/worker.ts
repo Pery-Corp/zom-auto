@@ -3,7 +3,7 @@ import * as near from 'near-api-js'
 import { api } from './api.js'
 import { log, msToHMS } from './../utils.js'
 import { addTime } from './../utils.js'
-import { Account } from './../accounts.js'
+import { Account } from './../database.js'
 import { Config } from './../Config.js'
 import { WorkerBarHelper } from './../bar-helper.js'
 
@@ -60,7 +60,6 @@ export class NWorker extends Worker {
                     try {
                         log.echo("Trying mint on land:", land.token_id)
                         // @ts-ignore
-                        // @ts-ignore
                         if (addTime(24, 0, 0, new Date(parseInt(land.last_zombie_claim/1000000))).getTime() >= new Date().getTime()) {
                         // @ts-ignore
                             log.echo("Not time to mint, next mint in next", msToHMS(addTime(24, 0, 0, new Date(parseInt(land.last_zombie_claim/1000000))).getTime() - new Date().getTime()))
@@ -85,7 +84,7 @@ export class NWorker extends Worker {
 
             this.barHelper.next()
             if (zombies_req) {
-                if (Config().burn && Config().transfer != 'zombie') {
+                if (Config().burn) {
                     let zombies = new Array()
                     for await (let zombie of zombies_req.zombies) {
                         if (Config().burnRarities.includes(zombie.card_rarity)) {

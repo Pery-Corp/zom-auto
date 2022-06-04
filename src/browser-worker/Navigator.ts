@@ -7,7 +7,7 @@ import {
 import { Config } from './../Config.js'
 
 import puppeteer from 'puppeteer'
-import { Account } from './../accounts.js'
+import { Account } from './../database.js'
 
 export const Navigator = (() => {
     const url = {

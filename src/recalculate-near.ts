@@ -1,4 +1,4 @@
-// import { Account, db } from './accounts.js'
+// import { Account, db } from './database.js'
 // import { api } from './near-worker/api.js'
 // import { plot, Plot, Layout } from 'nodeplotlib'
 

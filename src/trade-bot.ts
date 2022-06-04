@@ -1,3 +1,3 @@
-import { Account } from './accounts.js'
+import { Account } from './database.js'
 
 

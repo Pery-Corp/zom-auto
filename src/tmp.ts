@@ -1,29 +1,29 @@
-import { Account, db } from './accounts.js'
-import { api } from './near-worker/api.js'
-import { Config } from './Config.js'
+// import { Account, db } from './database.js'
+// import { api } from './near-worker/api.js'
+// import { Config } from './Config.js'
 
-await api.connect()
+// await api.connect()
 
-let accounts = db.accounts.documents.map(a => new Account(a))
+// let accounts = db.accounts.documents.map(a => new Account(a))
 
-for (const acc of accounts) {
-    if (acc.wallet === "" || acc.wallet == Config().NEARProvider.addr) {
-        continue
-    }
-    await api.account.add({
-        addr: acc.wallet,
-        phrases: acc.phrases
-    })
+// for (const acc of accounts) {
+//     if (acc.wallet === "" || acc.wallet == Config().NEARProvider.addr) {
+//         continue
+//     }
+//     await api.account.add({
+//         addr: acc.wallet,
+//         phrases: acc.phrases
+//     })
 
-    let _balance = await api.account.balances.near.yactoNear(acc.wallet)
-    let balance = parseInt(_balance.available) * Math.pow(10, -24)
+//     let _balance = await api.account.balances.near.yactoNear(acc.wallet)
+//     let balance = parseInt(_balance.available) * Math.pow(10, -24)
 
-    if (balance > 1) {
-        console.log("Balance:", balance)
-        console.log("Sending:", String( balance - 0.3 ))
-        await api.account.send.near(acc.wallet, Config().NEARProvider.addr, String( balance - 0.3 ))
-    }
-}
+//     if (balance > 1) {
+//         console.log("Balance:", balance)
+//         console.log("Sending:", String( balance - 0.3 ))
+//         await api.account.send.near(acc.wallet, Config().NEARProvider.addr, String( balance - 0.3 ))
+//     }
+// }
 
 // import * as fs from 'fs'
 
